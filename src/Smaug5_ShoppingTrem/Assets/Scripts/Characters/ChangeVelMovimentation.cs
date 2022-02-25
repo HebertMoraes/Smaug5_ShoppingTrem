@@ -18,7 +18,7 @@ public class ChangeVelMovimentation : MonoBehaviour
             GetComponent<MovimentationCharacter>().velOfMovimentation = minVelocityMovimentation;
         }
 
-        if (Input.GetKey(KeyCode.Q)) {
+        if (Input.GetKey(KeyCode.Z)) {
 
             if (GetComponent<MovimentationCharacter>().velOfMovimentation <= maxVelocityMovimentation
             && GetComponent<MovimentationCharacter>().velOfMovimentation >= minVelocityMovimentation){
@@ -26,7 +26,7 @@ public class ChangeVelMovimentation : MonoBehaviour
             }
             
         }
-        if (Input.GetKey(KeyCode.W)) {
+        if (Input.GetKey(KeyCode.X)) {
 
             if (GetComponent<MovimentationCharacter>().velOfMovimentation <= maxVelocityMovimentation
             && GetComponent<MovimentationCharacter>().velOfMovimentation >= minVelocityMovimentation){

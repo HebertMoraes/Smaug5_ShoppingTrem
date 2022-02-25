@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1654416033190001517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: -4}
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -114,15 +114,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87b52748570b63343b58106a408569b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkMaxForwards: 0
-  walkMaxBackwards: 0
-  zMaxPosition: 1
-  zMinPosition: -6
-  trainCarPrefab: {fileID: 5565874258795919138, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
   velOfMovimentation: 10
-  velRotationMaxForwardBackward: 1
-  velRotationDefault: 10
+  velOfMovHorizontal: 3
   multiplyGravityWhenFall: 4
+  timeMaxForMovimentation: 0.5
 --- !u!114 &-3594127699681115775
 MonoBehaviour:
   m_ObjectHideFlags: 0
