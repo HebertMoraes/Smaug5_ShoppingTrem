@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 4069786667859785586}
   - component: {fileID: 6632318427356469132}
   m_Layer: 0
-  m_Name: Train Car
+  m_Name: TrainCar
   m_TagString: TrainCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

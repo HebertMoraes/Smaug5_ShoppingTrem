@@ -7,14 +7,14 @@ public class SpawnTrainCar : MonoBehaviour
     public float distanceForDelete;
     public float positionZtoSpawn;
     private GameObject character;
-    public GameObject trainCarPrefab;
+    private GameObject trainCarPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
         character = GameObject.FindGameObjectWithTag("Player");
         //Talvez seja melhor e faça mais sentido esse prefab do corredor estar no GameController
-        //trainCarPrefab = character.GetComponent<MovimentationCharacter>().trainCarPrefab;
+        trainCarPrefab = character.GetComponent<MovimentationCharacter>().trainCarPrefab;
     }
 
     // Update is called once per frame

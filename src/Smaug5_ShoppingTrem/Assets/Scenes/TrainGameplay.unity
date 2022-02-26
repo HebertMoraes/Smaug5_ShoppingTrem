@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5565874258795919138, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
       propertyPath: m_Name
-      value: Train Car
+      value: TrainCar6
       objectReference: {fileID: 0}
     - target: {fileID: 5565874258795919139, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
       propertyPath: m_RootOrder
@@ -189,7 +189,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5565874258795919138, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
       propertyPath: m_Name
-      value: Train Car
+      value: TrainCar2
       objectReference: {fileID: 0}
     - target: {fileID: 5565874258795919139, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
       propertyPath: m_RootOrder
@@ -339,7 +339,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5565874258795919138, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
       propertyPath: m_Name
-      value: Train Car
+      value: TrainCar1
       objectReference: {fileID: 0}
     - target: {fileID: 5565874258795919139, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
       propertyPath: m_RootOrder
@@ -396,7 +396,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5565874258795919138, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
       propertyPath: m_Name
-      value: Train Car
+      value: TrainCar4
       objectReference: {fileID: 0}
     - target: {fileID: 5565874258795919139, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
       propertyPath: m_RootOrder
@@ -453,7 +453,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5565874258795919138, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
       propertyPath: m_Name
-      value: Train Car
+      value: TrainCar3
       objectReference: {fileID: 0}
     - target: {fileID: 5565874258795919139, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
       propertyPath: m_RootOrder
@@ -510,7 +510,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5565874258795919138, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
       propertyPath: m_Name
-      value: Train Car
+      value: TrainCar8
       objectReference: {fileID: 0}
     - target: {fileID: 5565874258795919139, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
       propertyPath: m_RootOrder
@@ -567,7 +567,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5565874258795919138, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
       propertyPath: m_Name
-      value: Train Car
+      value: TrainCar5
       objectReference: {fileID: 0}
     - target: {fileID: 5565874258795919139, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
       propertyPath: m_RootOrder
@@ -707,7 +707,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5565874258795919138, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
       propertyPath: m_Name
-      value: Train Car
+      value: TrainCar7
       objectReference: {fileID: 0}
     - target: {fileID: 5565874258795919139, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
       propertyPath: m_RootOrder
@@ -819,7 +819,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5775242915309564643, guid: 42e5e1b07a56e6349bbcf17770721424, type: 3}
+      propertyPath: trainCarPrefab
+      value: 
+      objectReference: {fileID: 5565874258795919138, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
+    - target: {fileID: 5775242915309564643, guid: 42e5e1b07a56e6349bbcf17770721424, type: 3}
       propertyPath: velOfMovimentationTurn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5775242915309564643, guid: 42e5e1b07a56e6349bbcf17770721424, type: 3}
+      propertyPath: velOfMovimentationLeftRight
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -135,10 +135,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velOfMovimentation: 10
-  velOfMovimentationTurn: 5
+  velOfMovimentationLeftRight: 5
   posXLine1: -1
   posXLine2: 0
   posXLine3: 1
+  trainCarPrefab: {fileID: 0}
 --- !u!114 &-3594127699681115775
 MonoBehaviour:
   m_ObjectHideFlags: 0

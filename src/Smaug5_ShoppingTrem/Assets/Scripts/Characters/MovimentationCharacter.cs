@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//ESSE COMPONENTE É ULTRAPASSADO, TODA A MOVIMENTAÇAO DO PERSONAGEM VAI SER MANIPULADO PELOS STATES MACHINES
 public class MovimentationCharacter : MonoBehaviour
 {   
     public float velOfMovimentation;
-    public float velOfMovimentationTurn;
+    public float velOfMovimentationLeftRight;
     public float posXLine1, posXLine2, posXLine3;
     private bool isTurningLeft, isTurningRight;
-    private float posXAlreadyAdded;
+    private float posXAlreadyImcremented;
     private CharacterController charControll;
     private int currentLine;
+    public GameObject trainCarPrefab;
 
     void Start()
     {
@@ -27,28 +27,32 @@ public class MovimentationCharacter : MonoBehaviour
         //
 
         if (isTurningLeft) {
-            Turning(-velOfMovimentationTurn);
+            Turning(-velOfMovimentationLeftRight);
         }
         if (isTurningRight) {
-            Turning(velOfMovimentationTurn);
+            Turning(velOfMovimentationLeftRight);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && currentLine != 1 && (!isTurningLeft || !isTurningRight)) {
-            isTurningLeft = true;
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && currentLine != 1) {
+            if (!isTurningLeft && !isTurningRight) {
+                isTurningLeft = true;
+            }
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow) && currentLine != 3 && (!isTurningLeft || !isTurningRight)) {
-            isTurningRight = true;
+        if (Input.GetKeyDown(KeyCode.RightArrow) && currentLine != 3) {
+            if (!isTurningLeft && !isTurningRight) {
+                isTurningRight = true;
+            }
         }
     }
 
     private void Turning(float velToTurntionAdd) {
 
-        float currentValueToAdd = velToTurntionAdd * Time.deltaTime;
-        charControll.Move(new Vector3(currentValueToAdd, 0, 0));
-        posXAlreadyAdded += currentValueToAdd;
+        float currentValueToIncrement = velToTurntionAdd * Time.deltaTime;
+        charControll.Move(new Vector3(currentValueToIncrement, 0, 0));
+        posXAlreadyImcremented += currentValueToIncrement;
 
-        if (currentLine == 1 && transform.position.x + posXAlreadyAdded >= posXLine2) {
-            posXAlreadyAdded = 0;
+        if (currentLine == 1 && posXLine1 + posXAlreadyImcremented >= posXLine2) {
+            posXAlreadyImcremented = 0;
             currentLine = 2;
             isTurningLeft = false;
             isTurningRight = false;
@@ -60,8 +64,8 @@ public class MovimentationCharacter : MonoBehaviour
 
         if (currentLine == 2) {
 
-            if (transform.position.x + posXAlreadyAdded >= posXLine3) {
-                posXAlreadyAdded = 0;
+            if (posXLine2 + posXAlreadyImcremented >= posXLine3) {
+                posXAlreadyImcremented = 0;
                 currentLine = 3;
                 isTurningLeft = false;
                 isTurningRight = false;
@@ -70,12 +74,11 @@ public class MovimentationCharacter : MonoBehaviour
                     transform.position.z), 
                     transform.rotation);
             }
-            if (transform.position.x + posXAlreadyAdded <= posXLine1) {
-                posXAlreadyAdded = 0;
+            if (posXLine2 + posXAlreadyImcremented <= posXLine1) {
+                posXAlreadyImcremented = 0;
                 currentLine = 1;
                 isTurningLeft = false;
                 isTurningRight = false;
-                transform.position.Set(posXLine1, 0, 0);
                 transform.SetPositionAndRotation(new Vector3(posXLine1, 
                     transform.position.y, 
                     transform.position.z), 
@@ -83,8 +86,8 @@ public class MovimentationCharacter : MonoBehaviour
             }
         }
 
-        if (currentLine == 3 && transform.position.x + posXAlreadyAdded <= posXLine2) {
-            posXAlreadyAdded = 0;
+        if (currentLine == 3 && posXLine3 + posXAlreadyImcremented <= posXLine2) {
+            posXAlreadyImcremented = 0;
             currentLine = 2;
             isTurningLeft = false;
             isTurningRight = false;
