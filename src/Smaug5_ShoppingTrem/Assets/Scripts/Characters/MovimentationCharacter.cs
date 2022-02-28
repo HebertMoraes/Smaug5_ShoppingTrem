@@ -6,16 +6,17 @@ public class MovimentationCharacter : MonoBehaviour
 {   
     public float velOfMovimentation;
     public float velOfMovimentationLeftRight;
-    public float posXLine1, posXLine2, posXLine3;
+    public float posXLineLeft, posXLineMid, posXLineRight;
     private bool isTurningLeft, isTurningRight;
-    private float posXAlreadyImcremented;
+    private float posXAlreadyIncremented;
     private CharacterController charControll;
-    private int currentLine;
+    private string currentLine;
+    private bool alreadyMakeSecondTurn;
     public GameObject trainCarPrefab;
 
     void Start()
     {
-        currentLine = 2;
+        currentLine = "mid";
         charControll = GetComponent<CharacterController>();
     }
 
@@ -23,78 +24,155 @@ public class MovimentationCharacter : MonoBehaviour
     {
         charControll.Move(new Vector3(0, Physics.gravity.y, 0) * Time.deltaTime);
 
-        //AQUI DEVE SER TRATADO A VELOCIDADE CRESCENTE AO DECORRER DO TEMPO NA FASE.
-        //
-
         if (isTurningLeft) {
-            Turning(-velOfMovimentationLeftRight);
+            
+            if (Input.GetKeyDown(KeyCode.RightArrow) && !alreadyMakeSecondTurn) {
+                if (currentLine == "mid") {
+
+                    isTurningLeft = false;
+                    isTurningRight = true;
+                    currentLine = "left";
+
+                    float totalLeft_Mid = System.Math.Abs(posXLineMid - posXLineLeft);
+                    posXAlreadyIncremented = totalLeft_Mid - System.Math.Abs(posXAlreadyIncremented);
+
+                    alreadyMakeSecondTurn = true;
+                    Turning(velOfMovimentationLeftRight);
+
+                } else if (currentLine == "right") {
+
+                    isTurningLeft = false;
+                    isTurningRight = true;
+                    currentLine = "mid";
+                    
+                    float totalMid_Right = posXLineRight - posXLineMid;
+                    posXAlreadyIncremented = totalMid_Right - System.Math.Abs(posXAlreadyIncremented);
+
+                    alreadyMakeSecondTurn = true;
+                    Turning(velOfMovimentationLeftRight);
+
+                }
+            } else {
+                Turning(-velOfMovimentationLeftRight);
+            }
         }
         if (isTurningRight) {
-            Turning(velOfMovimentationLeftRight);
+
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && !alreadyMakeSecondTurn) {
+                if (currentLine == "left") {
+
+                    isTurningRight = false;
+                    isTurningLeft = true;
+                    currentLine = "mid";
+                    
+                    float totalLeft_Mid = System.Math.Abs(posXLineLeft - posXLineMid);
+                    posXAlreadyIncremented = (totalLeft_Mid - posXAlreadyIncremented) * -1;
+
+                    alreadyMakeSecondTurn = true;
+                    Turning(-velOfMovimentationLeftRight);
+
+                } else if (currentLine == "mid") {
+                    isTurningRight = false;
+                    isTurningLeft = true;
+                    currentLine = "right";
+                    
+                    float totalMid_Right = posXLineRight - posXLineMid;
+                    posXAlreadyIncremented = (totalMid_Right - posXAlreadyIncremented) * -1;
+
+                    alreadyMakeSecondTurn = true;
+                    Turning(-velOfMovimentationLeftRight);
+
+                }
+            } else {
+                Turning(velOfMovimentationLeftRight);
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && currentLine != 1) {
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && currentLine != "left") {
             if (!isTurningLeft && !isTurningRight) {
                 isTurningLeft = true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow) && currentLine != 3) {
+        if (Input.GetKeyDown(KeyCode.RightArrow) && currentLine != "right") {
             if (!isTurningLeft && !isTurningRight) {
                 isTurningRight = true;
             }
         }
     }
 
-    private void Turning(float velToTurntionAdd) {
+    private void Turning(float velToTurnAdd) {
 
-        float currentValueToIncrement = velToTurntionAdd * Time.deltaTime;
-        charControll.Move(new Vector3(currentValueToIncrement, 0, 0));
-        posXAlreadyImcremented += currentValueToIncrement;
+        float currentValueToIncrement = velToTurnAdd * Time.deltaTime;
 
-        if (currentLine == 1 && posXLine1 + posXAlreadyImcremented >= posXLine2) {
-            posXAlreadyImcremented = 0;
-            currentLine = 2;
-            isTurningLeft = false;
-            isTurningRight = false;
-            transform.SetPositionAndRotation(new Vector3(posXLine2, 
-                transform.position.y, 
-                transform.position.z), 
-                transform.rotation);
-        }
+        posXAlreadyIncremented += currentValueToIncrement;
+        
+        if (currentLine == "left") {
 
-        if (currentLine == 2) {
-
-            if (posXLine2 + posXAlreadyImcremented >= posXLine3) {
-                posXAlreadyImcremented = 0;
-                currentLine = 3;
+            if (posXLineLeft + posXAlreadyIncremented >= posXLineMid) {
+                posXAlreadyIncremented = 0;
+                currentLine = "mid";
                 isTurningLeft = false;
                 isTurningRight = false;
-                transform.SetPositionAndRotation(new Vector3(posXLine3, 
+                alreadyMakeSecondTurn = false;
+                transform.SetPositionAndRotation(new Vector3(posXLineMid, 
                     transform.position.y, 
                     transform.position.z), 
                     transform.rotation);
+            } else {
+                charControll.Move(new Vector3(currentValueToIncrement, 0, 0)); 
             }
-            if (posXLine2 + posXAlreadyImcremented <= posXLine1) {
-                posXAlreadyImcremented = 0;
-                currentLine = 1;
+
+        } else if (currentLine == "mid") {
+
+            if (currentValueToIncrement > 0) {
+
+                if (posXLineMid + posXAlreadyIncremented >= posXLineRight) {
+                    posXAlreadyIncremented = 0;
+                    currentLine = "right";
+                    isTurningLeft = false;
+                    isTurningRight = false;
+                    alreadyMakeSecondTurn = false;
+                    transform.SetPositionAndRotation(new Vector3(posXLineRight, 
+                        transform.position.y, 
+                        transform.position.z), 
+                        transform.rotation);
+
+                } else { 
+                    charControll.Move(new Vector3(currentValueToIncrement, 0, 0)); 
+                }
+            } else {
+
+                if (posXLineMid + posXAlreadyIncremented <= posXLineLeft) {
+                    posXAlreadyIncremented = 0;
+                    currentLine = "left";
+                    isTurningLeft = false;
+                    isTurningRight = false;
+                    alreadyMakeSecondTurn = false;
+                    transform.SetPositionAndRotation(new Vector3(posXLineLeft, 
+                        transform.position.y, 
+                        transform.position.z), 
+                        transform.rotation);
+                } else { 
+                    charControll.Move(new Vector3(currentValueToIncrement, 0, 0)); 
+                }
+            }
+
+        } else if (currentLine == "right") {
+
+            if (posXLineRight + posXAlreadyIncremented <= posXLineMid) {
+                posXAlreadyIncremented = 0;
+                currentLine = "mid";
                 isTurningLeft = false;
                 isTurningRight = false;
-                transform.SetPositionAndRotation(new Vector3(posXLine1, 
+                alreadyMakeSecondTurn = false;
+                transform.SetPositionAndRotation(new Vector3(posXLineMid, 
                     transform.position.y, 
                     transform.position.z), 
                     transform.rotation);
-            }
-        }
 
-        if (currentLine == 3 && posXLine3 + posXAlreadyImcremented <= posXLine2) {
-            posXAlreadyImcremented = 0;
-            currentLine = 2;
-            isTurningLeft = false;
-            isTurningRight = false;
-            transform.SetPositionAndRotation(new Vector3(posXLine2, 
-                transform.position.y, 
-                transform.position.z), 
-                transform.rotation);
-        }
+            } else { 
+                charControll.Move(new Vector3(currentValueToIncrement, 0, 0)); 
+            }
+        } 
     }
 }

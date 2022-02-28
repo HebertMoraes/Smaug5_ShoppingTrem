@@ -819,6 +819,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5775242915309564643, guid: 42e5e1b07a56e6349bbcf17770721424, type: 3}
+      propertyPath: posXLineLeft
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5775242915309564643, guid: 42e5e1b07a56e6349bbcf17770721424, type: 3}
+      propertyPath: posXLineRight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5775242915309564643, guid: 42e5e1b07a56e6349bbcf17770721424, type: 3}
       propertyPath: trainCarPrefab
       value: 
       objectReference: {fileID: 5565874258795919138, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
