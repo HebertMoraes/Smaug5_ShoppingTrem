@@ -8,11 +8,15 @@ public class JumpPlayerStateM : StateMachineBehaviour
     private float currentVelocityYJump;
     public float valueToDecreaseVel;
     private float currentValueToDecreaseVel;
+    private float currentValueToIncreaseVelFall;
+    private CharacterController charControll;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         currentVelocityYJump = velocityYJump;
         currentValueToDecreaseVel = valueToDecreaseVel;
+        currentValueToIncreaseVelFall = currentValueToDecreaseVel;
+        charControll = animator.gameObject.GetComponent<CharacterController>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -20,16 +24,28 @@ public class JumpPlayerStateM : StateMachineBehaviour
     {
         if (currentVelocityYJump > 0) {
 
-            animator.gameObject.GetComponent<CharacterController>().Move(new Vector3(
+            charControll.Move(new Vector3(
                 0, currentVelocityYJump * Time.deltaTime, 0
             ));
 
-            currentVelocityYJump -= currentValueToDecreaseVel;
-            currentValueToDecreaseVel = currentValueToDecreaseVel - (currentValueToDecreaseVel / 0.05f);
-        }
+            currentVelocityYJump -= currentValueToDecreaseVel * Time.deltaTime;
+            currentValueToDecreaseVel -= (((0.1f / currentValueToDecreaseVel) + 0.02f) * Time.deltaTime);
+            currentValueToIncreaseVelFall = currentValueToDecreaseVel;
 
-        if (animator.gameObject.GetComponent<CharacterController>().isGrounded && currentVelocityYJump <= 0) {
-            animator.SetInteger("stateAnim", 0);
+        } else {
+
+            charControll.Move(new Vector3(
+                0, currentVelocityYJump * Time.deltaTime, 0
+            ));
+
+            currentVelocityYJump -= currentValueToIncreaseVelFall * Time.deltaTime;
+            currentValueToIncreaseVelFall -= (((0.1f * currentValueToIncreaseVelFall) + 0.02f) * Time.deltaTime);
+
+            if (charControll.isGrounded) {
+                currentVelocityYJump = velocityYJump;
+                currentValueToDecreaseVel = valueToDecreaseVel; 
+                animator.SetInteger("stateAnim", 0);
+            }
         }
     }
 
@@ -37,7 +53,8 @@ public class JumpPlayerStateM : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         currentVelocityYJump = velocityYJump;
-        currentValueToDecreaseVel = valueToDecreaseVel;    
+        currentValueToDecreaseVel = valueToDecreaseVel;
+        currentValueToIncreaseVelFall = currentValueToDecreaseVel; 
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

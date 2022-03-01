@@ -7,27 +7,70 @@ public class MovimentationCharacter : MonoBehaviour
     public float velOfMovimentation;
     public float velOfMovimentationLeftRight;
     public float posXLineLeft, posXLineMid, posXLineRight;
-    public int valueToSlideTouchScreen;
     private bool isTurningLeft, isTurningRight;
     private float posXAlreadyIncremented;
     private CharacterController charControll;
     private string currentLine;
     private bool alreadyMakeSecondTurn;
+    private TouchScreenController touchSceenControll;
     public GameObject trainCarPrefab;
 
     void Start()
     {
         currentLine = "mid";
         charControll = GetComponent<CharacterController>();
+        touchSceenControll = GameObject.FindGameObjectWithTag("GameController").GetComponent<TouchScreenController>();
     }
 
     void Update ()
     {
-        charControll.Move(new Vector3(0, Physics.gravity.y / 4, 0) * Time.deltaTime);
+
+        //TODO: 
+        //
+        //movimentar para as laterais não pode ser de um oposto ao outro com o mesmo Touch, deve-se retirar
+        //o dedo e refazer o movimento de slide para o local desejado novamente;
+        //
+        //pode-se pular quando está deslizando, finalizando a animação de slide, seu state machine e iniciando o pulo
+        //direto, o mesmo vale para do pulo para slide, só que nesse caso não vai imediatemanete e sim, a gravidade 
+        //é aumentada para ele pousar bem mais rápido do que o normal;
+        //
+        //tirar o bouncing (quicar no chão) ao pousar no chão
+        //
+        //
+
+        if (GetComponent<Animator>().GetInteger("stateAnim") != 1) {
+            charControll.Move(new Vector3(0, Physics.gravity.y, 0) * Time.deltaTime);
+        }
+
+        /*
+        if (!isTurningLeft && !isTurningRight) {
+            if (currentLine == "left") {
+
+                transform.SetPositionAndRotation(new Vector3(posXLineLeft, 
+                    transform.position.y, 
+                    transform.position.z), 
+                    transform.rotation);
+
+            } else if (currentLine == "mid") {
+
+                transform.SetPositionAndRotation(new Vector3(posXLineMid, 
+                    transform.position.y, 
+                    transform.position.z), 
+                    transform.rotation);
+
+            } else if (currentLine == "right") {
+
+                transform.SetPositionAndRotation(new Vector3(posXLineRight, 
+                    transform.position.y, 
+                    transform.position.z), 
+                    transform.rotation);
+            }
+        }
+        */
 
         if (isTurningLeft) {
             
-            if (CheckSlideTouchToRight() && !alreadyMakeSecondTurn) {
+            if (touchSceenControll.CheckSwipTouchToRight() && !alreadyMakeSecondTurn) {
                 if (currentLine == "mid") {
 
                     isTurningLeft = false;
@@ -59,7 +102,7 @@ public class MovimentationCharacter : MonoBehaviour
         }
         if (isTurningRight) {
 
-            if (CheckSlideTouchToLeft() && !alreadyMakeSecondTurn) {
+            if (touchSceenControll.CheckSwipTouchToLeft() && !alreadyMakeSecondTurn) {
                 if (currentLine == "left") {
 
                     isTurningRight = false;
@@ -89,12 +132,12 @@ public class MovimentationCharacter : MonoBehaviour
             }
         }
 
-        if (CheckSlideTouchToLeft() && currentLine != "left") {
+        if (touchSceenControll.CheckSwipTouchToLeft() && currentLine != "left") {
             if (!isTurningLeft && !isTurningRight) {
                 isTurningLeft = true;
             }
         }
-        if (CheckSlideTouchToRight() && currentLine != "right") {
+        if (touchSceenControll.CheckSwipTouchToRight() && currentLine != "right") {
             if (!isTurningLeft && !isTurningRight) {
                 isTurningRight = true;
             }
@@ -177,63 +220,4 @@ public class MovimentationCharacter : MonoBehaviour
         } 
     }
 
-    public bool CheckSlideTouchToLeft() {
-        
-        if (Input.touchCount > 0) {
-            
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Moved) {
-                if (touch.deltaPosition.x <= -valueToSlideTouchScreen) {
-                    return true;
-                } else { 
-                    return false; 
-                }
-            } else { 
-                return false; 
-            }
-
-        } else {
-            return false;
-        }
-    }
-
-    public bool CheckSlideTouchToRight() {
-        
-        if (Input.touchCount > 0) {
-            
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Moved) {
-                if (touch.deltaPosition.x >= valueToSlideTouchScreen) {
-                    return true;
-                } else { 
-                    return false; 
-                }
-            } else { 
-                return false; 
-            }
-
-        } else {
-            return false;
-        }
-    }
-
-    public bool CheckSlideTouchToUp() {
-        
-        if (Input.touchCount > 0) {
-            
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Moved) {
-                if (touch.deltaPosition.y >= valueToSlideTouchScreen) {
-                    return true;
-                } else { 
-                    return false; 
-                }
-            } else { 
-                return false; 
-            }
-
-        } else {
-            return false;
-        }
-    }
 }

@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class IdleRunPlayerStateM : StateMachineBehaviour
 {
+    private TouchScreenController touchSceenControll;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //
-    //}
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        touchSceenControll = GameObject.FindGameObjectWithTag("GameController").GetComponent<TouchScreenController>();
+    }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (animator.gameObject.GetComponent<MovimentationCharacter>().CheckSlideTouchToUp()) {
+        if (touchSceenControll.CheckSwipTouchToUp()) {
             animator.SetInteger("stateAnim", 1);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow)) {
+        if (touchSceenControll.CheckSwipTouchToDown()) {
             animator.SetInteger("stateAnim", 2);
         }
     }

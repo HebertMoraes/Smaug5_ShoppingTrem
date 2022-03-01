@@ -90,8 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183bcba11fe8d274c992f2dad7a16d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityYJump: 20
-  valueToDecreaseVel: 1
+  velocityYJump: 5
+  valueToDecreaseVel: 8
 --- !u!1102 &-4572360154478616045
 AnimatorState:
   serializedVersion: 6
