@@ -7,6 +7,7 @@ public class MovimentationCharacter : MonoBehaviour
     public float velOfMovimentation;
     public float velOfMovimentationLeftRight;
     public float posXLineLeft, posXLineMid, posXLineRight;
+    public int valueToSlideTouchScreen;
     private bool isTurningLeft, isTurningRight;
     private float posXAlreadyIncremented;
     private CharacterController charControll;
@@ -22,11 +23,11 @@ public class MovimentationCharacter : MonoBehaviour
 
     void Update ()
     {
-        charControll.Move(new Vector3(0, Physics.gravity.y, 0) * Time.deltaTime);
+        charControll.Move(new Vector3(0, Physics.gravity.y / 4, 0) * Time.deltaTime);
 
         if (isTurningLeft) {
             
-            if (Input.GetKeyDown(KeyCode.RightArrow) && !alreadyMakeSecondTurn) {
+            if (CheckSlideTouchToRight() && !alreadyMakeSecondTurn) {
                 if (currentLine == "mid") {
 
                     isTurningLeft = false;
@@ -58,7 +59,7 @@ public class MovimentationCharacter : MonoBehaviour
         }
         if (isTurningRight) {
 
-            if (Input.GetKeyDown(KeyCode.LeftArrow) && !alreadyMakeSecondTurn) {
+            if (CheckSlideTouchToLeft() && !alreadyMakeSecondTurn) {
                 if (currentLine == "left") {
 
                     isTurningRight = false;
@@ -88,12 +89,12 @@ public class MovimentationCharacter : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && currentLine != "left") {
+        if (CheckSlideTouchToLeft() && currentLine != "left") {
             if (!isTurningLeft && !isTurningRight) {
                 isTurningLeft = true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow) && currentLine != "right") {
+        if (CheckSlideTouchToRight() && currentLine != "right") {
             if (!isTurningLeft && !isTurningRight) {
                 isTurningRight = true;
             }
@@ -174,5 +175,65 @@ public class MovimentationCharacter : MonoBehaviour
                 charControll.Move(new Vector3(currentValueToIncrement, 0, 0)); 
             }
         } 
+    }
+
+    public bool CheckSlideTouchToLeft() {
+        
+        if (Input.touchCount > 0) {
+            
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Moved) {
+                if (touch.deltaPosition.x <= -valueToSlideTouchScreen) {
+                    return true;
+                } else { 
+                    return false; 
+                }
+            } else { 
+                return false; 
+            }
+
+        } else {
+            return false;
+        }
+    }
+
+    public bool CheckSlideTouchToRight() {
+        
+        if (Input.touchCount > 0) {
+            
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Moved) {
+                if (touch.deltaPosition.x >= valueToSlideTouchScreen) {
+                    return true;
+                } else { 
+                    return false; 
+                }
+            } else { 
+                return false; 
+            }
+
+        } else {
+            return false;
+        }
+    }
+
+    public bool CheckSlideTouchToUp() {
+        
+        if (Input.touchCount > 0) {
+            
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Moved) {
+                if (touch.deltaPosition.y >= valueToSlideTouchScreen) {
+                    return true;
+                } else { 
+                    return false; 
+                }
+            } else { 
+                return false; 
+            }
+
+        } else {
+            return false;
+        }
     }
 }
