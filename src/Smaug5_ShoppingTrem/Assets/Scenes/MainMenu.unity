@@ -275,7 +275,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 993562532}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: ToTrainGameplay
+        m_MethodName: ToLoadingTrainGameplay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

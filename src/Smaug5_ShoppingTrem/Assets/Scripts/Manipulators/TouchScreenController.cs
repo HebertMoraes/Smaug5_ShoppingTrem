@@ -46,7 +46,7 @@ public class TouchScreenController : MonoBehaviour
         }
     }
 
-    public bool CheckSwipTouchToUp() {
+    public bool CheckSwipUpJump() {
         
         if (Input.touchCount > 0) {
             

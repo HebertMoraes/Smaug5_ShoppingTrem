@@ -15,7 +15,7 @@ public class IdleRunPlayerStateM : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (touchSceenControll.CheckSwipTouchToUp()) {
+        if (touchSceenControll.CheckSwipUpJump()) {
             animator.SetInteger("stateAnim", 1);
         }
         if (touchSceenControll.CheckSwipTouchToDown()) {
