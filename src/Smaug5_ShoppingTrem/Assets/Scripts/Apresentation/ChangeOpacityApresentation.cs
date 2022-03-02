@@ -20,7 +20,7 @@ public class ChangeOpacityApresentation : MonoBehaviour
     {
         if (currentElapsedTime >= timeToChangeScene)
         {
-            gameObject.GetComponent<ChangeScene>().ToMainMenu();
+            SceneManager.LoadScene("MainMenu");
 
         } else if (currentElapsedTime > (timeToChangeScene / 2) + (timeToChangeScene / 4)) {
 
