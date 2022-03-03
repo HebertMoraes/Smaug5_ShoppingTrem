@@ -153,6 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constantOfIncrementationVelocity: 0.2
-  valueChangeVelMovimentation: 5
+  valueChangeVelMovimentation: 10
   maxVelocityMovimentation: 35
   minVelocityMovimentation: 2

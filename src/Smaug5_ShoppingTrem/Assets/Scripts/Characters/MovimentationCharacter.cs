@@ -13,7 +13,6 @@ public class MovimentationCharacter : MonoBehaviour
     private string currentLine;
     private bool alreadyMakeSecondTurn;
     private TouchScreenController touchSceenControll;
-    public GameObject trainCarPrefab;
 
     void Start()
     {

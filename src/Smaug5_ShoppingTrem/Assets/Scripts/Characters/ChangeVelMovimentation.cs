@@ -15,7 +15,7 @@ public class ChangeVelMovimentation : MonoBehaviour
 
         //Alterar velocidade da forma correta que é constante de pouco em pouco
         GetComponent<MovimentationCharacter>().velOfMovimentation += constantOfIncrementationVelocity * Time.deltaTime;
-        //Debug.Log("velocidade atual:  " + GetComponent<MovimentationCharacter>().velOfMovimentation);
+        Debug.Log("velocidade atual:  " + GetComponent<MovimentationCharacter>().velOfMovimentation);
 
 
         if (GetComponent<MovimentationCharacter>().velOfMovimentation > maxVelocityMovimentation) {
