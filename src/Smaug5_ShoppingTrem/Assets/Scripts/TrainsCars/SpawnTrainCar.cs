@@ -15,7 +15,7 @@ public class SpawnTrainCar : MonoBehaviour
     {
         character = GameObject.FindGameObjectWithTag("Player");
         //Talvez seja melhor e faça mais sentido esse prefab do corredor estar no GameController
-        trainCarObjParent = GameObject.Find("TrainCars");
+        trainCarObjParent = GameObject.Find("AllTrainCars");
         trainCarPrefab = trainCarObjParent.GetComponent<MovTrainCarController>().trainCarPrefab;
     }
 
@@ -26,7 +26,7 @@ public class SpawnTrainCar : MonoBehaviour
 
             trainCarObjParent.GetComponent<MovTrainCarController>().trainsCarsCanMove = false;   
             
-            float positionZtoSpawn = trainCarObjParent.transform.GetChild(7).transform.position.z + sizeTrainCarGameObj;
+            float positionZtoSpawn = trainCarObjParent.transform.GetChild(4).transform.position.z + sizeTrainCarGameObj;
 
             //float positionZtoSpawn = trainCarObjParent.transform.GetChild(7).transform.position.z +
                 //(sizeTrainCarGameObj - (sizeTrainCarGameObj / 20));

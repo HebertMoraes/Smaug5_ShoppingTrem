@@ -10,7 +10,7 @@ public class MovimentationTrainCar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        trainCarObjParent = GameObject.Find("TrainCars");
+        trainCarObjParent = GameObject.Find("AllTrainCars");
         character = GameObject.FindGameObjectWithTag("Player");
     }
 
