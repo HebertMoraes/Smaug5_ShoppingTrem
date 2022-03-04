@@ -173,6 +173,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainsCarsCanMove: 1
   trainCarPrefab: {fileID: 5662463391294655910, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
+  passengersPrefabs:
+  - {fileID: 2474269543554872780, guid: b097222fdeb331b4b9d7c87599263aa5, type: 3}
+  - {fileID: 2474269543554872780, guid: dfd4fa0a8cd42d34db3ee7294ba53692, type: 3}
+  - {fileID: 2474269543554872780, guid: b097222fdeb331b4b9d7c87599263aa5, type: 3}
 --- !u!1001 &73157587
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -784,7 +788,7 @@ PrefabInstance:
       objectReference: {fileID: 5565874258795919138, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
     - target: {fileID: 5775242915309564643, guid: 42e5e1b07a56e6349bbcf17770721424, type: 3}
       propertyPath: velOfMovimentation
-      value: 10
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 5775242915309564643, guid: 42e5e1b07a56e6349bbcf17770721424, type: 3}
       propertyPath: velOfMovimentationTurn
