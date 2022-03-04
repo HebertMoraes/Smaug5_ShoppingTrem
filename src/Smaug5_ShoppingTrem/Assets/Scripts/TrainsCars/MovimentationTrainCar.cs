@@ -23,7 +23,7 @@ public class MovimentationTrainCar : MonoBehaviour
             gameObject.transform.Translate(new Vector3(
                 0,
                 0,
-                -character.GetComponent<MovimentationCharacter>().velOfMovimentation * Time.deltaTime),Space.Self);
+                -character.GetComponent<MovimentationCharacter>().velOfMovimentation * Time.deltaTime), Space.Self);
 
             /*
             gameObject.transform.position = new Vector3(

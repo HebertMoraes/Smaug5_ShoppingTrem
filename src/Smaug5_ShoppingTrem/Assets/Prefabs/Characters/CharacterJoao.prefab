@@ -139,7 +139,6 @@ MonoBehaviour:
   posXLineLeft: -1
   posXLineMid: 0
   posXLineRight: 1
-  trainCarPrefab: {fileID: 5565874258795919138, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
 --- !u!114 &-3594127699681115775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a063dd1130bcbc4aa31366ab5337928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  constantOfIncrementationVelocity: 0.2
+  constantOfIncrementationVelocity: 5
   valueChangeVelMovimentation: 10
   maxVelocityMovimentation: 35
   minVelocityMovimentation: 2
