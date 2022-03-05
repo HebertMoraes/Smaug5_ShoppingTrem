@@ -5,52 +5,59 @@ using UnityEngine;
 public class SpawnPassenger : MonoBehaviour
 {
     public int minPassengerPerTrainCar, maxPassengerPerTrainCar;
-
+    public int indicePassengerSpots;
     [Range(0, 1)]
     public float chanceToSpawn;
+
+    private MovTrainCarController allTrainCars;
+    private List<Transform> spotsPossibleSpawn;
+    private int passengersSpawned;
 
     // Start is called before the first frame update
     void Start()
     {
-        MovTrainCarController allTrainCars = GetComponentInParent<MovTrainCarController>();
+        allTrainCars = GetComponentInParent<MovTrainCarController>();
 
-        List<Transform> spotsPossibleSpawn = new List<Transform>();
+        spotsPossibleSpawn = new List<Transform>();
 
-        for (int j = 0; j <= transform.childCount - 1; j++)
+        for (int j = 0; j <= transform.GetChild(indicePassengerSpots).childCount - 1; j++)
         {
-            spotsPossibleSpawn.Add(transform.GetChild(j));
+            spotsPossibleSpawn.Add(transform.GetChild(indicePassengerSpots).GetChild(j));
         }
 
-        Debug.Log(spotsPossibleSpawn.Count);
-
-        int passengersSpawned = 0;
-        for (int i = 0; i <= maxPassengerPerTrainCar - 1;)
+        for (int i = 0; i < maxPassengerPerTrainCar;)
         {
-            if (Random.value <= chanceToSpawn) {
-
-                GameObject spotChosen = spotsPossibleSpawn[Random.Range(0, spotsPossibleSpawn.Count)].gameObject;
-                    spotsPossibleSpawn.Remove(spotChosen.transform);
-
-                Instantiate(allTrainCars.passengersPrefabs[Random.Range(0, allTrainCars.passengersPrefabs.Length)], 
-                    spotChosen.transform.position, 
-                    spotChosen.transform.rotation,
-                    transform
-                );
-                passengersSpawned += 1;
-            
-                Destroy(spotChosen);
-            }
-            
-            if (passengersSpawned <= minPassengerPerTrainCar) 
+            if (passengersSpawned < minPassengerPerTrainCar) 
             {
-                //está abaixo do mínimo, não acrescenta para ir denovo até acertar a porcentagem 
-                //e spawnar
+                SpawnPassengerMethod();
+                i++;
 
-            } else if (passengersSpawned <= maxPassengerPerTrainCar) 
+            } else if (passengersSpawned < maxPassengerPerTrainCar) 
             {
+                if (Random.value <= chanceToSpawn) {
+                
+                    SpawnPassengerMethod();
+                    i++;
+                }
+            } else {
                 i++;
             }
-            
         }
+    }
+
+    void SpawnPassengerMethod() {
+
+        int indiceChosen = Random.Range(0, spotsPossibleSpawn.Count);
+        Transform spotChosen = spotsPossibleSpawn[indiceChosen];
+        spotsPossibleSpawn.RemoveAt(indiceChosen);
+                
+        Instantiate(allTrainCars.passengersPrefabs[Random.Range(0, allTrainCars.passengersPrefabs.Count)], 
+            spotChosen.position, 
+            spotChosen.rotation,
+            transform.GetChild(indicePassengerSpots)
+        );
+        passengersSpawned += 1;
+            
+        Destroy(spotChosen.gameObject);
     }
 }
