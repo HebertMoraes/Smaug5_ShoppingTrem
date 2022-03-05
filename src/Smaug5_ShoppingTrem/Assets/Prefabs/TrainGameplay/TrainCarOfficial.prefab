@@ -389,10 +389,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda80a6ef722d23439889f8c655a0705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minPassengerPerTrainCar: 3
-  maxPassengerPerTrainCar: 6
+  minPassengerPerTrainCar: 5
+  maxPassengerPerTrainCar: 9
   indicePassengerSpots: 5
-  chanceToSpawn: 0.2
+  chanceToSpawn: 0.4
 --- !u!1 &5670718369911208696
 GameObject:
   m_ObjectHideFlags: 0

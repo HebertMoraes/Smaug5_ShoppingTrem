@@ -37,8 +37,8 @@ public class SpawnPassenger : MonoBehaviour
                 if (Random.value <= chanceToSpawn) {
                 
                     SpawnPassengerMethod();
-                    i++;
                 }
+                i++;
             } else {
                 i++;
             }
