@@ -8,16 +8,14 @@ public class SpawnPassenger : MonoBehaviour
     public int indicePassengerSpots;
     [Range(0, 1)]
     public float chanceToSpawn;
+    public List<GameObject> passengersPrefabs;
 
-    private MovTrainCarController allTrainCars;
     private List<Transform> spotsPossibleSpawn;
     private int passengersSpawned;
 
     // Start is called before the first frame update
     void Start()
     {
-        allTrainCars = GetComponentInParent<MovTrainCarController>();
-
         spotsPossibleSpawn = new List<Transform>();
 
         for (int j = 0; j <= transform.GetChild(indicePassengerSpots).childCount - 1; j++)
@@ -45,13 +43,13 @@ public class SpawnPassenger : MonoBehaviour
         }
     }
 
-    void SpawnPassengerMethod() {
+    private void SpawnPassengerMethod() {
 
         int indiceChosen = Random.Range(0, spotsPossibleSpawn.Count);
         Transform spotChosen = spotsPossibleSpawn[indiceChosen];
         spotsPossibleSpawn.RemoveAt(indiceChosen);
                 
-        Instantiate(allTrainCars.passengersPrefabs[Random.Range(0, allTrainCars.passengersPrefabs.Count)], 
+        Instantiate(passengersPrefabs[Random.Range(0, passengersPrefabs.Count)], 
             spotChosen.position, 
             spotChosen.rotation,
             transform.GetChild(indicePassengerSpots)

@@ -6,5 +6,5 @@ public class MovTrainCarController : MonoBehaviour
 {
     public bool trainsCarsCanMove;
     public GameObject trainCarPrefab;
-    public List<GameObject> passengersPrefabs;
+    
 }
