@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5775242915309564643}
   - component: {fileID: -3594127699681115775}
   - component: {fileID: -3451789696676187257}
+  - component: {fileID: 4525040043680161261}
   m_Layer: 0
   m_Name: CharacterJoao
   m_TagString: Player
@@ -140,6 +141,8 @@ MonoBehaviour:
   posXLineLeft: -1
   posXLineMid: 0
   posXLineRight: 1
+  isTurningLeft: 0
+  isTurningRight: 0
 --- !u!114 &-3594127699681115775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,3 +174,18 @@ MonoBehaviour:
   currentProductsMerchandise: 10
   chancePassengerInterestBuy: 0.2
   sellPrice: 3
+--- !u!114 &4525040043680161261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654416033190001517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55e24208e3cbb64983e5b5352b34625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToCopPursuitNear: 3
+  alreadyHitOnce: 0
+  currentTimeCopInPursuitNear: 0

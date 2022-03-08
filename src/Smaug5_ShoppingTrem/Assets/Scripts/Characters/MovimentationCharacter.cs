@@ -7,7 +7,8 @@ public class MovimentationCharacter : MonoBehaviour
     public float velOfMovimentation;
     public float velOfMovimentationLeftRight;
     public float posXLineLeft, posXLineMid, posXLineRight;
-    private bool isTurningLeft, isTurningRight;
+    [HideInInspector]
+    public bool isTurningLeft, isTurningRight;
     private float posXAlreadyIncremented;
     private CharacterController charControll;
     private string currentLine;
