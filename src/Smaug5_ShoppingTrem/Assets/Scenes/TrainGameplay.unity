@@ -714,6 +714,10 @@ PrefabInstance:
       propertyPath: constantOfIncrementationVelocity
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: -3451789696676187257, guid: 42e5e1b07a56e6349bbcf17770721424, type: 3}
+      propertyPath: chanceInterestBuy
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1654416033190001513, guid: 42e5e1b07a56e6349bbcf17770721424, type: 3}
       propertyPath: m_RootOrder
       value: 2

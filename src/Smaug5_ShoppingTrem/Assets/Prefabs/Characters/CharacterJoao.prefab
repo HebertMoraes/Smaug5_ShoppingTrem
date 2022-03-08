@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -8006259661590310799}
   - component: {fileID: 5775242915309564643}
   - component: {fileID: -3594127699681115775}
+  - component: {fileID: -3451789696676187257}
   m_Layer: 0
   m_Name: CharacterJoao
   m_TagString: Player
@@ -155,3 +156,18 @@ MonoBehaviour:
   valueChangeVelMovimentation: 10
   maxVelocityMovimentation: 35
   minVelocityMovimentation: 2
+--- !u!114 &-3451789696676187257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654416033190001517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c01a23644e18a441a295a66f0a36e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentProductsMerchandise: 10
+  chancePassengerInterestBuy: 0.2
+  sellPrice: 3
