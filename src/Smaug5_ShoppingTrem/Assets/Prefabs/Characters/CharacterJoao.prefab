@@ -186,6 +186,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a55e24208e3cbb64983e5b5352b34625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToCopPursuitNear: 3
+  timeInImmortal: 2
+  timeToCopPursuitNear: 5
   alreadyHitOnce: 0
+  immortal: 0
+  valueToChangeAlphaInImmortal: 0.3
   currentTimeCopInPursuitNear: 0

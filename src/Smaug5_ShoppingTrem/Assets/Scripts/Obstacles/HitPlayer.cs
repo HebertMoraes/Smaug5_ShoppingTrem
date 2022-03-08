@@ -17,8 +17,8 @@ public class HitPlayer : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject == playerCharacter) {
 
-            if (playerCharacter.GetComponent<MovimentationCharacter>().isTurningLeft || 
-                playerCharacter.GetComponent<MovimentationCharacter>().isTurningRight) {
+            //se está movendo, mas antes, estava sendo verificado se o isTurnLeft ou isTurnRight estavam true
+            if (playerCharacter.GetComponent<CharacterController>().velocity.x != 0) {
                 
                 loseSystemPlayer.AlmostHitHardOnObstacle();
 
