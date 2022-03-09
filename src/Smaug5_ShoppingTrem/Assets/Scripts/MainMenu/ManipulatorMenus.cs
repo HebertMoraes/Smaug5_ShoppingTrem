@@ -24,5 +24,19 @@ public class ManipulatorMenus : MonoBehaviour
         SceneManager.LoadScene("LoadingTrainGameplay");
     }
 
+    public void OpenOptions()
+    {
+
+    }
+
+    public void CloseOptions()
+    {
+
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
     
 }
