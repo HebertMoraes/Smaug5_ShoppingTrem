@@ -3450,6 +3450,7 @@ GameObject:
   - component: {fileID: 1394518912}
   - component: {fileID: 1394518911}
   - component: {fileID: 1394518915}
+  - component: {fileID: 1394518916}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3553,6 +3554,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e07c7b35c6666fd4590e129d4d319052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1394518916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394518910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f49adbef111d4458cf71a818e974df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeSave:
+    countMoney: 0
+    countCash: 0
+    countCandy: 0
+    countChoco: 0
+    countFone: 0
+    countStepsDistance: 0
+    countSoldAmount: 0
+    countItemSold: 0
+  hasLoaded: 0
 --- !u!1 &1400218407
 GameObject:
   m_ObjectHideFlags: 0

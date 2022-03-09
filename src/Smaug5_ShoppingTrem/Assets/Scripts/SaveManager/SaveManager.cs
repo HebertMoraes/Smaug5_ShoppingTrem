@@ -85,7 +85,7 @@ public class SaveManager : MonoBehaviour
         }
         else
         {
-            activeSave.countCandy = 50;
+            SaveManager.instance.activeSave.countCandy = 50;
         }
     }
 }
