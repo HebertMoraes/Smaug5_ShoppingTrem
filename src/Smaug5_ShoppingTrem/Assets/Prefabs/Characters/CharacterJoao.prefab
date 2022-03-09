@@ -190,5 +190,5 @@ MonoBehaviour:
   timeToCopPursuitNear: 5
   alreadyHitOnce: 0
   immortal: 0
-  valueToChangeAlphaInImmortal: 0.3
+  valueToChangeAlphaInImmortal: 6
   currentTimeCopInPursuitNear: 0

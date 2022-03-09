@@ -6,49 +6,43 @@ public class LoseSystem : MonoBehaviour
 {
     public float timeInImmortal;
     public float timeToCopPursuitNear;
+    [HideInInspector]
     public bool alreadyHitOnce;
+    [HideInInspector]
     public bool immortal;
-    public int numberOfBlinks;
     public float valueToChangeAlphaInImmortal;
     [HideInInspector]
     public float currentTimeCopInPursuitNear;
 
     private Color playerCharacterColor;
     private float newAlphaToColor;
-    private float secondsOnEachBlink;
-    private int currentBlink;
     private bool increaseOpacity;
 
     private void Start() {
         playerCharacterColor = GetComponent<MeshRenderer>().material.color;
         newAlphaToColor = playerCharacterColor.a;
-
-        secondsOnEachBlink = timeInImmortal / numberOfBlinks;
+        
     }
 
     private void Update() {
-
-        Debug.Log(newAlphaToColor);
 
         if (alreadyHitOnce) {
 
             currentTimeCopInPursuitNear += Time.deltaTime;
             
             if (immortal) {
-                BlinkOpacity();
+                if (increaseOpacity) {
+                    BlinkOpacity(valueToChangeAlphaInImmortal);
+                }
+                else {
+                    BlinkOpacity(-valueToChangeAlphaInImmortal);
+                }
             }
 
             if (currentTimeCopInPursuitNear >= timeToCopPursuitNear) {
                 alreadyHitOnce = false;
                 currentTimeCopInPursuitNear = 0;
                 increaseOpacity = false;
-
-                GetComponent<MeshRenderer>().material.color = new Color(
-                    playerCharacterColor.r, 
-                    playerCharacterColor.g,
-                    playerCharacterColor.b,
-                    1
-                );
             }
         }
     }
@@ -81,57 +75,51 @@ public class LoseSystem : MonoBehaviour
         //para que os vagões param de andar 
     }
 
-    private void BlinkOpacity() {
+    private void BlinkOpacity(float valueToChangeAlpha) {
         
         //fazer piscar o personagem aqui
-        if (increaseOpacity) {
-            
-            newAlphaToColor += valueToChangeAlphaInImmortal * Time.deltaTime;
+        newAlphaToColor += valueToChangeAlpha * Time.deltaTime;
+
+        GetComponent<MeshRenderer>().material.color = new Color(
+            playerCharacterColor.r, 
+            playerCharacterColor.g,
+            playerCharacterColor.b,
+            newAlphaToColor
+        );
+
+        if (GetComponent<MeshRenderer>().material.color.a >= 1) {
 
             GetComponent<MeshRenderer>().material.color = new Color(
                 playerCharacterColor.r, 
                 playerCharacterColor.g,
                 playerCharacterColor.b,
-                newAlphaToColor
+                1
             );
-
-            if (GetComponent<MeshRenderer>().material.color.a >= 1) {
-
-                GetComponent<MeshRenderer>().material.color = new Color(
-                    playerCharacterColor.r, 
-                    playerCharacterColor.g,
-                    playerCharacterColor.b,
-                    1
-                );
-                increaseOpacity = false;
-            }
-
-        } else {
-
-            newAlphaToColor -= valueToChangeAlphaInImmortal * Time.deltaTime;
+            increaseOpacity = false;
+            newAlphaToColor = 1;
+        }
+        if (GetComponent<MeshRenderer>().material.color.a <= 0) {
 
             GetComponent<MeshRenderer>().material.color = new Color(
                 playerCharacterColor.r, 
                 playerCharacterColor.g,
                 playerCharacterColor.b,
-                newAlphaToColor
+                0
             );
-
-            if (GetComponent<MeshRenderer>().material.color.a <= 0) {
-
-                GetComponent<MeshRenderer>().material.color = new Color(
-                    playerCharacterColor.r, 
-                    playerCharacterColor.g,
-                    playerCharacterColor.b,
-                    0
-                );
-                increaseOpacity = true;
-            }
+            increaseOpacity = true;
+            newAlphaToColor = 0;
         }
 
-
         if (currentTimeCopInPursuitNear >= timeInImmortal) {
+            
             immortal = false;
+
+            GetComponent<MeshRenderer>().material.color = new Color(
+                playerCharacterColor.r, 
+                playerCharacterColor.g,
+                playerCharacterColor.b,
+                1
+            );
         }
     }
 }
