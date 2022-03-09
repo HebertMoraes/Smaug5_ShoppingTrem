@@ -182,9 +182,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -208595431880416365, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
       propertyPath: m_Name
       value: Vagao_portas (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
@@ -248,9 +260,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7640558969779515294, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
       propertyPath: m_Name
       value: Vagao_passageiros (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
@@ -567,8 +599,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.967361, y: -34.2}
-  m_SizeDelta: {x: 175.5, y: 44}
+  m_AnchoredPosition: {x: 9.6, y: -34.2}
+  m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &80222506
 MonoBehaviour:
@@ -676,7 +708,7 @@ GameObject:
   - component: {fileID: 85120287}
   - component: {fileID: 85120286}
   - component: {fileID: 85120285}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -815,6 +847,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7640558969779515294, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: -4683669308469848369, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -826,6 +870,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
       propertyPath: m_Name
       value: Vagao_passageiros
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
@@ -1118,9 +1170,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -208595431880416365, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
       propertyPath: m_Name
       value: Vagao_portas (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
@@ -1651,7 +1715,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 391463774}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Vagoes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1694,7 +1758,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 456398938}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BOTTOM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1709,7 +1773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456398937}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -84, z: -1072}
+  m_LocalPosition: {x: 0, y: -84.8, z: -1627}
   m_LocalScale: {x: 4.7065015, y: 4.7065015, z: 4.7065015}
   m_Children:
   - {fileID: 1977898079}
@@ -1730,7 +1794,7 @@ GameObject:
   - component: {fileID: 462196391}
   - component: {fileID: 462196390}
   - component: {fileID: 462196389}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: boxChoco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1822,7 +1886,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 500250933}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Candy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1902,9 +1966,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7640558969779515294, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
       propertyPath: m_Name
       value: Vagao_passageiros (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
@@ -1980,9 +2064,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc573d1888d374e42a24a3a076995184, type: 2}
+    - target: {fileID: -516098083770646512, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -208595431880416365, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
       propertyPath: m_Name
       value: Vagao_portas
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
@@ -2180,9 +2276,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7640558969779515294, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
       propertyPath: m_Name
       value: Vagao_passageiros (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
@@ -2246,6 +2362,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7640558969779515294, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: -804731622281664130, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2253,6 +2381,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
       propertyPath: m_Name
       value: Vagao_passageiros (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
@@ -2320,9 +2456,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -208595431880416365, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
       propertyPath: m_Name
       value: Vagao_portas (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
@@ -2542,7 +2690,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 933975478}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TOP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2557,7 +2705,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933975477}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 508.80722, z: -997.66113}
+  m_LocalPosition: {x: 0, y: 510.6, z: -1551}
   m_LocalScale: {x: 11.085124, y: 11.085124, z: 11.085124}
   m_Children:
   - {fileID: 359498490}
@@ -2887,7 +3035,7 @@ GameObject:
   - component: {fileID: 1193138596}
   - component: {fileID: 1193138595}
   - component: {fileID: 1193138594}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: boxCandy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2982,7 +3130,7 @@ GameObject:
   - component: {fileID: 1217062040}
   - component: {fileID: 1217062039}
   - component: {fileID: 1217062038}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: boxFone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3426,9 +3574,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -208595431880416365, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
       propertyPath: m_Name
       value: Vagao_portas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e7d3015f42a5604b8f7e494e4d8c622, type: 3}
@@ -3453,7 +3613,7 @@ GameObject:
   - component: {fileID: 1394518916}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: TrainCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3471,7 +3631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
+  m_BlockingObjects: 3
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3487,15 +3647,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
+  m_ReferenceResolution: {x: 1080, y: 1920}
+  m_ScreenMatchMode: 2
+  m_MatchWidthOrHeight: 0.03
+  m_PhysicalUnit: 0
+  m_FallbackScreenDPI: 92.21
+  m_DefaultSpriteDPI: 88.2
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
 --- !u!223 &1394518913
@@ -3509,8 +3669,8 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1770908567}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PlaneDistance: 14.6
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -4012,9 +4172,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7640558969779515294, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
       propertyPath: m_Name
       value: Vagao_passageiros (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
@@ -4078,9 +4258,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7640558969779515294, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
       propertyPath: m_Name
       value: Vagao_passageiros (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
@@ -4140,7 +4340,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 59.9
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -4153,7 +4353,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -4805,7 +5005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1985249103}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MIDDLE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4820,7 +5020,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985249102}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -54, y: 0, z: -362}
   m_LocalScale: {x: 11.085124, y: 11.085124, z: 11.085124}
   m_Children:
   - {fileID: 85120284}
@@ -4845,7 +5045,7 @@ GameObject:
   - component: {fileID: 2002536985}
   - component: {fileID: 2002536984}
   - component: {fileID: 2002536983}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4984,9 +5184,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7640558969779515294, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
       propertyPath: m_Name
       value: Vagao_passageiros (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82355bbac6714f64b8b32a391ee8e892, type: 3}
@@ -5068,8 +5288,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16.237991, y: -34.2}
-  m_SizeDelta: {x: 173.78, y: 44}
+  m_AnchoredPosition: {x: -9.3, y: -34.2}
+  m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2087705417
 MonoBehaviour:
