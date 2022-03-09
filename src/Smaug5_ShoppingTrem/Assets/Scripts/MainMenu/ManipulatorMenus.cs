@@ -9,21 +9,13 @@ public class ManipulatorMenus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GlobalVariables.countMoney = 1;
-        GlobalVariables.countCash = 2;
-        GlobalVariables.countCandy = 3;
-        GlobalVariables.countChoco = 4;
-        GlobalVariables.countFone = 5;
-        /* GlobalVariables.countItemSold = 1;
-         GlobalVariables.countSoldAmount = 1;
-         GlobalVariables.countStepsDistance = 1;*/
-        RefreshHUD();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        RefreshHUD();
     }
 
     public void SceneToLoadGameplay() {
@@ -42,28 +34,28 @@ public class ManipulatorMenus : MonoBehaviour
     public void RefreshMoney()
     {
         TextMeshProUGUI ctMoney = transform.GetChild(0).GetChild(1).GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-        ctMoney.text = "R$" + GlobalVariables.countMoney.ToString();
+        ctMoney.text = "R$" + SaveManager.instance.activeSave.countMoney.ToString();
     }
 
     public void RefreshCash()
     {
         TextMeshProUGUI ctCash = transform.GetChild(0).GetChild(2).GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-        ctCash.text = "x" + GlobalVariables.countCash.ToString();
+        ctCash.text = "x" + SaveManager.instance.activeSave.countCash.ToString();
     }
     public void RefreshCandy()
     {
         TextMeshProUGUI ctCandy = transform.GetChild(0).GetChild(3).GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-        ctCandy.text = "x" + GlobalVariables.countCandy.ToString();
+        ctCandy.text = "x" + SaveManager.instance.activeSave.countCandy.ToString();
     }
     public void RefreshChoco()
     {
         TextMeshProUGUI ctChoco = transform.GetChild(0).GetChild(4).GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-        ctChoco.text = "x" + GlobalVariables.countChoco.ToString();
+        ctChoco.text = "x" + SaveManager.instance.activeSave.countChoco.ToString();
     }
     public void RefreshFone()
     {
         TextMeshProUGUI ctFone = transform.GetChild(0).GetChild(5).GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-        ctFone.text = "x" + GlobalVariables.countFone.ToString();
+        ctFone.text = "x" + SaveManager.instance.activeSave.countFone.ToString();
     }
 
 
