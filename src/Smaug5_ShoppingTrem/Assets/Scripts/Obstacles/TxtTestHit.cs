@@ -15,8 +15,8 @@ public class TxtTestHit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        numbersOfhardHit = 0;
-        numbersOfAlmostHardHit = 0;
+        //numbersOfhardHit = 0;
+        //numbersOfAlmostHardHit = 0;
 
         loseSystemPlayerChar = GameObject.FindGameObjectWithTag("Player").GetComponent<LoseSystem>();
 
