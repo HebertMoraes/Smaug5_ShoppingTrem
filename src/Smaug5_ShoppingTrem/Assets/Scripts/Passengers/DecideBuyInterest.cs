@@ -5,6 +5,7 @@ using UnityEngine;
 public class DecideBuyInterest : MonoBehaviour
 {
     public GameObject indicatorSalesPrefab;
+    public float adjustmentPosX;
     
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,7 @@ public class DecideBuyInterest : MonoBehaviour
             if (transform.position.x > 0 ) {
 
                 Vector3 positionToSpawn = new Vector3( 
-                    transform.position.x - 2, 
+                    transform.position.x + (-adjustmentPosX), 
                     indicatorSalesPrefab.transform.position.y, 
                     transform.position.z
                 );
@@ -28,7 +29,7 @@ public class DecideBuyInterest : MonoBehaviour
             //está no banco do lado esquerdo
             } else {
                 Vector3 positionToSpawn = new Vector3( 
-                    transform.position.x + 2, 
+                    transform.position.x + adjustmentPosX, 
                     indicatorSalesPrefab.transform.position.y, 
                     transform.position.z
                 );

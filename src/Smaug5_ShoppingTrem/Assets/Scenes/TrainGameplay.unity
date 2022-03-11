@@ -1295,7 +1295,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3594127699681115775, guid: 42e5e1b07a56e6349bbcf17770721424, type: 3}
       propertyPath: constantOfIncrementationVelocity
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3451789696676187257, guid: 42e5e1b07a56e6349bbcf17770721424, type: 3}
       propertyPath: chanceInterestBuy
@@ -1371,7 +1371,7 @@ PrefabInstance:
       objectReference: {fileID: 5565874258795919138, guid: f984e6d56f6fa31488966d85a19ab568, type: 3}
     - target: {fileID: 5775242915309564643, guid: 42e5e1b07a56e6349bbcf17770721424, type: 3}
       propertyPath: velOfMovimentation
-      value: 34
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5775242915309564643, guid: 42e5e1b07a56e6349bbcf17770721424, type: 3}
       propertyPath: velOfMovimentationTurn
