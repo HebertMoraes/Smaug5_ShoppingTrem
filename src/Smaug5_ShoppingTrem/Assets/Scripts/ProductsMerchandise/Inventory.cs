@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
     [Range(0,1)]
     public float chancePassengerInterestBuy;//setada no começo de cada partida de acordo com o produto escolhido para venda
     public float sellPrice; //setada no começo de cada partida de acordo com o produto escolhido para venda
+    [HideInInspector]
     public float moneyEarned;//dinheiro de vendas feitas em cada partida
 
     public void MakeBusinessWithPassenger() {
