@@ -13,8 +13,15 @@ public class MakeBusiness : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
+
         if (other.gameObject == playerCharacter) {
-            playerCharacter.GetComponent<Inventory>().MakeBusinessWithPassenger();
+
+            if (playerCharacter.GetComponent<Inventory>().currentProductsMerchandise > 0) {
+
+                playerCharacter.GetComponent<Inventory>().MakeBusinessWithPassenger();
+                Destroy(gameObject);
+            }
+            
         }
     }
 }

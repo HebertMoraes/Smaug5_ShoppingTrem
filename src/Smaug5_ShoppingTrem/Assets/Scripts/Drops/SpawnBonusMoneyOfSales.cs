@@ -22,7 +22,7 @@ public class SpawnBonusMoneyOfSales : MonoBehaviour
         List<float> spotsZPossiblesToSpawn = new List<float>();
         int numberOfSpotsPossibles = transform.GetChild(indiceDropSpots).childCount;
 
-        for (int i = 0; i < numberOfSpotsPossibles - 1; i++)
+        for (int i = 0; i <= numberOfSpotsPossibles - 1; i++)
         {
             spotsZPossiblesToSpawn.Add(transform.GetChild(indiceDropSpots).GetChild(i).transform.position.z);
         }

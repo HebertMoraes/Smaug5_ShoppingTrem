@@ -2,21 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActiveX2ScoreSteps : MonoBehaviour
+public class ActivePackageProductMerchandise : MonoBehaviour
 {
-    public float valueToBonus;
-    public float timeTotalInBonus;
+    public int valueToAddProduct;
     private GameObject playerCharacter;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         playerCharacter = GameObject.FindGameObjectWithTag("Player");
     }
 
+    private void Update() {
+        if (playerCharacter.GetComponent<Inventory>().currentProductsMerchandise > 0) {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject == playerCharacter) {
-            playerCharacter.GetComponent<ScoreCount>().ActiveX2ScoreCount(valueToBonus, timeTotalInBonus);
+            playerCharacter.GetComponent<Inventory>().currentProductsMerchandise += valueToAddProduct;
             Destroy(gameObject);
         }
     }
