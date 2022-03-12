@@ -2825,7 +2825,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &366555245
 Transform:
   m_ObjectHideFlags: 0
@@ -3172,7 +3172,7 @@ GameObject:
   - component: {fileID: 413325791}
   - component: {fileID: 413325790}
   m_Layer: 5
-  m_Name: itemdaLista
+  m_Name: itemCandy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3193,9 +3193,9 @@ RectTransform:
   m_Father: {fileID: 1406865388}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 383.8, y: -6}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.94}
 --- !u!114 &413325790
@@ -4992,7 +4992,7 @@ GameObject:
   - component: {fileID: 657165017}
   - component: {fileID: 657165016}
   m_Layer: 5
-  m_Name: itemdaLista (2)
+  m_Name: itemFone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5013,9 +5013,9 @@ RectTransform:
   m_Father: {fileID: 1406865388}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 383.8, y: -712.85}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1.59}
 --- !u!114 &657165016
@@ -5247,8 +5247,8 @@ RectTransform:
   m_Father: {fileID: 106515704}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.056100845}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6891,7 +6891,7 @@ GameObject:
   - component: {fileID: 1020190980}
   - component: {fileID: 1020190979}
   m_Layer: 5
-  m_Name: Button
+  m_Name: buyFone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6912,9 +6912,9 @@ RectTransform:
   m_Father: {fileID: 657165015}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -85}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1020190979
@@ -6960,7 +6960,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1020190980}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1394518916}
+        m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
+        m_MethodName: BuyFone
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1020190980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7282,7 +7294,7 @@ GameObject:
   - component: {fileID: 1026461501}
   - component: {fileID: 1026461500}
   m_Layer: 5
-  m_Name: itemdaLista (3)
+  m_Name: itemSkin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7303,9 +7315,9 @@ RectTransform:
   m_Father: {fileID: 1406865388}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 383.8, y: -1063.7749}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1.94}
 --- !u!114 &1026461500
@@ -7887,9 +7899,9 @@ RectTransform:
   m_Father: {fileID: 1026461499}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -85}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1152451824
@@ -9278,7 +9290,7 @@ GameObject:
   - component: {fileID: 1326377805}
   - component: {fileID: 1326377804}
   m_Layer: 5
-  m_Name: Button
+  m_Name: buyCandy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9299,9 +9311,9 @@ RectTransform:
   m_Father: {fileID: 413325788}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -85}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1326377804
@@ -9348,9 +9360,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PopOut, Assembly-CSharp
-        m_MethodName: ClosePop
+      - m_Target: {fileID: 1394518916}
+        m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
+        m_MethodName: BuyCandy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9411,7 +9423,7 @@ GameObject:
   - component: {fileID: 1351897136}
   - component: {fileID: 1351897135}
   m_Layer: 5
-  m_Name: itemdaLista (1)
+  m_Name: itemChoco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9432,9 +9444,9 @@ RectTransform:
   m_Father: {fileID: 1406865388}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 383.8, y: -359.925}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1.26}
 --- !u!114 &1351897135
@@ -9914,7 +9926,6 @@ MonoBehaviour:
     countSoldAmount: 0
     countItemSold: 0
   hasLoaded: 0
-  btn: {fileID: 689950552}
 --- !u!1 &1398946643
 GameObject:
   m_ObjectHideFlags: 0
@@ -12955,7 +12966,7 @@ GameObject:
   - component: {fileID: 1913733101}
   - component: {fileID: 1913733100}
   m_Layer: 5
-  m_Name: Button
+  m_Name: buyChoco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12976,9 +12987,9 @@ RectTransform:
   m_Father: {fileID: 1351897134}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -85}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1913733100
@@ -13024,7 +13035,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1913733101}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1394518916}
+        m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
+        m_MethodName: BuyChoco
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1913733101
 MonoBehaviour:
   m_ObjectHideFlags: 0

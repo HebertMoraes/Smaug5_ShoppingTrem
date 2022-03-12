@@ -14,10 +14,6 @@ public class SaveManager : MonoBehaviour
 
     public bool hasLoaded;
 
-    #region
-    public Button btn;
-    #endregion
-
     public void Awake()
     {
         instance = this;
@@ -116,12 +112,58 @@ public class SaveManager : MonoBehaviour
         Debug.Log("O produto selecionado foi: Fone");
         Save();
     }
-
-
-
     #endregion
 
+    #region BuyCrates
+    public void BuyCandy()
+    {
+        if(activeSave.countMoney >= 50)
+        {
+            activeSave.countCandy += 50;
+            activeSave.countMoney -= 50;
+            Debug.Log("Compra efetuada com sucesso!");
+            Save();
+        }
+        else
+        {
+            Debug.Log("Você não tem dinheiro para comprar mais produtos! Jogue para conseguir mais.");
+        }
+    }
 
+    public void BuyChoco()
+    {
+        if (activeSave.countCash >= 50)
+        {
+            activeSave.countChoco += 50;
+            activeSave.countCash -= 50;
+            Debug.Log("Compra efetuada com sucesso!");
+            Save();
+        }
+        else
+        {
+            Debug.Log("Você não tem dinheiro para comprar mais produtos! Jogue para conseguir mais.");
+        }
+    }
+
+    public void BuyFone()
+    {
+        if (activeSave.countCash >= 75)
+        {
+            activeSave.countFone += 50;
+            activeSave.countCash -= 75;
+            Debug.Log("Compra efetuada com sucesso!");
+            Save();
+        }
+        else
+        {
+            Debug.Log("Você não tem dinheiro para comprar mais produtos! Jogue para conseguir mais.");
+        }
+    }
+    #endregion
+
+    #region MissionReward
+
+    #endregion
 }
 
 
