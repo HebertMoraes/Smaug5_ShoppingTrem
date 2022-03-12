@@ -109,3 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indicatorSalesPrefab: {fileID: 5319339349064163362, guid: 6a97c5b7fbdb5174a983a066baaad026, type: 3}
+  adjustmentPosX: 3
