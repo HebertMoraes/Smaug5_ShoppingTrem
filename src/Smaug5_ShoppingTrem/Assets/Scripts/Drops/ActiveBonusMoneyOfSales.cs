@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MakeBusiness : MonoBehaviour
+public class ActiveBonusMoneyOfSales : MonoBehaviour
 {
     private GameObject playerCharacter;
 
@@ -12,9 +12,15 @@ public class MakeBusiness : MonoBehaviour
         playerCharacter = GameObject.FindGameObjectWithTag("Player");
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject == playerCharacter) {
-            playerCharacter.GetComponent<Inventory>().MakeBusinessWithPassenger();
+            
         }
     }
 }
