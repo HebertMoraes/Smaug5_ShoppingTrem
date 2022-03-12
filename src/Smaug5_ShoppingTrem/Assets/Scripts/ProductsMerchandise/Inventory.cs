@@ -10,10 +10,11 @@ public class Inventory : MonoBehaviour
     public float sellPrice; //setada no começo de cada partida de acordo com o produto escolhido para venda
     [HideInInspector]
     public float moneyEarned;//dinheiro de vendas feitas em cada partida
+    private float valueToMultiplyBonusMoney = 1;
 
     public void MakeBusinessWithPassenger() {
         currentProductsMerchandise -= 1;
-        moneyEarned += sellPrice;
+        moneyEarned += (sellPrice * valueToMultiplyBonusMoney);
         GetComponent<ScoreCount>().currentScoreSales += 1;
     }
 }

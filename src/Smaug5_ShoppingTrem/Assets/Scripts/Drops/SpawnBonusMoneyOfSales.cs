@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnX2ScoreSteps : MonoBehaviour
+public class SpawnBonusMoneyOfSales : MonoBehaviour
 {
-    public GameObject x2ScoreStepsPrefab;
+    public GameObject bonusMoneyOfSalesPrefab;
     [Range(0, 1)]
     public float chanceToSpawn;
     public int indiceDropSpots;
@@ -28,18 +28,18 @@ public class SpawnX2ScoreSteps : MonoBehaviour
         }
 
         if (Random.value <= chanceToSpawn) {
-            
+
             int indiceChosenOfChildDropSpots = Random.Range(0, spotsZPossiblesToSpawn.Count);
             float posZSpotChosen = spotsZPossiblesToSpawn[indiceChosenOfChildDropSpots];
 
             Vector3 positionToSpawn = new Vector3(
                 posXPossiblesToSpawn[Random.Range(0, 3)],
-                x2ScoreStepsPrefab.transform.position.y,
+                bonusMoneyOfSalesPrefab.transform.position.y,
                 posZSpotChosen
             );
             Destroy(transform.GetChild(indiceDropSpots).GetChild(indiceChosenOfChildDropSpots).gameObject);
 
-            Instantiate(x2ScoreStepsPrefab, positionToSpawn, x2ScoreStepsPrefab.transform.rotation, transform);
+            Instantiate(bonusMoneyOfSalesPrefab, positionToSpawn, bonusMoneyOfSalesPrefab.transform.rotation, transform);
         }
     }
 }

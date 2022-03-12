@@ -5,12 +5,17 @@ using UnityEngine;
 public class DecideBuyInterest : MonoBehaviour
 {
     public GameObject indicatorSalesPrefab;
-    public float adjustmentPosX;
+    private GameObject playerCharacter;
+    private float posXSpawnLeft;
+    private float posXSpawnRight;
     
     // Start is called before the first frame update
     void Start()
     {
-        Inventory inventoryPLayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        playerCharacter = GameObject.FindGameObjectWithTag("Player");
+        Inventory inventoryPLayer = playerCharacter.GetComponent<Inventory>();
+        posXSpawnLeft = playerCharacter.GetComponent<MovimentationCharacter>().posXLineLeft;
+        posXSpawnRight = playerCharacter.GetComponent<MovimentationCharacter>().posXLineRight;
 
         if (Random.value <= inventoryPLayer.chancePassengerInterestBuy) {
 
@@ -18,7 +23,7 @@ public class DecideBuyInterest : MonoBehaviour
             if (transform.position.x > 0 ) {
 
                 Vector3 positionToSpawn = new Vector3( 
-                    transform.position.x + (-adjustmentPosX), 
+                    posXSpawnRight, 
                     indicatorSalesPrefab.transform.position.y, 
                     transform.position.z
                 );
@@ -29,7 +34,7 @@ public class DecideBuyInterest : MonoBehaviour
             //está no banco do lado esquerdo
             } else {
                 Vector3 positionToSpawn = new Vector3( 
-                    transform.position.x + adjustmentPosX, 
+                    posXSpawnLeft, 
                     indicatorSalesPrefab.transform.position.y, 
                     transform.position.z
                 );
