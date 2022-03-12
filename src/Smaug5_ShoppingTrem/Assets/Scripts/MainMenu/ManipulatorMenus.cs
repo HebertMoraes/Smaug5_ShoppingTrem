@@ -6,6 +6,7 @@ using TMPro;
 
 public class ManipulatorMenus : MonoBehaviour
 {
+    public static SaveManager instance;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,8 @@ public class ManipulatorMenus : MonoBehaviour
         RefreshHUD();
     }
 
-    public void SceneToLoadGameplay() {
+    public void SceneToLoadGameplay()
+    {
         SceneManager.LoadScene("LoadingTrainGameplay");
     }
 
@@ -29,9 +31,18 @@ public class ManipulatorMenus : MonoBehaviour
 
         GameObject mission = gameObject.transform.Find("MissionsLayout").gameObject;
         mission.SetActive(false);
+
+        GameObject candy = gameObject.transform.Find("CandyLayout").gameObject;
+        candy.SetActive(false);
+
+        GameObject choco = gameObject.transform.Find("ChocoLayout").gameObject;
+        choco.SetActive(false);
+
+        GameObject fone = gameObject.transform.Find("FoneLayout").gameObject;
+        fone.SetActive(false);
     }
 
-    //#######################################INICIO-ATUALIZANDO DADOS DA HUD#####################################################################################
+    #region RefreshHud
     public void RefreshHUD()
     {
         RefreshMoney();
@@ -83,9 +94,9 @@ public class ManipulatorMenus : MonoBehaviour
     {
         TextMeshProUGUI ctStepsDistance = transform.GetChild(0).GetChild(1).GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
     }*/
+    #endregion
 
-    //#######################################FINALIZADO-ATUALIZANDO DADOS DA HUD#####################################################################################
-
+    #region OpenPopUP
     public void OpenShop()
     {
         GameObject shop = gameObject.transform.Find("ShopLayout").gameObject;
@@ -97,5 +108,25 @@ public class ManipulatorMenus : MonoBehaviour
         GameObject mission = gameObject.transform.Find("MissionsLayout").gameObject;
         mission.SetActive(true);
     }
+
+    public void OpenCandy()
+    {
+        GameObject candy = gameObject.transform.Find("CandyLayout").gameObject;
+        candy.SetActive(true);
+    }
+
+    public void OpenChoco()
+    {
+        GameObject choco = gameObject.transform.Find("ChocoLayout").gameObject;
+        choco.SetActive(true);
+    }
+
+    public void OpenFone()
+    {
+        GameObject fone = gameObject.transform.Find("FoneLayout").gameObject;
+        fone.SetActive(true);
+    }
+    #endregion
+
 
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Xml;
+using UnityEngine.UI;
 using System.Xml.Serialization;
 
 public class SaveManager : MonoBehaviour
@@ -12,6 +13,10 @@ public class SaveManager : MonoBehaviour
     public SaveData activeSave;
 
     public bool hasLoaded;
+
+    #region
+    public Button btn;
+    #endregion
 
     public void Awake()
     {
@@ -35,6 +40,8 @@ public class SaveManager : MonoBehaviour
         {
             Load();
         }
+
+
     }
 
     //Método para salvar o Save
@@ -88,6 +95,33 @@ public class SaveManager : MonoBehaviour
             SaveManager.instance.activeSave.countCandy = 50;
         }
     }
+
+    #region SelectCrate
+    public void CandySelectedCrate()
+    {
+        activeSave.currentCrate = "Candy";
+        Debug.Log("O produto selecionado foi: Candy");
+        Save();
+    }
+
+    public void ChocoSelectedCrate()
+    {
+        activeSave.currentCrate = "Choco";
+        Debug.Log("O produto selecionado foi: Choco");
+        Save();
+    }
+    public void FoneSelectedCrate()
+    {
+        activeSave.currentCrate = "Fone";
+        Debug.Log("O produto selecionado foi: Fone");
+        Save();
+    }
+
+
+
+    #endregion
+
+
 }
 
 
@@ -101,6 +135,7 @@ public class SaveData{
     public int countCandy;
     public int countChoco;
     public int countFone;
+    public string currentCrate;
 
     //Variaveis de record
     public int countStepsDistance;
