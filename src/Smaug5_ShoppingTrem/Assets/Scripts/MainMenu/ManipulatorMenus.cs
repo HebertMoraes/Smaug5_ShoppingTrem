@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 using TMPro;
 
 public class ManipulatorMenus : MonoBehaviour
-{    
+{
     // Start is called before the first frame update
     void Start()
     {
-        
+        OnGameEnter();
     }
 
     // Update is called once per frame
@@ -22,6 +22,16 @@ public class ManipulatorMenus : MonoBehaviour
         SceneManager.LoadScene("LoadingTrainGameplay");
     }
 
+    public void OnGameEnter()
+    {
+        GameObject shop = gameObject.transform.Find("ShopLayout").gameObject;
+        shop.SetActive(false);
+
+        GameObject mission = gameObject.transform.Find("MissionsLayout").gameObject;
+        mission.SetActive(false);
+    }
+
+    //#######################################INICIO-ATUALIZANDO DADOS DA HUD#####################################################################################
     public void RefreshHUD()
     {
         RefreshMoney();
@@ -73,5 +83,19 @@ public class ManipulatorMenus : MonoBehaviour
     {
         TextMeshProUGUI ctStepsDistance = transform.GetChild(0).GetChild(1).GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
     }*/
+
+    //#######################################FINALIZADO-ATUALIZANDO DADOS DA HUD#####################################################################################
+
+    public void OpenShop()
+    {
+        GameObject shop = gameObject.transform.Find("ShopLayout").gameObject;
+        shop.SetActive(true);
+    }
+
+    public void OpenMission()
+    {
+        GameObject mission = gameObject.transform.Find("MissionsLayout").gameObject;
+        mission.SetActive(true);
+    }
 
 }
