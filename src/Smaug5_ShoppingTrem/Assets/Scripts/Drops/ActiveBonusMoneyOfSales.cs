@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ActiveBonusMoneyOfSales : MonoBehaviour
 {
+    public float bonusToMultiplyMoneySales;
+    public float timeTotalInBonus;
     private GameObject playerCharacter;
 
     // Start is called before the first frame update
@@ -12,15 +14,10 @@ public class ActiveBonusMoneyOfSales : MonoBehaviour
         playerCharacter = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject == playerCharacter) {
-            
+            playerCharacter.GetComponent<Inventory>().BonusMoneyOfSales(bonusToMultiplyMoneySales, timeTotalInBonus);
+            Destroy(gameObject);
         }
     }
 }
