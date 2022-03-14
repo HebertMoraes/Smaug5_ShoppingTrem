@@ -40,6 +40,9 @@ public class ManipulatorMenus : MonoBehaviour
 
         GameObject fone = gameObject.transform.Find("FoneLayout").gameObject;
         fone.SetActive(false);
+
+        GameObject options = gameObject.transform.Find("OptionLayout").gameObject;
+        options.SetActive(false);
     }
 
     #region RefreshHud
@@ -125,6 +128,12 @@ public class ManipulatorMenus : MonoBehaviour
     {
         GameObject fone = gameObject.transform.Find("FoneLayout").gameObject;
         fone.SetActive(true);
+    }
+
+    public void OpenOptions()
+    {
+        GameObject option = gameObject.transform.Find("OptionLayout").gameObject;
+        option.SetActive(true);
     }
     #endregion
 
