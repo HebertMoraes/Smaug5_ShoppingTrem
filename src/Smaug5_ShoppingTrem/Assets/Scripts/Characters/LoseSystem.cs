@@ -73,6 +73,10 @@ public class LoseSystem : MonoBehaviour
     public void LoseGame() {
         //preparar as pontuações e huds para o gameOver, setar velocidade do personagem para 0
         //para que os vagões param de andar 
+        GameObject.FindGameObjectWithTag("Player").GetComponent<MovimentationCharacter>().velOfMovimentation = 0;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<MovimentationCharacter>().velOfMovimentationLeftRight = 0;
+
+        //GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().
     }
 
     private void BlinkOpacity(float valueToChangeAlpha) {

@@ -342,6 +342,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 30658439}
     m_Modifications:
+    - target: {fileID: 3055227578182807874, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3733747631608300679, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651966912397888069, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5662463391294655910, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
       propertyPath: m_Name
       value: TrainCarOfficial (2)
@@ -388,6 +400,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5662463391294655911, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5878521814722475295, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758303179028679133, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1078,6 +1098,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 30658439}
     m_Modifications:
+    - target: {fileID: 3055227578182807874, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3733747631608300679, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5662463391294655910, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
       propertyPath: m_Name
       value: TrainCarOfficial (1)
@@ -1124,6 +1152,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5662463391294655911, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5878521814722475295, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758303179028679133, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1542,6 +1578,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 30658439}
     m_Modifications:
+    - target: {fileID: 3055227578182807874, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651966912397888069, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5662463391294655910, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
       propertyPath: m_Name
       value: TrainCarOfficial (3)
@@ -1588,6 +1632,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5662463391294655911, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5878521814722475295, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758303179028679133, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
