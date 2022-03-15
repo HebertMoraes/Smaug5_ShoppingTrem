@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ScoreCount : MonoBehaviour
 {
-    private float currentScoreSteps;
+    [HideInInspector]
+    public float currentScoreSteps;
     public float valueToDivideSteps;
     [HideInInspector]
     public int currentScoreSales;
@@ -35,8 +36,8 @@ public class ScoreCount : MonoBehaviour
         currentScoreSteps += ((movCharacterBehavior.velOfMovimentation * Time.deltaTime) / valueToDivideSteps) 
             * x2BonusScoreCount;
 
-        Debug.Log("score steps: " + currentScoreSteps + " score sales: " + currentScoreSales + " money earned: " +
-            GetComponent<Inventory>().moneyEarned);
+        //Debug.Log("score steps: " + currentScoreSteps + " score sales: " + currentScoreSales + " money earned: " +
+            // GetComponent<Inventory>().moneyEarned);
     }
 
     public void ActiveX2ScoreCount(float valueToBonus, float timeInBonus) {

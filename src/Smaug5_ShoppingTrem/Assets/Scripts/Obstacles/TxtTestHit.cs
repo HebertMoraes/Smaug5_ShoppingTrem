@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TxtTestHit : MonoBehaviour
 {
+    public int indexDebuggTest;
     private TMPro.TextMeshProUGUI txtBehaviorHardHit;
     private TMPro.TextMeshProUGUI txtBehaviorAlmostHardHit;
     private TMPro.TextMeshProUGUI txtBehaviorCopTimePursuit;
@@ -20,9 +21,9 @@ public class TxtTestHit : MonoBehaviour
 
         loseSystemPlayerChar = GameObject.FindGameObjectWithTag("Player").GetComponent<LoseSystem>();
 
-        txtBehaviorHardHit = transform.GetChild(0).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
-        txtBehaviorAlmostHardHit = transform.GetChild(1).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
-        txtBehaviorCopTimePursuit = transform.GetChild(2).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
+        txtBehaviorHardHit = transform.GetChild(indexDebuggTest).GetChild(0).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
+        txtBehaviorAlmostHardHit = transform.GetChild(indexDebuggTest).GetChild(1).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
+        txtBehaviorCopTimePursuit = transform.GetChild(indexDebuggTest).GetChild(2).gameObject.GetComponent<TMPro.TextMeshProUGUI>();
     }
 
     public void RefreshTxtHit(string hitMode) {
