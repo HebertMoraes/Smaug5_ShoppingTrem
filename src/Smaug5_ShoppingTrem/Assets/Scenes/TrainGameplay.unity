@@ -1010,7 +1010,7 @@ GameObject:
   m_Component:
   - component: {fileID: 717550725}
   m_Layer: 5
-  m_Name: Top
+  m_Name: TopHud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1845,7 +1845,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1328739619}
   m_Layer: 5
-  m_Name: Bottom
+  m_Name: BottomHud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2082,7 +2082,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6376b7818ba184489dd942f4fba4c1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indiceGameOverInCanvas: 3
+  indexGameOverInCanvas: 3
+  indexDebuggtestInCanvas: 0
+  indexTopHudInCanvas: 1
+  indexBottomHudInCanvas: 2
+  indexScoreSteps: 1
+  indexSalesMade: 2
+  indexMoneyEarned: 3
 --- !u!1001 &1444514204
 PrefabInstance:
   m_ObjectHideFlags: 0

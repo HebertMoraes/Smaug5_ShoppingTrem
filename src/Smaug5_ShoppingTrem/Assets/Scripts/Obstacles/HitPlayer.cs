@@ -17,13 +17,17 @@ public class HitPlayer : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject == playerCharacter) {
 
-            //se está movendo, mas antes, estava sendo verificado se o isTurnLeft ou isTurnRight estavam true
-            if (playerCharacter.GetComponent<CharacterController>().velocity.x != 0) {
-                
-                loseSystemPlayer.AlmostHitHardOnObstacle();
+            if (GameObject.FindGameObjectWithTag("Player").GetComponent<MovimentationCharacter>().velOfMovimentation > 0) {
 
-            } else {
-                loseSystemPlayer.HitHardOnObstacle();
+                //se está movendo, mas antes, estava sendo verificado se o isTurnLeft ou isTurnRight estavam true
+                if (playerCharacter.GetComponent<CharacterController>().velocity.x != 0) {
+                
+                    loseSystemPlayer.AlmostHitHardOnObstacle();
+
+                } else {
+
+                    loseSystemPlayer.HitHardOnObstacle();
+                }
             }
         }
     }

@@ -157,9 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   constantOfIncrementationVelocity: 1
-  valueChangeVelMovimentation: 10
   maxVelocityMovimentation: 35
-  minVelocityMovimentation: 2
 --- !u!114 &-3451789696676187257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +173,7 @@ MonoBehaviour:
   currentProductsMerchandise: 10
   chancePassengerInterestBuy: 0.2
   sellPrice: 3
+  moneyEarned: 0
 --- !u!114 &4525040043680161261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +191,7 @@ MonoBehaviour:
   alreadyHitOnce: 0
   immortal: 0
   valueToChangeAlphaInImmortal: 6
+  valueToChangeAlphaInGameOver: 2
   currentTimeCopInPursuitNear: 0
 --- !u!114 &7620297727644844619
 MonoBehaviour:

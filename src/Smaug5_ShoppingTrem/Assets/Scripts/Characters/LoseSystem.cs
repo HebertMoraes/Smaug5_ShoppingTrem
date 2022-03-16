@@ -11,6 +11,7 @@ public class LoseSystem : MonoBehaviour
     [HideInInspector]
     public bool immortal;
     public float valueToChangeAlphaInImmortal;
+    public float valueToChangeAlphaInGameOver;
     [HideInInspector]
     public float currentTimeCopInPursuitNear;
 
@@ -26,7 +27,8 @@ public class LoseSystem : MonoBehaviour
 
     private void Update() {
 
-        if (alreadyHitOnce) {
+        if (alreadyHitOnce && 
+            GameObject.FindGameObjectWithTag("Player").GetComponent<MovimentationCharacter>().velOfMovimentation > 0) {
 
             currentTimeCopInPursuitNear += Time.deltaTime;
             
@@ -44,6 +46,19 @@ public class LoseSystem : MonoBehaviour
                 currentTimeCopInPursuitNear = 0;
                 increaseOpacity = false;
             }
+        }
+
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<MovimentationCharacter>().velOfMovimentation <= 0) {
+
+            float newAlphaColorGameOver = GetComponent<MeshRenderer>().material.color.a - 
+                (valueToChangeAlphaInGameOver * Time.deltaTime);
+
+            GetComponent<MeshRenderer>().material.color = new Color(
+                playerCharacterColor.r, 
+                playerCharacterColor.g,
+                playerCharacterColor.b,
+                newAlphaColorGameOver
+            );
         }
     }
 
@@ -71,13 +86,9 @@ public class LoseSystem : MonoBehaviour
         }
     }
     public void LoseGame() {
-        //preparar as pontuações e huds para o gameOver, setar velocidade do personagem para 0
-        //para que os vagões param de andar
         
         GameObject.FindGameObjectWithTag("Player").GetComponent<MovimentationCharacter>().velOfMovimentation = 0;
         GameObject.FindGameObjectWithTag("Player").GetComponent<MovimentationCharacter>().velOfMovimentationLeftRight = 0;
-
-        //GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().
     }
 
     private void BlinkOpacity(float valueToChangeAlpha) {
