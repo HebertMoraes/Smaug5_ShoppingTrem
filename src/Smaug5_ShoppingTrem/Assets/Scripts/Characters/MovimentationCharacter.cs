@@ -27,15 +27,9 @@ public class MovimentationCharacter : MonoBehaviour
 
         //TODO: 
         //
-        //movimentar para as laterais não pode ser de um oposto ao outro com o mesmo Touch, deve-se retirar
-        //o dedo e refazer o movimento de slide para o local desejado novamente;
-        //
-        //pode-se pular quando está deslizando, finalizando a animação de slide, seu state machine e iniciando o pulo
-        //direto, o mesmo vale para do pulo para slide, só que nesse caso não vai imediatemanete e sim, a gravidade 
-        //é aumentada para ele pousar bem mais rápido do que o normal;
-        //
         //tirar o bouncing (quicar no chão) ao pousar no chão
         //
+        //aumentar a velocidade de pulo para chegar no alcance máximo do pulo.
         //
 
         if (GetComponent<Animator>().GetInteger("stateAnim") != 1) {

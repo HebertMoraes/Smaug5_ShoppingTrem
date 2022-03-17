@@ -45,44 +45,4 @@ public class TouchScreenController : MonoBehaviour
             return false;
         }
     }
-
-    public bool CheckSwipUpJump() {
-        
-        if (Input.touchCount > 0) {
-            
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Moved) {
-                if (touch.deltaPosition.y >= valueToSlideTouchScreen) {
-                    return true;
-                } else { 
-                    return false; 
-                }
-            } else { 
-                return false; 
-            }
-
-        } else {
-            return false;
-        }
-    }
-
-    public bool CheckSwipTouchToDown() {
-        
-        if (Input.touchCount > 0) {
-            
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Moved) {
-                if (touch.deltaPosition.y <= valueToSlideTouchScreen) {
-                    return true;
-                } else { 
-                    return false; 
-                }
-            } else { 
-                return false; 
-            }
-
-        } else {
-            return false;
-        }
-    }
 }
