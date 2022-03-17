@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverManipulation : MonoBehaviour
+public class GameOverManipulator : MonoBehaviour
 {
     public int indexGameOverInCanvas;
     public int indexDebuggtestInCanvas;
@@ -28,22 +28,14 @@ public class GameOverManipulation : MonoBehaviour
         backgroundGameOver = transform.GetChild(indexGameOverInCanvas).GetChild(0);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (playerMovimentation.velOfMovimentation <= 0) {
-
-            transform.GetChild(indexGameOverInCanvas).gameObject.SetActive(true);
-
-            transform.GetChild(indexDebuggtestInCanvas).gameObject.SetActive(false);
-            transform.GetChild(indexTopHudInCanvas).gameObject.SetActive(false);
-            transform.GetChild(indexBottomHudInCanvas).gameObject.SetActive(false);
-
-            PutRecordsOnUI();
-        }
-    }
-
     public void PutRecordsOnUI() {
+
+        transform.GetChild(indexGameOverInCanvas).gameObject.SetActive(true);
+
+        transform.GetChild(indexDebuggtestInCanvas).gameObject.SetActive(false);
+        transform.GetChild(indexTopHudInCanvas).gameObject.SetActive(false);
+        transform.GetChild(indexBottomHudInCanvas).gameObject.SetActive(false);
+
 
         backgroundGameOver.GetChild(indexScoreSteps).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = 
             System.Math.Round(playerScoreCount.currentScoreSteps, 2).ToString();

@@ -18,17 +18,17 @@ public class LoseSystem : MonoBehaviour
     private Color playerCharacterColor;
     private float newAlphaToColor;
     private bool increaseOpacity;
+    private GameState gameState;
 
     private void Start() {
         playerCharacterColor = GetComponent<MeshRenderer>().material.color;
         newAlphaToColor = playerCharacterColor.a;
-        
+        gameState = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameState>();
     }
 
     private void Update() {
 
-        if (alreadyHitOnce && 
-            GameObject.FindGameObjectWithTag("Player").GetComponent<MovimentationCharacter>().velOfMovimentation > 0) {
+        if (alreadyHitOnce && gameState.currentState == GameState.states.Running) {
 
             currentTimeCopInPursuitNear += Time.deltaTime;
             
@@ -48,7 +48,7 @@ public class LoseSystem : MonoBehaviour
             }
         }
 
-        if (GameObject.FindGameObjectWithTag("Player").GetComponent<MovimentationCharacter>().velOfMovimentation <= 0) {
+        if (gameState.currentState == GameState.states.GameOver) {
 
             float newAlphaColorGameOver = GetComponent<MeshRenderer>().material.color.a - 
                 (valueToChangeAlphaInGameOver * Time.deltaTime);
@@ -87,8 +87,12 @@ public class LoseSystem : MonoBehaviour
     }
     public void LoseGame() {
         
+        gameState.currentState = GameState.states.GameOver;
+
         GameObject.FindGameObjectWithTag("Player").GetComponent<MovimentationCharacter>().velOfMovimentation = 0;
         GameObject.FindGameObjectWithTag("Player").GetComponent<MovimentationCharacter>().velOfMovimentationLeftRight = 0;
+
+        GameObject.Find("Canvas").GetComponent<GameOverManipulator>().PutRecordsOnUI();
     }
 
     private void BlinkOpacity(float valueToChangeAlpha) {

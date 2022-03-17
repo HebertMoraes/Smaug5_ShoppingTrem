@@ -9,11 +9,13 @@ public class IdleRunPlayerStateM : StateMachineBehaviour
     //variavéis copiadas
     protected bool m_IsSwiping = false;
     protected Vector2 m_StartingTouch;
+    private GameState gameState;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         touchSceenControll = GameObject.FindGameObjectWithTag("GameController").GetComponent<TouchScreenController>();
+        gameState = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameState>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -21,7 +23,8 @@ public class IdleRunPlayerStateM : StateMachineBehaviour
     {
 
         // Use touch input on mobile
-        if (Input.touchCount == 1)
+        if (Input.touchCount == 1 && 
+            gameState.currentState == GameState.states.Running)
         {
 			if(m_IsSwiping)
 			{
@@ -77,10 +80,11 @@ public class IdleRunPlayerStateM : StateMachineBehaviour
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        //suponho que precise disso
+        m_IsSwiping = false;
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
