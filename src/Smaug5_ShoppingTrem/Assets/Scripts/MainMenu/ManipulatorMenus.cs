@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -53,6 +54,9 @@ public class ManipulatorMenus : MonoBehaviour
         RefreshCandy();
         RefreshChoco();
         RefreshFone();
+        RefreshMissionMeters();
+        RefreshMissionSoldItem();
+        RefreshMissionSalesAmount();
     }
 
     public void RefreshMoney()
@@ -81,22 +85,21 @@ public class ManipulatorMenus : MonoBehaviour
         TextMeshProUGUI ctFone = transform.GetChild(0).GetChild(5).GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
         ctFone.text = "x" + SaveManager.instance.activeSave.countFone.ToString();
     }
-
-
-    /*public void RefreshItemSold()
+    public void RefreshMissionMeters()
     {
-        TextMeshProUGUI ctItemSold = transform.GetChild(0).GetChild(1).GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI ctMeters = transform.GetChild(4).GetChild(4).GetChild(0).GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
+        ctMeters.text = SaveManager.instance.activeSave.countStepsDistance.ToString() + "/1000";
     }
-
-    public void RefreshSoldAmount()
+    public void RefreshMissionSoldItem()
     {
-        TextMeshProUGUI ctSoldAmount = transform.GetChild(0).GetChild(1).GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI ctSoldItem = transform.GetChild(4).GetChild(4).GetChild(1).GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
+        ctSoldItem.text = SaveManager.instance.activeSave.countItemSold.ToString() + "/100";
     }
-
-    public void RefreshStepsDistance()
+    public void RefreshMissionSalesAmount()
     {
-        TextMeshProUGUI ctStepsDistance = transform.GetChild(0).GetChild(1).GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-    }*/
+        TextMeshProUGUI ctSalesAmount = transform.GetChild(4).GetChild(4).GetChild(2).GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
+        ctSalesAmount.text = SaveManager.instance.activeSave.countSalesAmount.ToString() + "/1000";
+    }
     #endregion
 
     #region OpenPopUP
@@ -137,5 +140,10 @@ public class ManipulatorMenus : MonoBehaviour
     }
     #endregion
 
+    #region Rewards
+    
+
+    
+    #endregion
 
 }

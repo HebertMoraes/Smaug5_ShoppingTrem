@@ -10,6 +10,7 @@ public class Inventory : MonoBehaviour
     public float sellPrice; //setada no começo de cada partida de acordo com o produto escolhido para venda
     [HideInInspector]
     public float moneyEarned;//dinheiro de vendas feitas em cada partida
+    public int totalItemSale;
     private float valueToMultiplyBonusMoney = 1;
     private float timeTotalInBonus;
     private float currentTimeInBonusMoneySales;
@@ -21,6 +22,7 @@ public class Inventory : MonoBehaviour
         moneyEarned += (float)System.Math.Round((sellPrice * valueToMultiplyBonusMoney), 0);
         
         GetComponent<ScoreCount>().currentScoreSales += 1;
+        totalItemSale += 1;
     }
 
     private void Update() {
@@ -39,4 +41,6 @@ public class Inventory : MonoBehaviour
         timeTotalInBonus = timeInBonus;
         currentTimeInBonusMoneySales = 0;
     }
+
+
 }

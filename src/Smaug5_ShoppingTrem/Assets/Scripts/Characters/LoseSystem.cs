@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class LoseSystem : MonoBehaviour
 {
+    ScoreCount steps = new ScoreCount();
     public float timeInImmortal;
     public float timeToCopPursuitNear;
     [HideInInspector]
+    public bool canSave = false;
     public bool alreadyHitOnce;
     [HideInInspector]
     public bool immortal;
@@ -91,6 +93,7 @@ public class LoseSystem : MonoBehaviour
 
         GameObject.FindGameObjectWithTag("Player").GetComponent<MovimentationCharacter>().velOfMovimentation = 0;
         GameObject.FindGameObjectWithTag("Player").GetComponent<MovimentationCharacter>().velOfMovimentationLeftRight = 0;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SaveManager>().IncrementScore();
 
         GameObject.Find("Canvas").GetComponent<GameOverManipulator>().PutRecordsOnUI();
     }

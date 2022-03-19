@@ -14,6 +14,9 @@ public class SaveManager : MonoBehaviour
 
     public bool hasLoaded;
 
+    private Inventory playerInventory;
+    private ScoreCount playerScoreCount;
+    private LoseSystem lose;
     public void Awake()
     {
         instance = this;
@@ -36,8 +39,6 @@ public class SaveManager : MonoBehaviour
         {
             Load();
         }
-
-
     }
 
     //Método para salvar o Save
@@ -162,7 +163,37 @@ public class SaveManager : MonoBehaviour
     #endregion
 
     #region MissionReward
+    public void ClaimMetragem()
+    {
+        activeSave.countCash += 25;
+        activeSave.haveClaimedRewardMetragem = true;
+        Save();
+    }
+    public void ClaimItemSold()
+    {
+        activeSave.countCash += 50;
+        activeSave.haveClaimedRewardItemSold = true;
+        Save();
+    }
+    public void ClaimSalesAmount()
+    {
+        activeSave.countCash += 75;
+        activeSave.haveClaimedRewardSalesAmount = true;
+        Save();
+    }
+    #endregion
 
+    #region Records
+    public void IncrementScore()
+    {
+        GameObject playerCharacter = GameObject.FindGameObjectWithTag("Player");
+        playerInventory = playerCharacter.GetComponent<Inventory>();
+        playerScoreCount = playerCharacter.GetComponent<ScoreCount>();
+        activeSave.countStepsDistance += playerScoreCount.currentScoreSteps;
+        activeSave.countSalesAmount += playerInventory.moneyEarned;
+        activeSave.countItemSold += playerInventory.currentProductsMerchandise;
+        Save();
+    }
     #endregion
 }
 
@@ -180,7 +211,13 @@ public class SaveData{
     public string currentCrate;
 
     //Variaveis de record
-    public int countStepsDistance;
-    public int countSoldAmount;
+    public float countStepsDistance;
+    public float countSalesAmount;
     public int countItemSold;
+
+    //Habilitam as missões
+    public bool haveClaimedRewardMetragem = false;
+    public bool haveClaimedRewardSalesAmount = false;
+    public bool haveClaimedRewardItemSold = false;
+
 }

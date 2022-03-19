@@ -5,17 +5,6 @@ using UnityEngine;
 public class CloseCandy : MonoBehaviour
 {
     private GameObject gameObject;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void ClosePop()
     {
         gameObject = GameObject.Find("CandyLayout");
