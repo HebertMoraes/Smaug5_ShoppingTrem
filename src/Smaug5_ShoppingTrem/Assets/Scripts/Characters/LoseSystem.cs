@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class LoseSystem : MonoBehaviour
 {
-    ScoreCount steps = new ScoreCount();
+    //ta dando erro, não se pode dar new em um mono behavior, se usa o método AddComponent() para um GameObject, 
+    //mas aqui suponho que o que deve ser feito é passar o ScoreCount já existente do Player, e para isso 
+    //se usa GetComponent<ScoreCount>() no player.
+    //ScoreCount steps = new ScoreCount();
     public float timeInImmortal;
     public float timeToCopPursuitNear;
     [HideInInspector]

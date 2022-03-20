@@ -13,13 +13,11 @@ public class MovimentationCharacter : MonoBehaviour
     private CharacterController charControll;
     private string currentLine;
     private bool alreadyMakeSecondTurn;
-    private TouchScreenController touchSceenControll;
 
     void Start()
     {
         currentLine = "mid";
         charControll = GetComponent<CharacterController>();
-        touchSceenControll = GameObject.FindGameObjectWithTag("GameController").GetComponent<TouchScreenController>();
     }
 
     void Update ()
@@ -28,8 +26,6 @@ public class MovimentationCharacter : MonoBehaviour
         //TODO: 
         //
         //tirar o bouncing (quicar no chão) ao pousar no chão
-        //
-        //aumentar a velocidade de pulo para chegar no alcance máximo do pulo.
         //
 
         if (GetComponent<Animator>().GetInteger("stateAnim") != 1) {
@@ -64,7 +60,7 @@ public class MovimentationCharacter : MonoBehaviour
 
         if (isTurningLeft) {
             
-            if (touchSceenControll.CheckSwipTouchToRight() && !alreadyMakeSecondTurn) {
+            if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && !alreadyMakeSecondTurn) {
                 if (currentLine == "mid") {
 
                     isTurningLeft = false;
@@ -96,7 +92,7 @@ public class MovimentationCharacter : MonoBehaviour
         }
         if (isTurningRight) {
 
-            if (touchSceenControll.CheckSwipTouchToLeft() && !alreadyMakeSecondTurn) {
+            if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && !alreadyMakeSecondTurn) {
                 if (currentLine == "left") {
 
                     isTurningRight = false;
@@ -126,12 +122,12 @@ public class MovimentationCharacter : MonoBehaviour
             }
         }
 
-        if (touchSceenControll.CheckSwipTouchToLeft() && currentLine != "left") {
+        if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && currentLine != "left") {
             if (!isTurningLeft && !isTurningRight) {
                 isTurningLeft = true;
             }
         }
-        if (touchSceenControll.CheckSwipTouchToRight() && currentLine != "right") {
+        if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && currentLine != "right") {
             if (!isTurningLeft && !isTurningRight) {
                 isTurningRight = true;
             }

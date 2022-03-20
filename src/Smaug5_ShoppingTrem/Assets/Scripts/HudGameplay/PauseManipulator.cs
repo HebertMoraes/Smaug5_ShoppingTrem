@@ -24,6 +24,18 @@ public class PauseManipulator : MonoBehaviour
         if (gameState.currentState == GameState.states.GameOver) {
             transform.GetChild(indexBtnActivePause).gameObject.SetActive(false);
         }
+
+        else if (gameState.currentState == GameState.states.Paused) {
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) {
+                ResumeGameplay();
+            }
+        }
+
+        else if (gameState.currentState == GameState.states.Running) {
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) {
+                ActivePause();
+            }
+        }
     }
 
     public void ActivePause () {

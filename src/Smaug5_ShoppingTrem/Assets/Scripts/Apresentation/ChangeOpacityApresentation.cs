@@ -20,7 +20,11 @@ public class ChangeOpacityApresentation : MonoBehaviour
     {
         if (currentElapsedTime >= timeToChangeScene)
         {
-            SceneManager.LoadScene("MainMenu");
+            //para teste da web, estou pulando o menu e indo direto para o carregamento da gameplay e depois, 
+            //a gameplay.
+            SceneManager.LoadScene("LoadingTrainGameplay");
+
+            //SceneManager.LoadScene("MainMenu");
 
         } else if (currentElapsedTime > (timeToChangeScene / 2) + (timeToChangeScene / 4)) {
 
