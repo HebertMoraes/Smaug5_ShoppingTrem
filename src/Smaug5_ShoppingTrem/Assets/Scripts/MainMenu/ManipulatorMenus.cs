@@ -17,7 +17,8 @@ public class ManipulatorMenus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RefreshHUD();
+        //comentado abaixo por hebert porque tava dando bug
+        //RefreshHUD();
     }
 
     public void SceneToLoadGameplay()

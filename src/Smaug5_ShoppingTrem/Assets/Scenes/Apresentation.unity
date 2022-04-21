@@ -364,6 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToChangeScene: 8
+  sceneToChange: MainMenu
 --- !u!1 &2059814643
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class ChangeOpacityApresentation : MonoBehaviour
 {
     public float timeToChangeScene;
+    public string sceneToChange;
     private float currentElapsedTime;
     private RawImage image;
 
@@ -20,11 +21,7 @@ public class ChangeOpacityApresentation : MonoBehaviour
     {
         if (currentElapsedTime >= timeToChangeScene)
         {
-            //para teste da web, estou pulando o menu e indo direto para o carregamento da gameplay e depois, 
-            //a gameplay.
-            SceneManager.LoadScene("LoadingTrainGameplay");
-
-            //SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene(sceneToChange);
 
         } else if (currentElapsedTime > (timeToChangeScene / 2) + (timeToChangeScene / 4)) {
 
