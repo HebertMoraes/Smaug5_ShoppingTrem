@@ -932,13 +932,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallRight
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -7640558969779515294, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
       propertyPath: m_Name
       value: SeatLeft
       objectReference: {fileID: 0}
+    - target: {fileID: -7640558969779515294, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -7146521406498821007, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
       propertyPath: m_Name
       value: WallLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3542852092398272455, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
       propertyPath: m_LocalScale.x
@@ -984,6 +996,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrainCar_Passenger
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4865064391339405807, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1554372
@@ -1027,6 +1043,10 @@ PrefabInstance:
     - target: {fileID: 8416272007918961125, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
       propertyPath: m_Name
       value: SeatRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
@@ -1192,13 +1212,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallRight
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -7640558969779515294, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
       propertyPath: m_Name
       value: SeatLeft
       objectReference: {fileID: 0}
+    - target: {fileID: -7640558969779515294, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -7146521406498821007, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
       propertyPath: m_Name
       value: WallLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5477749408508380018, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
       propertyPath: m_RootOrder
@@ -1260,6 +1292,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrainCar_Passenger
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4865064391339405807, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1307,6 +1343,10 @@ PrefabInstance:
     - target: {fileID: 8416272007918961125, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
       propertyPath: m_Name
       value: SeatRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
@@ -1472,13 +1512,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallRight
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -7640558969779515294, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
       propertyPath: m_Name
       value: SeatLeft
       objectReference: {fileID: 0}
+    - target: {fileID: -7640558969779515294, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -7146521406498821007, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
       propertyPath: m_Name
       value: WallLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3542852092398272455, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
       propertyPath: m_LocalScale.x
@@ -1524,6 +1576,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrainCar_Passenger
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4865064391339405807, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1554372
@@ -1567,6 +1623,10 @@ PrefabInstance:
     - target: {fileID: 8416272007918961125, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
       propertyPath: m_Name
       value: SeatRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e37d192607d4ce44cb7d78748e677454, type: 3}
@@ -1732,13 +1792,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallRight
       objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 5949379ef3e93b24ea56cf0253845238, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -208595431880416365, guid: 5949379ef3e93b24ea56cf0253845238, type: 3}
       propertyPath: m_Name
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: -208595431880416365, guid: 5949379ef3e93b24ea56cf0253845238, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5949379ef3e93b24ea56cf0253845238, type: 3}
       propertyPath: m_Name
       value: TrainCar_Doors
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5949379ef3e93b24ea56cf0253845238, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5949379ef3e93b24ea56cf0253845238, type: 3}
@@ -1868,13 +1940,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallRight
       objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 5949379ef3e93b24ea56cf0253845238, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -208595431880416365, guid: 5949379ef3e93b24ea56cf0253845238, type: 3}
       propertyPath: m_Name
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: -208595431880416365, guid: 5949379ef3e93b24ea56cf0253845238, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5949379ef3e93b24ea56cf0253845238, type: 3}
       propertyPath: m_Name
       value: TrainCar_Doors
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5949379ef3e93b24ea56cf0253845238, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5949379ef3e93b24ea56cf0253845238, type: 3}

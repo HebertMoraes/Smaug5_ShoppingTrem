@@ -26,7 +26,8 @@ public class SpawnTrainCar : MonoBehaviour
 
             trainCarObjParent.GetComponent<MovTrainCarController>().trainsCarsCanMove = false;   
             
-            float positionZtoSpawn = trainCarObjParent.transform.GetChild(4).transform.position.z + sizeTrainCarGameObj;
+            float positionZtoSpawn = trainCarObjParent.transform.GetChild(
+                trainCarObjParent.transform.childCount - 1).transform.position.z + sizeTrainCarGameObj;
 
             //float positionZtoSpawn = trainCarObjParent.transform.GetChild(7).transform.position.z +
                 //(sizeTrainCarGameObj - (sizeTrainCarGameObj / 20));
