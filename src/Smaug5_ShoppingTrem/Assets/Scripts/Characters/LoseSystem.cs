@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class LoseSystem : MonoBehaviour
 {
-    //ta dando erro, não se pode dar new em um mono behavior, se usa o método AddComponent() para um GameObject, 
-    //mas aqui suponho que o que deve ser feito é passar o ScoreCount já existente do Player, e para isso 
-    //se usa GetComponent<ScoreCount>() no player.
-    //ScoreCount steps = new ScoreCount();
     public float timeInImmortal;
     public float timeToCopPursuitNear;
     [HideInInspector]
-    public bool canSave = false;
     public bool alreadyHitOnce;
     [HideInInspector]
     public bool immortal;
@@ -24,11 +19,13 @@ public class LoseSystem : MonoBehaviour
     private float newAlphaToColor;
     private bool increaseOpacity;
     private GameState gameState;
+    private GameObject gameController;
 
     private void Start() {
         playerCharacterColor = GetComponent<MeshRenderer>().material.color;
         newAlphaToColor = playerCharacterColor.a;
-        gameState = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameState>();
+        gameController = GameObject.FindGameObjectWithTag("GameController");
+        gameState = gameController.GetComponent<GameState>();
     }
 
     private void Update() {
@@ -96,7 +93,10 @@ public class LoseSystem : MonoBehaviour
 
         GameObject.FindGameObjectWithTag("Player").GetComponent<MovimentationCharacter>().velOfMovimentation = 0;
         GameObject.FindGameObjectWithTag("Player").GetComponent<MovimentationCharacter>().velOfMovimentationLeftRight = 0;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<SaveManager>().IncrementScore();
+        //GameObject.FindGameObjectWithTag("Player").GetComponent<SaveManager>().IncrementScore();
+
+        //Salvar
+        gameController.GetComponent<SaveManager>().NewSave();
 
         GameObject.Find("Canvas").GetComponent<GameOverManipulator>().PutRecordsOnUI();
     }

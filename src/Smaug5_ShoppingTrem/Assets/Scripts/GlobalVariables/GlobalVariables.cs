@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-    public class GlobalVariables
+    public static class GlobalVariables
     {
-        //Variaveis de gameplay
-        public static int countMoney;
-        public static int countCash;
+        //setar essa variável ao selecionar o produto desejado lá no menu
+        public static allProductsToSell currentProductSelectedToSell;
+        public static float countMoney;
+        
+        //esse countCash provavelmente não será usado pois só tem uma moeda no game até então
+        //public static int countCash;
         public static int countCandy;
         public static int countChoco;
         public static int countFone;
 
-        //Variaveis de record
-        public static int countStepsDistance;
-        public static int countSoldAmount;
-        public static int countItemSold;
+        public static float stepsScoreRecord;
+        public static int countOfSalesRecord;
     }

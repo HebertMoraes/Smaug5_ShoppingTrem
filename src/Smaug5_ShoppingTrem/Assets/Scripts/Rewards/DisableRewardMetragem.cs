@@ -12,6 +12,7 @@ public class DisableRewardMetragem : MonoBehaviour
 
     private void Update()
     {
+        /*
         if (SaveManager.instance.activeSave.countStepsDistance >= 1000 && SaveManager.instance.activeSave.haveClaimedRewardMetragem == false)
         {
             gameObject.GetComponent<Button>().interactable = true;
@@ -20,5 +21,6 @@ public class DisableRewardMetragem : MonoBehaviour
         {
             gameObject.GetComponent<Button>().interactable = false;
         }
+        */
     }
 }

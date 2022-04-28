@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CloseChoco : MonoBehaviour
 {
-    private GameObject gameObject;
+    //private GameObject gameObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +18,7 @@ public class CloseChoco : MonoBehaviour
     }
     public void ClosePop()
     {
-        gameObject = GameObject.Find("ChocoLayout");
-        gameObject.SetActive(false);
+        //gameObject = GameObject.Find("ChocoLayout");
+        //gameObject.SetActive(false);
     }
 }

@@ -16,7 +16,7 @@ public class MakeBusiness : MonoBehaviour
 
         if (other.gameObject == playerCharacter) {
 
-            if (playerCharacter.GetComponent<Inventory>().currentProductsMerchandise > 0) {
+            if (playerCharacter.GetComponent<Inventory>().currentProductsInInventory > 0) {
 
                 playerCharacter.GetComponent<Inventory>().MakeBusinessWithPassenger();
                 Destroy(gameObject);

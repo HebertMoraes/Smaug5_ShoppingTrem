@@ -1339,6 +1339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 668939200}
   - component: {fileID: 668939202}
+  - component: {fileID: 668939201}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -1360,6 +1361,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &668939201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668939199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f49adbef111d4458cf71a818e974df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &668939202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4069,37 +4082,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 25.643, y: 0, z: 0}
---- !u!1 &2097530296 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1654416033190001517, guid: 42e5e1b07a56e6349bbcf17770721424, type: 3}
-  m_PrefabInstance: {fileID: 1654416032290731422}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2097530297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097530296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87f49adbef111d4458cf71a818e974df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeSave:
-    countMoney: 0
-    countCash: 0
-    countCandy: 0
-    countChoco: 0
-    countFone: 0
-    currentCrate: 
-    countStepsDistance: 0
-    countSalesAmount: 0
-    countItemSold: 0
-    haveClaimedRewardMetragem: 0
-    haveClaimedRewardSalesAmount: 0
-    haveClaimedRewardItemSold: 0
-  hasLoaded: 0
 --- !u!1 &2125238443
 GameObject:
   m_ObjectHideFlags: 0

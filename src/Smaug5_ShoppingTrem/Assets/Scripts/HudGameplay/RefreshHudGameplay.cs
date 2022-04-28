@@ -27,7 +27,7 @@ public class RefreshHudGameplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        txtProductsInInventory.text = playerInventory.currentProductsMerchandise.ToString();
+        txtProductsInInventory.text = playerInventory.currentProductsInInventory.ToString();
         txtMoneyEarned.text = "$ " + playerInventory.moneyEarned;
 
         txtCurrentSteps.text = System.Math.Round(scorePlayer.currentScoreSteps, 2).ToString();

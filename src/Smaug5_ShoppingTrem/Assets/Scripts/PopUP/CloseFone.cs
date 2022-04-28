@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CloseFone : MonoBehaviour
 {
-    private GameObject gameObject;
+    //private GameObject gameObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +18,7 @@ public class CloseFone : MonoBehaviour
     }
     public void ClosePop()
     {
-        gameObject = GameObject.Find("FoneLayout");
-        gameObject.SetActive(false);
+        //gameObject = GameObject.Find("FoneLayout");
+        //gameObject.SetActive(false);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CloseShop : MonoBehaviour
 {
 
-    private GameObject gameObject;
+    //private GameObject gameObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class CloseShop : MonoBehaviour
 
     public void ClosePop()
     {
-        gameObject = GameObject.Find("ShopLayout");
-        gameObject.SetActive(false);
+        //gameObject = GameObject.Find("ShopLayout");
+        //gameObject.SetActive(false);
     }
 }

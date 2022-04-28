@@ -12,7 +12,7 @@ public class SpawnPackageProductMerchandise : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().currentProductsMerchandise <= 0) {
+        if (GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>().currentProductsInInventory <= 0) {
 
             MovimentationCharacter playerCharacterMovBehavior = GameObject.FindGameObjectWithTag("Player").
                 GetComponent<MovimentationCharacter>();

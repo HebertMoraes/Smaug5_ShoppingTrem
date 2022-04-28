@@ -14,14 +14,14 @@ public class ActivePackageProductMerchandise : MonoBehaviour
     }
 
     private void Update() {
-        if (playerCharacter.GetComponent<Inventory>().currentProductsMerchandise > 0) {
+        if (playerCharacter.GetComponent<Inventory>().currentProductsInInventory > 0) {
             Destroy(gameObject);
         }
     }
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject == playerCharacter) {
-            playerCharacter.GetComponent<Inventory>().currentProductsMerchandise += valueToAddProduct;
+            playerCharacter.GetComponent<Inventory>().currentProductsInInventory += valueToAddProduct;
             Destroy(gameObject);
         }
     }

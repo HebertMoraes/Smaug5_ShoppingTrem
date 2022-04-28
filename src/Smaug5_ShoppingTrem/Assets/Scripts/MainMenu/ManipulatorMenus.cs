@@ -50,6 +50,7 @@ public class ManipulatorMenus : MonoBehaviour
     #region RefreshHud
     public void RefreshHUD()
     {
+        /*
         RefreshMoney();
         RefreshCash();
         RefreshCandy();
@@ -58,8 +59,9 @@ public class ManipulatorMenus : MonoBehaviour
         RefreshMissionMeters();
         RefreshMissionSoldItem();
         RefreshMissionSalesAmount();
+        */
     }
-
+    /*
     public void RefreshMoney()
     {
         TextMeshProUGUI ctMoney = transform.GetChild(0).GetChild(1).GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
@@ -101,8 +103,10 @@ public class ManipulatorMenus : MonoBehaviour
         TextMeshProUGUI ctSalesAmount = transform.GetChild(4).GetChild(4).GetChild(2).GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
         ctSalesAmount.text = SaveManager.instance.activeSave.countSalesAmount.ToString() + "/1000";
     }
+    */
     #endregion
-
+    
+    
     #region OpenPopUP
     public void OpenShop()
     {

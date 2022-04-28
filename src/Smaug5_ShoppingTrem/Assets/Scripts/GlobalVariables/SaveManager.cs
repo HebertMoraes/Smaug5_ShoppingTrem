@@ -8,24 +8,23 @@ using System.Xml.Serialization;
 
 public class SaveManager : MonoBehaviour
 {
-    public static SaveManager instance;
-
-    public SaveData activeSave;
-
-    public bool hasLoaded;
-
+    //public static SaveManager instance;
+    //public SaveData activeSave;
+    //public bool hasLoaded;
     private Inventory playerInventory;
     private ScoreCount playerScoreCount;
-    private LoseSystem lose;
+    //private LoseSystem lose;
+
     public void Awake()
     {
-        instance = this;
-        Load();
+        //instance = this;
+        //Load();
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        playerScoreCount = GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreCount>();
     }
 
     // Update is called once per frame
@@ -33,40 +32,74 @@ public class SaveManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            Save();
+            //Save();
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
-            Load();
+            //Load();
         }
     }
 
-    //Método para salvar o Save
+    public void NewSave() {
+
+        //salvando record steps
+        if (playerScoreCount.currentScoreSteps > GlobalVariables.stepsScoreRecord) {
+
+            GlobalVariables.stepsScoreRecord = playerScoreCount.currentScoreSteps;
+        }
+
+        //salvando record de vendas
+        if (playerInventory.totalItemSale > GlobalVariables.countOfSalesRecord) {
+
+            GlobalVariables.countOfSalesRecord = playerInventory.totalItemSale;
+        }
+
+        //salvando dinheiro
+        GlobalVariables.countMoney += playerInventory.moneyEarned;
+
+        //salvando o estoque de acordo com o produto escolhido na partida
+        if (playerInventory.currentTypeOfProductInInventory == allProductsToSell.Candy) {
+            GlobalVariables.countCandy -= playerInventory.currentProductsInInventory;
+        }
+        if (playerInventory.currentTypeOfProductInInventory == allProductsToSell.Choco) {
+            GlobalVariables.countChoco -= playerInventory.currentProductsInInventory;
+        }
+        if (playerInventory.currentTypeOfProductInInventory == allProductsToSell.Fone) {
+            GlobalVariables.countFone -= playerInventory.currentProductsInInventory;
+        }
+    }
+
+    public void NewLoad() {
+
+    }
+
+    /*
+    //Mï¿½todo para salvar o Save
     public void Save()
     {
-        //Application.persistentDataPath é a pasta raiz dos aparelhos Android e IOS
+        //Application.persistentDataPath ï¿½ a pasta raiz dos aparelhos Android e IOS
         string dataPath = Application.persistentDataPath;
 
         //Inicia o XmlSerializer para identificar os tipos de dados definidos na classe SaveData
         var serializer = new XmlSerializer(typeof(SaveData));
 
-        //Inicia a criação do arquivo de save
+        //Inicia a criaï¿½ï¿½o do arquivo de save
         var stream = new FileStream(dataPath + "/" + "SaveTrain" + ".save", FileMode.Create);
 
-        //O Serialize irá coletar os dados do jogo, para inserir no arquivo do save
+        //O Serialize irï¿½ coletar os dados do jogo, para inserir no arquivo do save
         serializer.Serialize(stream, activeSave);
 
-        //Finaliza a criação do arquivo de save
+        //Finaliza a criaï¿½ï¿½o do arquivo de save
         stream.Close();
 
         Debug.Log("Saved");
     }
 
-    //Método para carregar o Save
+    //Mï¿½todo para carregar o Save
     public void Load()
     {
 
-        //Application.persistentDataPath é a pasta raiz dos aparelhos Android e IOS
+        //Application.persistentDataPath ï¿½ a pasta raiz dos aparelhos Android e IOS
         string dataPath = Application.persistentDataPath;
 
         //Checar se o arquivo de save existe
@@ -78,7 +111,7 @@ public class SaveManager : MonoBehaviour
             //Inicia a abertura do arquivo
             var stream = new FileStream(dataPath + "/" + "SaveTrain" + ".save", FileMode.Open);
 
-            //O save atual do jogo irá receber os dados do Save, seguindo o formato de SaveData
+            //O save atual do jogo irï¿½ receber os dados do Save, seguindo o formato de SaveData
             activeSave = serializer.Deserialize(stream) as SaveData;
 
             //Termina a leitura do save
@@ -92,29 +125,31 @@ public class SaveManager : MonoBehaviour
             SaveManager.instance.activeSave.countCandy = 50;
         }
     }
-
+    */
+    /*
     #region SelectCrate
     public void CandySelectedCrate()
     {
-        activeSave.currentCrate = "Candy";
+        //activeSave.currentCrate = "Candy";
         Debug.Log("O produto selecionado foi: Candy");
-        Save();
+        //Save();
     }
 
     public void ChocoSelectedCrate()
     {
-        activeSave.currentCrate = "Choco";
+        //activeSave.currentCrate = "Choco";
         Debug.Log("O produto selecionado foi: Choco");
-        Save();
+        //Save();
     }
     public void FoneSelectedCrate()
     {
-        activeSave.currentCrate = "Fone";
+        //activeSave.currentCrate = "Fone";
         Debug.Log("O produto selecionado foi: Fone");
-        Save();
+        //Save();
     }
     #endregion
-
+    */
+    /*
     #region BuyCrates
     public void BuyCandy()
     {
@@ -123,11 +158,11 @@ public class SaveManager : MonoBehaviour
             activeSave.countCandy += 50;
             activeSave.countMoney -= 50;
             Debug.Log("Compra efetuada com sucesso!");
-            Save();
+            //Save();
         }
         else
         {
-            Debug.Log("Você não tem dinheiro para comprar mais produtos! Jogue para conseguir mais.");
+            Debug.Log("Vocï¿½ nï¿½o tem dinheiro para comprar mais produtos! Jogue para conseguir mais.");
         }
     }
 
@@ -138,11 +173,11 @@ public class SaveManager : MonoBehaviour
             activeSave.countChoco += 50;
             activeSave.countCash -= 50;
             Debug.Log("Compra efetuada com sucesso!");
-            Save();
+            //Save();
         }
         else
         {
-            Debug.Log("Você não tem dinheiro para comprar mais produtos! Jogue para conseguir mais.");
+            Debug.Log("Vocï¿½ nï¿½o tem dinheiro para comprar mais produtos! Jogue para conseguir mais.");
         }
     }
 
@@ -153,36 +188,39 @@ public class SaveManager : MonoBehaviour
             activeSave.countFone += 50;
             activeSave.countCash -= 75;
             Debug.Log("Compra efetuada com sucesso!");
-            Save();
+            //Save();
         }
         else
         {
-            Debug.Log("Você não tem dinheiro para comprar mais produtos! Jogue para conseguir mais.");
+            Debug.Log("Vocï¿½ nï¿½o tem dinheiro para comprar mais produtos! Jogue para conseguir mais.");
         }
     }
     #endregion
+    */
 
+    /*
     #region MissionReward
     public void ClaimMetragem()
     {
         activeSave.countCash += 25;
         activeSave.haveClaimedRewardMetragem = true;
-        Save();
+        //Save();
     }
     public void ClaimItemSold()
     {
         activeSave.countCash += 50;
         activeSave.haveClaimedRewardItemSold = true;
-        Save();
+        //Save();
     }
     public void ClaimSalesAmount()
     {
         activeSave.countCash += 75;
         activeSave.haveClaimedRewardSalesAmount = true;
-        Save();
+        //Save();
     }
     #endregion
-
+    */
+    /*
     #region Records
     public void IncrementScore()
     {
@@ -192,12 +230,13 @@ public class SaveManager : MonoBehaviour
         activeSave.countStepsDistance += playerScoreCount.currentScoreSteps;
         activeSave.countSalesAmount += playerInventory.moneyEarned;
         activeSave.countItemSold += playerInventory.currentProductsMerchandise;
-        Save();
+        //Save();
     }
     #endregion
+    */
 }
 
-
+/*
 //Define os tipos de dados a serem salvos
 [System.Serializable]
 public class SaveData{
@@ -215,9 +254,9 @@ public class SaveData{
     public float countSalesAmount;
     public int countItemSold;
 
-    //Habilitam as missões
+    //Habilitam as missï¿½es
     public bool haveClaimedRewardMetragem = false;
     public bool haveClaimedRewardSalesAmount = false;
     public bool haveClaimedRewardItemSold = false;
 
-}
+}*/

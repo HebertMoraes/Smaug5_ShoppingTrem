@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ScoreCount : MonoBehaviour
 {
-    [HideInInspector]
-    public SaveManager save;
     public float currentScoreSteps;
     public float valueToDivideSteps;
     [HideInInspector]

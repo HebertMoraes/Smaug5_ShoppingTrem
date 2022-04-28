@@ -47,6 +47,7 @@ public class GameOverManipulator : MonoBehaviour
             "$ " + playerInventory.moneyEarned;
     }
 
+    //esse método está sendo usado ao clicar no botão de return to Manu ao dar o gameOver
     public void FinishGameplay() {
         SceneManager.LoadScene("MainMenu");
     }

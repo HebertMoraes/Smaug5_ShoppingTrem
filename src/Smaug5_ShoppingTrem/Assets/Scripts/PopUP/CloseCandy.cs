@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CloseCandy : MonoBehaviour
 {
-    private GameObject gameObject;
+    //private GameObject gameObject;
     public void ClosePop()
     {
-        gameObject = GameObject.Find("CandyLayout");
-        gameObject.SetActive(false);
+        //gameObject = GameObject.Find("CandyLayout");
+        //gameObject.SetActive(false);
     }
 }

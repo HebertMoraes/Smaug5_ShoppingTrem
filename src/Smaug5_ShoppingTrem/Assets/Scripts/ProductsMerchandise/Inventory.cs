@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public int currentProductsMerchandise;//quantos produtos o player tem para vender, quantos tem no inventario
+    public int currentProductsInInventory;//quantos produtos o player tem para vender, quantos tem no inventario
     [Range(0,1)]
     public float chancePassengerInterestBuy;//setada no começo de cada partida de acordo com o produto escolhido para venda
     public float sellPrice; //setada no começo de cada partida de acordo com o produto escolhido para venda
     [HideInInspector]
-    public float moneyEarned;//dinheiro de vendas feitas em cada partida
-    public int totalItemSale;
+    public float moneyEarned; //dinheiro de vendas feitas em cada partida 
+    public int totalItemSale; 
     private float valueToMultiplyBonusMoney = 1;
     private float timeTotalInBonus;
     private float currentTimeInBonusMoneySales;
+    public allProductsToSell currentTypeOfProductInInventory;
+
+    private void Start() {
+        currentTypeOfProductInInventory = GlobalVariables.currentProductSelectedToSell;
+    }
 
     public void MakeBusinessWithPassenger() {
 
-        currentProductsMerchandise -= 1;
+        currentProductsInInventory -= 1;
 
         moneyEarned += (float)System.Math.Round((sellPrice * valueToMultiplyBonusMoney), 0);
         
@@ -41,6 +46,5 @@ public class Inventory : MonoBehaviour
         timeTotalInBonus = timeInBonus;
         currentTimeInBonusMoneySales = 0;
     }
-
-
 }
+

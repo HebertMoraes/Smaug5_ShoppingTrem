@@ -12,6 +12,7 @@ public class DisableRewardItemSold : MonoBehaviour
 
     private void Update()
     {
+        /*
         if (SaveManager.instance.activeSave.countItemSold >= 100 && SaveManager.instance.activeSave.haveClaimedRewardItemSold == false)
         {
             gameObject.GetComponent<Button>().interactable = true;
@@ -20,5 +21,6 @@ public class DisableRewardItemSold : MonoBehaviour
         {
             gameObject.GetComponent<Button>().interactable = false;
         }
+        */
     }
 }

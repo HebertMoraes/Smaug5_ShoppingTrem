@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CloseOption : MonoBehaviour
 {
-    private GameObject gameObject;
+    //private GameObject gameObject;
     public void ClosePop()
     {
-        gameObject = GameObject.Find("OptionLayout");
-        gameObject.SetActive(false);
+        //gameObject = GameObject.Find("OptionLayout");
+        //gameObject.SetActive(false);
     }
 }
