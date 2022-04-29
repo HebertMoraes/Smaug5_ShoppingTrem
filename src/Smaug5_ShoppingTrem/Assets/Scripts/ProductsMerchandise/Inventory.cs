@@ -16,8 +16,8 @@ public class Inventory : MonoBehaviour
     private float currentTimeInBonusMoneySales;
     public allProductsToSell currentTypeOfProductInInventory;
 
-    private void Start() {
-        currentTypeOfProductInInventory = GlobalVariables.currentProductSelectedToSell;
+    private void Awake() {
+        currentTypeOfProductInInventory = VariablesSave.currentProductSelectedToSell;
     }
 
     public void MakeBusinessWithPassenger() {

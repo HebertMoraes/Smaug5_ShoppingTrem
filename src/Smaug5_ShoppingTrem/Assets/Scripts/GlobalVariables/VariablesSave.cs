@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-    public static class GlobalVariables
+    public static class VariablesSave
     {
         //setar essa variável ao selecionar o produto desejado lá no menu
         public static allProductsToSell currentProductSelectedToSell;

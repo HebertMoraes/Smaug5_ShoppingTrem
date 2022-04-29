@@ -19,12 +19,17 @@ public class SaveManager : MonoBehaviour
     {
         //instance = this;
         //Load();
+
+        //setar as variáveis de acordo com o produto escolhido na variável GlobalVariables.currentProductSelectedToSell
+        //NewLoad();
     }
     // Start is called before the first frame update
     void Start()
     {
         playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         playerScoreCount = GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreCount>();
+
+        NewLoad();
     }
 
     // Update is called once per frame
@@ -43,34 +48,56 @@ public class SaveManager : MonoBehaviour
     public void NewSave() {
 
         //salvando record steps
-        if (playerScoreCount.currentScoreSteps > GlobalVariables.stepsScoreRecord) {
+        if (playerScoreCount.currentScoreSteps > VariablesSave.stepsScoreRecord) {
 
-            GlobalVariables.stepsScoreRecord = playerScoreCount.currentScoreSteps;
+            VariablesSave.stepsScoreRecord = playerScoreCount.currentScoreSteps;
         }
 
         //salvando record de vendas
-        if (playerInventory.totalItemSale > GlobalVariables.countOfSalesRecord) {
+        if (playerInventory.totalItemSale > VariablesSave.countOfSalesRecord) {
 
-            GlobalVariables.countOfSalesRecord = playerInventory.totalItemSale;
+            VariablesSave.countOfSalesRecord = playerInventory.totalItemSale;
         }
 
         //salvando dinheiro
-        GlobalVariables.countMoney += playerInventory.moneyEarned;
+        VariablesSave.countMoney += playerInventory.moneyEarned;
 
         //salvando o estoque de acordo com o produto escolhido na partida
         if (playerInventory.currentTypeOfProductInInventory == allProductsToSell.Candy) {
-            GlobalVariables.countCandy -= playerInventory.currentProductsInInventory;
+            VariablesSave.countCandy -= playerInventory.currentProductsInInventory;
         }
         if (playerInventory.currentTypeOfProductInInventory == allProductsToSell.Choco) {
-            GlobalVariables.countChoco -= playerInventory.currentProductsInInventory;
+            VariablesSave.countChoco -= playerInventory.currentProductsInInventory;
         }
         if (playerInventory.currentTypeOfProductInInventory == allProductsToSell.Fone) {
-            GlobalVariables.countFone -= playerInventory.currentProductsInInventory;
+            VariablesSave.countFone -= playerInventory.currentProductsInInventory;
         }
     }
 
     public void NewLoad() {
-
+              
+        switch (playerInventory.currentTypeOfProductInInventory)
+        {
+            case allProductsToSell.Candy:
+                playerInventory.chancePassengerInterestBuy = GameProductsBalanceVariables.chancePassengerInterestBuyCandy;
+                playerInventory.sellPrice = GameProductsBalanceVariables.sellPriceCandy;
+                playerInventory.currentProductsInInventory = VariablesSave.countCandy;
+                break;
+            case allProductsToSell.Choco:
+                playerInventory.chancePassengerInterestBuy = GameProductsBalanceVariables.chancePassengerInterestBuyChoco;
+                playerInventory.sellPrice = GameProductsBalanceVariables.sellPriceChoco;
+                playerInventory.currentProductsInInventory = VariablesSave.countChoco;
+                break;
+            case allProductsToSell.Fone:
+                playerInventory.chancePassengerInterestBuy = GameProductsBalanceVariables.chancePassengerInterestBuyFone;
+                playerInventory.sellPrice = GameProductsBalanceVariables.sellPriceFone;
+                playerInventory.currentProductsInInventory = VariablesSave.countFone;
+                break;
+            default:
+                playerInventory.chancePassengerInterestBuy = GameProductsBalanceVariables.chancePassengerInterestBuyCandy;
+                playerInventory.sellPrice = GameProductsBalanceVariables.sellPriceCandy;
+                break;
+        }
     }
 
     /*

@@ -7,7 +7,7 @@ using TMPro;
 
 public class ManipulatorMenus : MonoBehaviour
 {
-    public static SaveManager instance;
+    //public static SaveManager instance;
     // Start is called before the first frame update
     void Start()
     {
