@@ -11,7 +11,8 @@ public class ManipulatorMenus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        OnGameEnter();
+        //OnGameEnter();
+        RefreshHUD();
     }
 
     // Update is called once per frame
@@ -26,28 +27,28 @@ public class ManipulatorMenus : MonoBehaviour
         SceneManager.LoadScene("LoadingTrainGameplay");
     }
 
-    public void OnGameEnter()
-    {
-        GameObject shop = gameObject.transform.Find("ShopLayout").gameObject;
-        shop.SetActive(false);
+    // public void OnGameEnter()
+    // {
+    //     GameObject shop = gameObject.transform.Find("ShopLayout").gameObject;
+    //     shop.SetActive(false);
 
-        GameObject mission = gameObject.transform.Find("MissionsLayout").gameObject;
-        mission.SetActive(false);
+    //     GameObject mission = gameObject.transform.Find("MissionsLayout").gameObject;
+    //     mission.SetActive(false);
 
-        GameObject candy = gameObject.transform.Find("CandyLayout").gameObject;
-        candy.SetActive(false);
+    //     GameObject candy = gameObject.transform.Find("CandyLayout").gameObject;
+    //     candy.SetActive(false);
 
-        GameObject choco = gameObject.transform.Find("ChocoLayout").gameObject;
-        choco.SetActive(false);
+    //     GameObject choco = gameObject.transform.Find("ChocoLayout").gameObject;
+    //     choco.SetActive(false);
 
-        GameObject fone = gameObject.transform.Find("FoneLayout").gameObject;
-        fone.SetActive(false);
+    //     GameObject fone = gameObject.transform.Find("FoneLayout").gameObject;
+    //     fone.SetActive(false);
 
-        GameObject options = gameObject.transform.Find("OptionLayout").gameObject;
-        options.SetActive(false);
-    }
+    //     GameObject options = gameObject.transform.Find("OptionLayout").gameObject;
+    //     options.SetActive(false);
+    // }
 
-    #region RefreshHud
+    //#region RefreshHud
     public void RefreshHUD()
     {
         /*
@@ -104,51 +105,51 @@ public class ManipulatorMenus : MonoBehaviour
         ctSalesAmount.text = SaveManager.instance.activeSave.countSalesAmount.ToString() + "/1000";
     }
     */
-    #endregion
+    //#endregion
     
     
-    #region OpenPopUP
-    public void OpenShop()
-    {
-        GameObject shop = gameObject.transform.Find("ShopLayout").gameObject;
-        shop.SetActive(true);
-    }
+    // #region OpenPopUP
+    // public void OpenShop()
+    // {
+    //     GameObject shop = gameObject.transform.Find("ShopLayout").gameObject;
+    //     shop.SetActive(true);
+    // }
 
-    public void OpenMission()
-    {
-        GameObject mission = gameObject.transform.Find("MissionsLayout").gameObject;
-        mission.SetActive(true);
-    }
+    // public void OpenMission()
+    // {
+    //     GameObject mission = gameObject.transform.Find("MissionsLayout").gameObject;
+    //     mission.SetActive(true);
+    // }
 
-    public void OpenCandy()
-    {
-        GameObject candy = gameObject.transform.Find("CandyLayout").gameObject;
-        candy.SetActive(true);
-    }
+    // public void OpenCandy()
+    // {
+    //     GameObject candy = gameObject.transform.Find("CandyLayout").gameObject;
+    //     candy.SetActive(true);
+    // }
 
-    public void OpenChoco()
-    {
-        GameObject choco = gameObject.transform.Find("ChocoLayout").gameObject;
-        choco.SetActive(true);
-    }
+    // public void OpenChoco()
+    // {
+    //     GameObject choco = gameObject.transform.Find("ChocoLayout").gameObject;
+    //     choco.SetActive(true);
+    // }
 
-    public void OpenFone()
-    {
-        GameObject fone = gameObject.transform.Find("FoneLayout").gameObject;
-        fone.SetActive(true);
-    }
+    // public void OpenFone()
+    // {
+    //     GameObject fone = gameObject.transform.Find("FoneLayout").gameObject;
+    //     fone.SetActive(true);
+    // }
 
-    public void OpenOptions()
-    {
-        GameObject option = gameObject.transform.Find("OptionLayout").gameObject;
-        option.SetActive(true);
-    }
-    #endregion
+    // public void OpenOptions()
+    // {
+    //     GameObject option = gameObject.transform.Find("OptionLayout").gameObject;
+    //     option.SetActive(true);
+    // }
+    // #endregion
 
-    #region Rewards
+    // #region Rewards
     
 
     
-    #endregion
+    // #endregion
 
 }
