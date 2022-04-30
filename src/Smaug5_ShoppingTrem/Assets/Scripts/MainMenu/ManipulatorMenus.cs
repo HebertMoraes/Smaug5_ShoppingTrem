@@ -10,10 +10,14 @@ public class ManipulatorMenus : MonoBehaviour
     //public static SaveManager instance;
     // Start is called before the first frame update
 
+    public AudioSource source;
+
     public GameObject StartTrainGameplaybtn;
 
     void Start()
     {
+        source = GetComponent<AudioSource>();
+
         //OnGameEnter();
         //RefreshHUD();
     }
@@ -27,16 +31,19 @@ public class ManipulatorMenus : MonoBehaviour
 
     public void SelectCandy()
     {
+        source.Play();
         StartTrainGameplaybtn.GetComponent<CheckSelectionProduct>().alreadySelectedOne = true;
         VariablesSave.currentProductSelectedToSell = allProductsToSell.Candy;
     }
     public void SelectChoco()
     {
+        source.Play();
         StartTrainGameplaybtn.GetComponent<CheckSelectionProduct>().alreadySelectedOne = true;
         VariablesSave.currentProductSelectedToSell = allProductsToSell.Choco;
     }
     public void SelectFone()
     {
+        source.Play();
         StartTrainGameplaybtn.GetComponent<CheckSelectionProduct>().alreadySelectedOne = true;
         VariablesSave.currentProductSelectedToSell = allProductsToSell.Fone;
     }

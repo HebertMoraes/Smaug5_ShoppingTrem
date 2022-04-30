@@ -6,8 +6,12 @@ using UnityEngine.UI;
 
 public class CheckSelectionProduct : MonoBehaviour
 {
+    [HideInInspector]
     public bool alreadySelectedOne;
     private Button buttonStart;
+    private bool waitToGoTrainGameplay;
+    public float timeWaitToGotrainGameplay;
+    private float currentTimeWait;
 
     private void Start() {
         buttonStart = gameObject.GetComponent<Button>();
@@ -17,14 +21,27 @@ public class CheckSelectionProduct : MonoBehaviour
 
         if (alreadySelectedOne) {
             buttonStart.enabled = true;
+
+            if (waitToGoTrainGameplay) {
+
+                //aqui poderia colocar um fade na tela
+
+                if (currentTimeWait > timeWaitToGotrainGameplay) {
+                    SceneManager.LoadScene("LoadingTrainGameplay");
+                }
+            }
+            currentTimeWait += Time.deltaTime;
+
         } else {
             buttonStart.enabled = false;
         }
     }
+
     public void GoToLoadingTrainGameplay() {
 
         if (alreadySelectedOne) {
-            SceneManager.LoadScene("LoadingTrainGameplay");
+            GameObject.Find("Vagoes").transform.GetChild(0).gameObject.GetComponent<AudioSource>().Play();
+            waitToGoTrainGameplay = true;
         }
     }
 }
