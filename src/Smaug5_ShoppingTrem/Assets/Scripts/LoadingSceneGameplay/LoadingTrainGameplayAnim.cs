@@ -22,6 +22,6 @@ public class LoadingTrainGameplayAnim : MonoBehaviour
             SceneManager.LoadScene("TrainGameplay"); 
         }
         variableTest += 1;
-        Debug.Log(variableTest);
+        //Debug.Log(variableTest);
     }
 }

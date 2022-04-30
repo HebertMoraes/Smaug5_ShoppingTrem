@@ -9,10 +9,13 @@ public class ManipulatorMenus : MonoBehaviour
 {
     //public static SaveManager instance;
     // Start is called before the first frame update
+
+    public GameObject StartTrainGameplaybtn;
+
     void Start()
     {
         //OnGameEnter();
-        RefreshHUD();
+        //RefreshHUD();
     }
 
     // Update is called once per frame
@@ -22,9 +25,20 @@ public class ManipulatorMenus : MonoBehaviour
         //RefreshHUD();
     }
 
-    public void SceneToLoadGameplay()
+    public void SelectCandy()
     {
-        SceneManager.LoadScene("LoadingTrainGameplay");
+        StartTrainGameplaybtn.GetComponent<CheckSelectionProduct>().alreadySelectedOne = true;
+        VariablesSave.currentProductSelectedToSell = allProductsToSell.Candy;
+    }
+    public void SelectChoco()
+    {
+        StartTrainGameplaybtn.GetComponent<CheckSelectionProduct>().alreadySelectedOne = true;
+        VariablesSave.currentProductSelectedToSell = allProductsToSell.Choco;
+    }
+    public void SelectFone()
+    {
+        StartTrainGameplaybtn.GetComponent<CheckSelectionProduct>().alreadySelectedOne = true;
+        VariablesSave.currentProductSelectedToSell = allProductsToSell.Fone;
     }
 
     // public void OnGameEnter()
@@ -49,9 +63,9 @@ public class ManipulatorMenus : MonoBehaviour
     // }
 
     //#region RefreshHud
-    public void RefreshHUD()
+    /*public void RefreshHUD()
     {
-        /*
+        
         RefreshMoney();
         RefreshCash();
         RefreshCandy();
@@ -60,8 +74,8 @@ public class ManipulatorMenus : MonoBehaviour
         RefreshMissionMeters();
         RefreshMissionSoldItem();
         RefreshMissionSalesAmount();
-        */
-    }
+        
+    }*/
     /*
     public void RefreshMoney()
     {
