@@ -15,6 +15,9 @@ public class JumpPlayerStateM : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         landing = false;
+
+        animator.gameObject.GetComponent<CharacterSounds>().activeJumpSound();
+
         currentVelocityYJump = animator.GetFloat("velocityYJump");
         currentVelocityYLanding = animator.GetFloat("velocityYLanding");
         currentValueToDecreaseVelJump = animator.GetFloat("valueToDecreaseVelJump");

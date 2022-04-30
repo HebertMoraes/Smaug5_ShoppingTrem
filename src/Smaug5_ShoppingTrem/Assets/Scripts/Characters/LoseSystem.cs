@@ -20,12 +20,14 @@ public class LoseSystem : MonoBehaviour
     private bool increaseOpacity;
     private GameState gameState;
     private GameObject gameController;
+    private CharacterSounds charSounds;
 
     private void Start() {
         playerCharacterColor = GetComponent<MeshRenderer>().material.color;
         newAlphaToColor = playerCharacterColor.a;
         gameController = GameObject.FindGameObjectWithTag("GameController");
         gameState = gameController.GetComponent<GameState>();
+        charSounds = GetComponent<CharacterSounds>();
     }
 
     private void Update() {
@@ -67,7 +69,8 @@ public class LoseSystem : MonoBehaviour
     public void AlmostHitHardOnObstacle() {
         
         if (!immortal) {
-
+            
+            charSounds.activeHitSound();
             GameObject.Find("Canvas").GetComponent<TxtTestHit>().RefreshTxtHit("AlmostHardHit");
 
             if (alreadyHitOnce) {
@@ -82,7 +85,8 @@ public class LoseSystem : MonoBehaviour
     public void HitHardOnObstacle() {
         
         if (!immortal) {
-
+            
+            charSounds.activeHitHardSound();
             GameObject.Find("Canvas").GetComponent<TxtTestHit>().RefreshTxtHit("HardHit");
             LoseGame();
         }

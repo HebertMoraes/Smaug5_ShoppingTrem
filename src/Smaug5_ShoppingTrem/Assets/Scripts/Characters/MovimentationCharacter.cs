@@ -13,20 +13,17 @@ public class MovimentationCharacter : MonoBehaviour
     private CharacterController charControll;
     private string currentLine;
     private bool alreadyMakeSecondTurn;
+    private CharacterSounds charSounds;
 
     void Start()
     {
         currentLine = "mid";
         charControll = GetComponent<CharacterController>();
+        charSounds = GetComponent<CharacterSounds>();
     }
 
     void Update ()
     {
-
-        //TODO: 
-        //
-        //tirar o bouncing (quicar no chão) ao pousar no chão
-        //
 
         if (GetComponent<Animator>().GetInteger("stateAnim") != 1) {
             charControll.Move(new Vector3(0, Physics.gravity.y, 0) * Time.deltaTime);
@@ -135,6 +132,8 @@ public class MovimentationCharacter : MonoBehaviour
     }
 
     private void Turning(float velToTurnAdd) {
+
+        charSounds.activeSlideHorizontalSound();
 
         float currentValueToIncrement = velToTurnAdd * Time.deltaTime;
 
