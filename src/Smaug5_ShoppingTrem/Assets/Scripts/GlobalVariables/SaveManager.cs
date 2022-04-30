@@ -62,15 +62,15 @@ public class SaveManager : MonoBehaviour
         //salvando dinheiro
         VariablesSave.countMoney += playerInventory.moneyEarned;
 
-        //salvando o estoque de acordo com o produto escolhido na partida
+        //zerando o estoque do produto da partida pois o guarda roubou
         if (playerInventory.currentTypeOfProductInInventory == allProductsToSell.Candy) {
-            VariablesSave.countCandy -= playerInventory.currentProductsInInventory;
+            VariablesSave.countCandy = 0;
         }
         if (playerInventory.currentTypeOfProductInInventory == allProductsToSell.Choco) {
-            VariablesSave.countChoco -= playerInventory.currentProductsInInventory;
+            VariablesSave.countChoco = 0;
         }
         if (playerInventory.currentTypeOfProductInInventory == allProductsToSell.Fone) {
-            VariablesSave.countFone -= playerInventory.currentProductsInInventory;
+            VariablesSave.countFone = 0;
         }
     }
 
