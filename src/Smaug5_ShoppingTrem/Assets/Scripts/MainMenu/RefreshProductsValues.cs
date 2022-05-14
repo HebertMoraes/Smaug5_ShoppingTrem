@@ -13,6 +13,14 @@ public class RefreshProductsValues : MonoBehaviour
     public GameObject pricePlayerBuyChoco;
     public GameObject pricePlayerBuyFone;
 
+    public GameObject chanceInterestBuyCandy;
+    public GameObject chanceInterestBuyChoco;
+    public GameObject chanceInterestBuyFone;
+
+    public GameObject salesPriceCandy;
+    public GameObject salesPriceChoco;
+    public GameObject salesPriceFone;
+
     private TMPro.TextMeshProUGUI txtQuantityCandy;
     private TMPro.TextMeshProUGUI txtQuantityChoco;
     private TMPro.TextMeshProUGUI txtQuantityFone;
@@ -24,21 +32,43 @@ public class RefreshProductsValues : MonoBehaviour
         txtQuantityChoco = quantityChoco.GetComponent<TMPro.TextMeshProUGUI>();
         txtQuantityFone = quantityFone.GetComponent<TMPro.TextMeshProUGUI>();
 
+        //preço pro jogador comprar o produto
         pricePlayerBuyCandy.GetComponent<TMPro.TextMeshProUGUI>().text = "$ " +
             GameProductsBalanceVariables.buyPricePlayerCandy.ToString();
-        
+
         pricePlayerBuyChoco.GetComponent<TMPro.TextMeshProUGUI>().text = "$ " +
             GameProductsBalanceVariables.buyPricePlayerChoco.ToString();
-        
+
         pricePlayerBuyFone.GetComponent<TMPro.TextMeshProUGUI>().text = "$ " +
             GameProductsBalanceVariables.buyPricePlayerFone.ToString();
+
+        //chance de comprar
+        //FALTA CONVERTER DE 0-1 COMO É A VARIAVEL PARA PORCENTAGEM
+        chanceInterestBuyCandy.GetComponent<TMPro.TextMeshProUGUI>().text = "Chance Interest: \n" +
+            GameProductsBalanceVariables.chancePassengerInterestBuyCandy.ToString() + "%";
+
+        chanceInterestBuyChoco.GetComponent<TMPro.TextMeshProUGUI>().text = "Chance Interest: \n" +
+            GameProductsBalanceVariables.chancePassengerInterestBuyChoco.ToString() + "%";
+
+        chanceInterestBuyFone.GetComponent<TMPro.TextMeshProUGUI>().text = "Chance Interest: \n" +
+            GameProductsBalanceVariables.chancePassengerInterestBuyFone.ToString() + "%";
+
+        //preço de venda
+        salesPriceCandy.GetComponent<TMPro.TextMeshProUGUI>().text = "Sales Price: $" +
+            GameProductsBalanceVariables.sellPriceCandy.ToString();
+
+        salesPriceChoco.GetComponent<TMPro.TextMeshProUGUI>().text = "Sales Price: $" +
+            GameProductsBalanceVariables.sellPriceChoco.ToString();
+        
+        salesPriceFone.GetComponent<TMPro.TextMeshProUGUI>().text = "Sales Price: $" +
+            GameProductsBalanceVariables.sellPriceFone.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        txtQuantityCandy.text = "Quantity: \n" + VariablesSave.countCandy.ToString();
-        txtQuantityChoco.text = "Quantity: \n" + VariablesSave.countChoco.ToString();
-        txtQuantityFone.text = "Quantity: \n" + VariablesSave.countFone.ToString();
+        txtQuantityCandy.text = "Candy: " + VariablesSave.countCandy.ToString();
+        txtQuantityChoco.text = "Choco: " + VariablesSave.countChoco.ToString();
+        txtQuantityFone.text = "Fone: " + VariablesSave.countFone.ToString();
     }
 }
