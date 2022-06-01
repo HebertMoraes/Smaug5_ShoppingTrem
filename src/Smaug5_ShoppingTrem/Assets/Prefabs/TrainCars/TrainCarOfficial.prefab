@@ -554,7 +554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b73cab2d794e1a4e8c3eeeed834569b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x2ScoreStepsPrefab: {fileID: 6514801692718859690, guid: 86dbaf3fc74d6c74d9084eca036acac3, type: 3}
+  x2ScoreStepsPrefab: {fileID: 3589792841482040516, guid: cea69a84f7dfa41448a3c695a42d43f1, type: 3}
   chanceToSpawn: 0.06
   indiceDropSpots: 7
 --- !u!114 &8758303179028679133

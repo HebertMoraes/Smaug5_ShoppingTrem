@@ -1964,6 +1964,7 @@ GameObject:
   - component: {fileID: 1616266628539839723}
   - component: {fileID: 5351758947967556460}
   - component: {fileID: -7601025452090286871}
+  - component: {fileID: 4746110040387280967}
   m_Layer: 0
   m_Name: CharacterJack
   m_TagString: Player
@@ -2458,6 +2459,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &4746110040387280967
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8596737417518382806}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 5.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.62, z: 0}
 --- !u!1 &8626350260566202090
 GameObject:
   m_ObjectHideFlags: 0
