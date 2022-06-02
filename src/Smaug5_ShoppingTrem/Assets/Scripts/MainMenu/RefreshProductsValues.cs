@@ -33,34 +33,34 @@ public class RefreshProductsValues : MonoBehaviour
         txtQuantityFone = quantityFone.GetComponent<TMPro.TextMeshProUGUI>();
 
         //preço pro jogador comprar o produto
-        pricePlayerBuyCandy.GetComponent<TMPro.TextMeshProUGUI>().text = "$ " +
+        pricePlayerBuyCandy.GetComponent<TMPro.TextMeshProUGUI>().text = "$" +
             GameProductsBalanceVariables.buyPricePlayerCandy.ToString();
 
-        pricePlayerBuyChoco.GetComponent<TMPro.TextMeshProUGUI>().text = "$ " +
+        pricePlayerBuyChoco.GetComponent<TMPro.TextMeshProUGUI>().text = "$" +
             GameProductsBalanceVariables.buyPricePlayerChoco.ToString();
 
-        pricePlayerBuyFone.GetComponent<TMPro.TextMeshProUGUI>().text = "$ " +
+        pricePlayerBuyFone.GetComponent<TMPro.TextMeshProUGUI>().text = "$" +
             GameProductsBalanceVariables.buyPricePlayerFone.ToString();
 
         //chance de comprar
         //FALTA CONVERTER DE 0-1 COMO É A VARIAVEL PARA PORCENTAGEM
-        chanceInterestBuyCandy.GetComponent<TMPro.TextMeshProUGUI>().text = "Chance Interest: \n" +
+        chanceInterestBuyCandy.GetComponent<TMPro.TextMeshProUGUI>().text = "Interest: " +
             GameProductsBalanceVariables.chancePassengerInterestBuyCandy.ToString() + "%";
 
-        chanceInterestBuyChoco.GetComponent<TMPro.TextMeshProUGUI>().text = "Chance Interest: \n" +
+        chanceInterestBuyChoco.GetComponent<TMPro.TextMeshProUGUI>().text = "Interest: " +
             GameProductsBalanceVariables.chancePassengerInterestBuyChoco.ToString() + "%";
 
-        chanceInterestBuyFone.GetComponent<TMPro.TextMeshProUGUI>().text = "Chance Interest: \n" +
+        chanceInterestBuyFone.GetComponent<TMPro.TextMeshProUGUI>().text = "Interest: " +
             GameProductsBalanceVariables.chancePassengerInterestBuyFone.ToString() + "%";
 
         //preço de venda
-        salesPriceCandy.GetComponent<TMPro.TextMeshProUGUI>().text = "Sales Price: $" +
+        salesPriceCandy.GetComponent<TMPro.TextMeshProUGUI>().text = "Sell for: $" +
             GameProductsBalanceVariables.sellPriceCandy.ToString();
 
-        salesPriceChoco.GetComponent<TMPro.TextMeshProUGUI>().text = "Sales Price: $" +
+        salesPriceChoco.GetComponent<TMPro.TextMeshProUGUI>().text = "Sell for: $" +
             GameProductsBalanceVariables.sellPriceChoco.ToString();
         
-        salesPriceFone.GetComponent<TMPro.TextMeshProUGUI>().text = "Sales Price: $" +
+        salesPriceFone.GetComponent<TMPro.TextMeshProUGUI>().text = "Sell for: $" +
             GameProductsBalanceVariables.sellPriceFone.ToString();
     }
 
