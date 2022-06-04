@@ -15,6 +15,11 @@ public class CheckSelectionProduct : MonoBehaviour
 
     private void Start() {
         buttonStart = gameObject.GetComponent<Button>();
+        //estou setando para true abaixo porque agora o Candy sempre estará setado no inicio, 
+        //se não setar true aqui no start, a verificação de ter que selecionar algum produto antes 
+        //passa a valer. Também setado o currentProductSelectedToSell para o Candy.
+        VariablesSave.currentProductSelectedToSell = allProductsToSell.Candy;
+        alreadySelectedOne = true;
     }
 
     private void Update() {
