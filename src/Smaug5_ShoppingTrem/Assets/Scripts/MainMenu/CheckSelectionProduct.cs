@@ -40,7 +40,7 @@ public class CheckSelectionProduct : MonoBehaviour
     public void GoToLoadingTrainGameplay() {
 
         if (alreadySelectedOne) {
-            GameObject.Find("Vagoes").transform.GetChild(0).gameObject.GetComponent<AudioSource>().Play();
+            GameObject.Find("TrainCar1").GetComponent<AudioSource>().Play();
             waitToGoTrainGameplay = true;
         }
     }
