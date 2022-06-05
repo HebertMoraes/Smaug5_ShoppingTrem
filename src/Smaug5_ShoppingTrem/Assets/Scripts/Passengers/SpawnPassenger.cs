@@ -48,7 +48,7 @@ public class SpawnPassenger : MonoBehaviour
         int indiceChosen = Random.Range(0, spotsPossibleSpawn.Count);
         Transform spotChosen = spotsPossibleSpawn[indiceChosen];
         spotsPossibleSpawn.RemoveAt(indiceChosen);
-                
+
         Instantiate(passengersPrefabs[Random.Range(0, passengersPrefabs.Count)], 
             spotChosen.position, 
             spotChosen.rotation,
