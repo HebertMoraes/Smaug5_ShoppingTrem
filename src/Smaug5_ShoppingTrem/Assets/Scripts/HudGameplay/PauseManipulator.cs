@@ -7,6 +7,8 @@ public class PauseManipulator : MonoBehaviour
 {
     public int indexBtnActivePause;
     public int indexPauseUi;
+    public int indexTopHud;
+    public int indexBottomHud;
     private MovimentationCharacter playerMovimentation;
     private float lastVelOfMovimentation;
     private float lastVelOfMovimentationLeftRight;
@@ -50,6 +52,9 @@ public class PauseManipulator : MonoBehaviour
 
         transform.GetChild(indexBtnActivePause).gameObject.SetActive(false);
         transform.GetChild(indexPauseUi).gameObject.SetActive(true);
+
+        transform.GetChild(indexTopHud).gameObject.SetActive(false);
+        transform.GetChild(indexBottomHud).gameObject.SetActive(false);
     }
 
     public void ResumeGameplay () {
@@ -59,6 +64,9 @@ public class PauseManipulator : MonoBehaviour
 
         transform.GetChild(indexPauseUi).gameObject.SetActive(false);
         transform.GetChild(indexBtnActivePause).gameObject.SetActive(true);
+
+        transform.GetChild(indexTopHud).gameObject.SetActive(true);
+        transform.GetChild(indexBottomHud).gameObject.SetActive(true);
 
         gameState.currentState = GameState.states.Running;
     }
