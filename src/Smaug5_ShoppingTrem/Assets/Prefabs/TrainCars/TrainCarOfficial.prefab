@@ -1590,9 +1590,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minObstaclesrPerTrainCar: 2
-  maxObstaclesPerTrainCar: 3
-  chanceToSpawn: 0.1
-  chanceToSpawnAfterOneSpawned: 0.04
+  maxObstaclesPerTrainCar: 4
+  chanceToSpawn: 0.25
+  chanceToSpawnAfterOneSpawned: 0.05
   indiceObstaclesSpots: 6
   obstaclesPrefabs:
   - {fileID: 1061131046526675093, guid: 3fa5094780d191446bbacf0ed1cb75b8, type: 3}
