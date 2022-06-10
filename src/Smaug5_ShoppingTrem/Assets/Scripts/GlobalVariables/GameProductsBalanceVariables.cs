@@ -9,13 +9,13 @@ public enum allProductsToSell {
 }
 
 public static class GameProductsBalanceVariables {
-    public static float chancePassengerInterestBuyCandy = (float)0.5;
-    public static float chancePassengerInterestBuyChoco = (float)0.7;
-    public static float chancePassengerInterestBuyFone = (float)0.9;
+    public static float chancePassengerInterestBuyCandy = 0.1f;
+    public static float chancePassengerInterestBuyChoco = 0.2f;
+    public static float chancePassengerInterestBuyFone = 0.25f;
 
-    public static float sellPriceCandy = 2;
-    public static float sellPriceChoco = 5;
-    public static float sellPriceFone = 10;
+    public static float sellPriceCandy = 1.2f;
+    public static float sellPriceChoco = 3.6f;
+    public static float sellPriceFone = 6f;
 
     public static float buyPricePlayerCandy = 1;
     public static float buyPricePlayerChoco = 3;

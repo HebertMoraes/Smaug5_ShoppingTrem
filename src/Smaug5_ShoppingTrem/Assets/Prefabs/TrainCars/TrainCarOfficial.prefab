@@ -1640,7 +1640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   packageProductPrefab: {fileID: 5052303637778623276, guid: e2783ab06d04b7b4d8727fc1d3c85ebf, type: 3}
-  chanceToSpawn: 0.4
+  chanceToSpawn: 0.08
   indiceDropSpots: 7
 --- !u!1 &5670718369911208696
 GameObject:

@@ -13,11 +13,12 @@ public class DecideBuyInterest : MonoBehaviour
     void Start()
     {
         playerCharacter = GameObject.FindGameObjectWithTag("Player");
-        Inventory inventoryPLayer = playerCharacter.GetComponent<Inventory>();
+        Inventory inventoryPlayer = playerCharacter.GetComponent<Inventory>();
         posXSpawnLeft = playerCharacter.GetComponent<MovimentationCharacter>().posXLineLeft;
         posXSpawnRight = playerCharacter.GetComponent<MovimentationCharacter>().posXLineRight;
 
-        if (Random.value <= inventoryPLayer.chancePassengerInterestBuy) {
+        if ((Random.value <= inventoryPlayer.chancePassengerInterestBuy) &&
+            inventoryPlayer.currentProductsInInventory > 0) {
 
             //está no banco do lado direito
             if (transform.position.x > 0 ) {

@@ -6,7 +6,7 @@ using UnityEngine;
     {
         //setar essa variável ao selecionar o produto desejado lá no menu
         public static allProductsToSell currentProductSelectedToSell;
-        public static float countMoney = 100;
+        public static float countMoney = 10;
         
         //esse countCash provavelmente não será usado pois só tem uma moeda no game até então
         //public static int countCash;

@@ -44,14 +44,16 @@ public class RefreshProductsValues : MonoBehaviour
 
         //chance de comprar
         //FALTA CONVERTER DE 0-1 COMO É A VARIAVEL PARA PORCENTAGEM
-        chanceInterestBuyCandy.GetComponent<TMPro.TextMeshProUGUI>().text = "Interest: " +
-            GameProductsBalanceVariables.chancePassengerInterestBuyCandy.ToString() + "%";
+        //NÃO ESTÁ SENDO FEITO AUTOMÁTICO, ESTÁ SENDO SETADO O VALOR LÁ NO TEXTO DIRETO, POR ISSO ESTÁ COMENDATO
 
-        chanceInterestBuyChoco.GetComponent<TMPro.TextMeshProUGUI>().text = "Interest: " +
-            GameProductsBalanceVariables.chancePassengerInterestBuyChoco.ToString() + "%";
+        // chanceInterestBuyCandy.GetComponent<TMPro.TextMeshProUGUI>().text = "Interest: " +
+        //     GameProductsBalanceVariables.chancePassengerInterestBuyCandy.ToString() + "%";
 
-        chanceInterestBuyFone.GetComponent<TMPro.TextMeshProUGUI>().text = "Interest: " +
-            GameProductsBalanceVariables.chancePassengerInterestBuyFone.ToString() + "%";
+        // chanceInterestBuyChoco.GetComponent<TMPro.TextMeshProUGUI>().text = "Interest: " +
+        //     GameProductsBalanceVariables.chancePassengerInterestBuyChoco.ToString() + "%";
+
+        // chanceInterestBuyFone.GetComponent<TMPro.TextMeshProUGUI>().text = "Interest: " +
+        //     GameProductsBalanceVariables.chancePassengerInterestBuyFone.ToString() + "%";
 
         //preço de venda
         salesPriceCandy.GetComponent<TMPro.TextMeshProUGUI>().text = "Sell for: $" +
