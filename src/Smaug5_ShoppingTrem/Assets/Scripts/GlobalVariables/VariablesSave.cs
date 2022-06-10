@@ -16,4 +16,7 @@ using UnityEngine;
 
         public static float stepsScoreRecord;
         public static int countOfSalesRecord;
+
+        public static float musicVolume = (float)0.7;
+        public static float soundsVolume = (float)0.7;
     }

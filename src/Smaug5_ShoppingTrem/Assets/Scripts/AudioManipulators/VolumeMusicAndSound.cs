@@ -10,13 +10,35 @@ public class VolumeMusicAndSound : MonoBehaviour
     public Slider musicVolumeSlider;
     public Slider soundVolumeSlider;
 
-    public void updateMusicVolume () {
-        musicSource.volume = musicVolumeSlider.value;
+    public void Start()
+    {
+        // AdjustSoundsInStart();
     }
 
-    public void updateSoundVolume () {
-        foreach(AudioSource efectSound in soundEfectsSource) {
-            efectSound.volume = soundVolumeSlider.value;
+    public void AdjustSoundsInStart()
+    {
+        musicSource.volume = VariablesSave.musicVolume;
+        musicVolumeSlider.value = VariablesSave.musicVolume;
+
+        foreach (AudioSource efectSound in soundEfectsSource)
+        {
+            efectSound.volume = VariablesSave.soundsVolume;
+            soundVolumeSlider.value = VariablesSave.soundsVolume;
+        }
+    }
+
+    public void updateMusicVolume()
+    {
+        VariablesSave.musicVolume = musicVolumeSlider.value;
+        musicSource.volume = VariablesSave.musicVolume;
+    }
+
+    public void updateSoundVolume()
+    {
+        foreach (AudioSource efectSound in soundEfectsSource)
+        {
+            VariablesSave.soundsVolume = soundVolumeSlider.value;
+            efectSound.volume = VariablesSave.soundsVolume;
         }
     }
 }

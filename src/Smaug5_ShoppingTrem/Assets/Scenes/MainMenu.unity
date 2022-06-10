@@ -1491,7 +1491,6 @@ GameObject:
   m_Component:
   - component: {fileID: 504596512}
   - component: {fileID: 504596513}
-  - component: {fileID: 504596514}
   m_Layer: 5
   m_Name: MusicVolume
   m_TagString: Untagged
@@ -1572,7 +1571,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 504596514}
+      - m_Target: {fileID: 1185688543}
         m_TargetAssemblyTypeName: VolumeMusicAndSound, Assembly-CSharp
         m_MethodName: updateMusicVolume
         m_Mode: 1
@@ -1584,26 +1583,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &504596514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 504596511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d95251d9c718d08418ea97191774d682, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicSource: {fileID: 1770908569}
-  soundEfectsSource:
-  - {fileID: 573922696}
-  - {fileID: 1310818892}
-  - {fileID: 1195451476}
-  - {fileID: 729015492}
-  musicVolumeSlider: {fileID: 504596513}
-  soundVolumeSlider: {fileID: 1134761387}
 --- !u!1 &573922690
 GameObject:
   m_ObjectHideFlags: 0
@@ -3667,7 +3646,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1134761386}
   - component: {fileID: 1134761387}
-  - component: {fileID: 1134761388}
   m_Layer: 5
   m_Name: SoundVolume
   m_TagString: Untagged
@@ -3748,7 +3726,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1134761388}
+      - m_Target: {fileID: 1185688543}
         m_TargetAssemblyTypeName: VolumeMusicAndSound, Assembly-CSharp
         m_MethodName: updateSoundVolume
         m_Mode: 1
@@ -3760,26 +3738,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1134761388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1134761385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d95251d9c718d08418ea97191774d682, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicSource: {fileID: 1770908569}
-  soundEfectsSource:
-  - {fileID: 573922696}
-  - {fileID: 1310818892}
-  - {fileID: 1195451476}
-  - {fileID: 729015492}
-  musicVolumeSlider: {fileID: 504596513}
-  soundVolumeSlider: {fileID: 1134761387}
 --- !u!1 &1172141605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3963,6 +3921,7 @@ GameObject:
   - component: {fileID: 1185688540}
   - component: {fileID: 1185688542}
   - component: {fileID: 1185688541}
+  - component: {fileID: 1185688543}
   m_Layer: 5
   m_Name: PauseConfig
   m_TagString: Untagged
@@ -4028,6 +3987,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185688539}
   m_CullTransparentMesh: 1
+--- !u!114 &1185688543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185688539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95251d9c718d08418ea97191774d682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSource: {fileID: 1770908569}
+  soundEfectsSource:
+  - {fileID: 573922696}
+  - {fileID: 1310818892}
+  - {fileID: 1195451476}
+  - {fileID: 729015492}
+  musicVolumeSlider: {fileID: 504596513}
+  soundVolumeSlider: {fileID: 1134761387}
 --- !u!1 &1195451470
 GameObject:
   m_ObjectHideFlags: 0
@@ -6708,6 +6687,7 @@ GameObject:
   - component: {fileID: 1770908567}
   - component: {fileID: 1770908566}
   - component: {fileID: 1770908569}
+  - component: {fileID: 1770908570}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6876,6 +6856,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1770908570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770908565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3263b076d6a7aa545aac773dfc7e0184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundsManipulator: {fileID: 1185688543}
 --- !u!1 &1788020118
 GameObject:
   m_ObjectHideFlags: 0
