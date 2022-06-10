@@ -14,8 +14,8 @@ public static class GameProductsBalanceVariables {
     public static float chancePassengerInterestBuyFone = 0.25f;
 
     public static float sellPriceCandy = 1.2f;
-    public static float sellPriceChoco = 3.6f;
-    public static float sellPriceFone = 6f;
+    public static float sellPriceChoco = 3.4f;
+    public static float sellPriceFone = 5.6f;
 
     public static float buyPricePlayerCandy = 1;
     public static float buyPricePlayerChoco = 3;
