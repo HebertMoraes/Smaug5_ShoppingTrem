@@ -19,7 +19,7 @@ public class MovimentationCharacter : MonoBehaviour
     {
         currentLine = "mid";
         charControll = GetComponent<CharacterController>();
-        charSounds = GetComponent<CharacterSounds>();
+        charSounds = GameObject.Find("Sounds").GetComponent<CharacterSounds>();
     }
 
     void Update ()

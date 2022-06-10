@@ -16,7 +16,8 @@ public class JumpPlayerStateM : StateMachineBehaviour
     {
         landing = false;
 
-        animator.gameObject.GetComponent<CharacterSounds>().activeJumpSound();
+        // animator.gameObject.GetComponent<CharacterSounds>().activeJumpSound();
+        GameObject.Find("Sounds").GetComponent<CharacterSounds>().activeJumpSound();
 
         currentVelocityYJump = animator.GetFloat("velocityYJump");
         currentVelocityYLanding = animator.GetFloat("velocityYLanding");

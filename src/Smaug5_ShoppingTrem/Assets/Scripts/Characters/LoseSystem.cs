@@ -27,7 +27,7 @@ public class LoseSystem : MonoBehaviour
         newAlphaToColor = playerCharacterColor.a;
         gameController = GameObject.FindGameObjectWithTag("GameController");
         gameState = gameController.GetComponent<GameState>();
-        charSounds = GetComponent<CharacterSounds>();
+        charSounds = GameObject.Find("Sounds").GetComponent<CharacterSounds>();
     }
 
     private void Update() {

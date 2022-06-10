@@ -818,11 +818,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40e013ba78f45f9489f684fca122a6e6, type: 3}
---- !u!82 &208056155 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6665840565970537629, guid: 40e013ba78f45f9489f684fca122a6e6, type: 3}
-  m_PrefabInstance: {fileID: 208056154}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &351407602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,6 +1256,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401619775}
   m_CullTransparentMesh: 1
+--- !u!82 &485883219 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1751555703912613215, guid: 40e013ba78f45f9489f684fca122a6e6, type: 3}
+  m_PrefabInstance: {fileID: 208056154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &502336245 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 813165245731990091, guid: 40e013ba78f45f9489f684fca122a6e6, type: 3}
+  m_PrefabInstance: {fileID: 208056154}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &506489100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1893,7 +1898,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 677001548}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -2019,6 +2024,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677734702}
   m_CullTransparentMesh: 1
+--- !u!82 &704403311 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 454713485151113150, guid: 40e013ba78f45f9489f684fca122a6e6, type: 3}
+  m_PrefabInstance: {fileID: 208056154}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &717550724
 GameObject:
   m_ObjectHideFlags: 0
@@ -2922,9 +2932,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 2058771093}
   soundEfectsSource:
-  - {fileID: 208056155}
-  - {fileID: 208056155}
-  - {fileID: 208056155}
+  - {fileID: 485883219}
+  - {fileID: 704403311}
+  - {fileID: 502336245}
   musicVolumeSlider: {fileID: 1374784650}
   soundVolumeSlider: {fileID: 1085178856}
 --- !u!1 &1105812177
@@ -3594,9 +3604,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 2058771093}
   soundEfectsSource:
-  - {fileID: 208056155}
-  - {fileID: 208056155}
-  - {fileID: 208056155}
+  - {fileID: 485883219}
+  - {fileID: 704403311}
+  - {fileID: 502336245}
   musicVolumeSlider: {fileID: 1374784650}
   soundVolumeSlider: {fileID: 1085178856}
 --- !u!1 &1434863763
