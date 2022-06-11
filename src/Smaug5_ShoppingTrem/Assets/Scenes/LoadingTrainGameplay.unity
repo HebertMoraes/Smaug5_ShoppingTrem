@@ -459,7 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f9f2c08bc1742247978290910e156fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeInLoading: 10
+  timeInLoading: 6
   loadingIconTxt: {fileID: 1336975432}
   backgroundImg: {fileID: 1875641242}
   img1: {fileID: 2800000, guid: 072c3be12f1db5c4eab1b66dca05b992, type: 3}
