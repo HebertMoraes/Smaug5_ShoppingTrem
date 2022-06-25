@@ -11,10 +11,12 @@ public class Inventory : MonoBehaviour
     [HideInInspector]
     public float moneyEarned; //dinheiro de vendas feitas em cada partida 
     public int totalItemSale; 
+    public allProductsToSell currentTypeOfProductInInventory;
+    public AudioSource audioSourceCoinInSales;
     private float valueToMultiplyBonusMoney = 1;
     private float timeTotalInBonus;
     private float currentTimeInBonusMoneySales;
-    public allProductsToSell currentTypeOfProductInInventory;
+    
 
     private void Awake() {
         currentTypeOfProductInInventory = VariablesSave.currentProductSelectedToSell;
@@ -23,6 +25,7 @@ public class Inventory : MonoBehaviour
     public void MakeBusinessWithPassenger() {
 
         currentProductsInInventory -= 1;
+        this.audioSourceCoinInSales.Play();
 
         moneyEarned += (float)System.Math.Round((sellPrice * valueToMultiplyBonusMoney), 0);
         
