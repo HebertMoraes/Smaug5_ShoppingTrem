@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class ShadowPosiition : MonoBehaviour
 {
-    private GameObject playerCharacter;
+    public Transform objectToCastShadow;
 
     private void Start() {
-
-        playerCharacter = GameObject.FindWithTag("Player");
     }
 
     void Update()
     {
         transform.SetPositionAndRotation(
             new Vector3(
-                playerCharacter.transform.position.x, 
+                objectToCastShadow.position.x, 
                 transform.position.y, 
                 transform.position.z), 
                 

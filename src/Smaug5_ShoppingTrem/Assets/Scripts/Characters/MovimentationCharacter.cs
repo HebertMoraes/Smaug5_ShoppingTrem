@@ -14,12 +14,14 @@ public class MovimentationCharacter : MonoBehaviour
     private string currentLine;
     private bool alreadyMakeSecondTurn;
     private CharacterSounds charSounds;
+    private MovimentationGuard movimentationGuard;
 
     void Start()
     {
         currentLine = "mid";
         charControll = GetComponent<CharacterController>();
         charSounds = GameObject.Find("Sounds").GetComponent<CharacterSounds>();
+        movimentationGuard = GameObject.Find("Guard").GetComponent<MovimentationGuard>();
     }
 
     void Update ()
@@ -69,6 +71,7 @@ public class MovimentationCharacter : MonoBehaviour
 
                     alreadyMakeSecondTurn = true;
                     Turning(velOfMovimentationLeftRight);
+                    movimentationGuard.TurningGuard(velOfMovimentationLeftRight);
 
                 } else if (currentLine == "right") {
 
@@ -81,10 +84,11 @@ public class MovimentationCharacter : MonoBehaviour
 
                     alreadyMakeSecondTurn = true;
                     Turning(velOfMovimentationLeftRight);
-
+                    movimentationGuard.TurningGuard(velOfMovimentationLeftRight);
                 }
             } else {
                 Turning(-velOfMovimentationLeftRight);
+                movimentationGuard.TurningGuard(-velOfMovimentationLeftRight);
             }
         }
         if (isTurningRight) {
@@ -101,6 +105,7 @@ public class MovimentationCharacter : MonoBehaviour
 
                     alreadyMakeSecondTurn = true;
                     Turning(-velOfMovimentationLeftRight);
+                    movimentationGuard.TurningGuard(-velOfMovimentationLeftRight);
 
                 } else if (currentLine == "mid") {
                     isTurningRight = false;
@@ -112,10 +117,11 @@ public class MovimentationCharacter : MonoBehaviour
 
                     alreadyMakeSecondTurn = true;
                     Turning(-velOfMovimentationLeftRight);
-
+                    movimentationGuard.TurningGuard(-velOfMovimentationLeftRight);
                 }
             } else {
                 Turning(velOfMovimentationLeftRight);
+                movimentationGuard.TurningGuard(velOfMovimentationLeftRight);
             }
         }
 
