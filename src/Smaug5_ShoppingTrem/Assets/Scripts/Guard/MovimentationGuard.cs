@@ -24,11 +24,7 @@ public class MovimentationGuard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // transform.SetPositionAndRotation(new Vector3(
-        //     playerCharacter.transform.position.x,
-        //     transform.position.y,
-        //     transform.position.z
-        // ), transform.rotation);
+        
     }
 
     public void TurningGuard(float velToTurnAdd)
