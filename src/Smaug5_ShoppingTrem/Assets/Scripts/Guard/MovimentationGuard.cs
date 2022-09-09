@@ -7,7 +7,6 @@ public class MovimentationGuard : MonoBehaviour
     private GameObject playerCharacter;
     private float posXAlreadyIncremented;
     private string currentLine;
-    private bool alreadyMakeSecondTurn;
     public float posXLineLeft, posXLineMid, posXLineRight;
     [HideInInspector]
     public bool isTurningLeft, isTurningRight;
@@ -42,7 +41,6 @@ public class MovimentationGuard : MonoBehaviour
                 currentLine = "mid";
                 isTurningLeft = false;
                 isTurningRight = false;
-                alreadyMakeSecondTurn = false;
                 transform.SetPositionAndRotation(new Vector3(posXLineMid,
                     transform.position.y,
                     transform.position.z),
@@ -66,7 +64,6 @@ public class MovimentationGuard : MonoBehaviour
                     currentLine = "right";
                     isTurningLeft = false;
                     isTurningRight = false;
-                    alreadyMakeSecondTurn = false;
                     transform.SetPositionAndRotation(new Vector3(posXLineRight,
                         transform.position.y,
                         transform.position.z),
@@ -87,7 +84,6 @@ public class MovimentationGuard : MonoBehaviour
                     currentLine = "left";
                     isTurningLeft = false;
                     isTurningRight = false;
-                    alreadyMakeSecondTurn = false;
                     transform.SetPositionAndRotation(new Vector3(posXLineLeft,
                         transform.position.y,
                         transform.position.z),
@@ -109,7 +105,6 @@ public class MovimentationGuard : MonoBehaviour
                 currentLine = "mid";
                 isTurningLeft = false;
                 isTurningRight = false;
-                alreadyMakeSecondTurn = false;
                 transform.SetPositionAndRotation(new Vector3(posXLineMid,
                     transform.position.y,
                     transform.position.z),
