@@ -8,17 +8,31 @@ public class SpawnTypeProduct : MonoBehaviour
     public GameObject boxChoco;
     public GameObject boxPhone;
 
+    public GameState gameState;
+
+    private GameObject currentProductGameObj;
+
     // Start is called before the first frame update
     void Start()
     {
         if (VariablesSave.currentProductSelectedToSell == allProductsToSell.Candy) {
-            Instantiate(boxCandy);
+            currentProductGameObj = Instantiate(boxCandy);
         }
         if (VariablesSave.currentProductSelectedToSell == allProductsToSell.Choco) {
-            Instantiate(boxChoco);
+            currentProductGameObj = Instantiate(boxChoco);
         }
         if (VariablesSave.currentProductSelectedToSell == allProductsToSell.Fone) {
-            Instantiate(boxPhone);
+            currentProductGameObj = Instantiate(boxPhone);
+        }
+    }
+
+    private void Update() {
+        if (gameState.currentState == GameState.states.GameOver) {
+            Destroy(currentProductGameObj);
+        } else if (gameState.currentState == GameState.states.Paused) {
+            currentProductGameObj.SetActive(false);
+        } else {
+            currentProductGameObj.SetActive(true);
         }
     }
 }
