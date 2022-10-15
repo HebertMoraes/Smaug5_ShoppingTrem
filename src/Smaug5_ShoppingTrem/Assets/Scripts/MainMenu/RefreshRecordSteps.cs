@@ -7,7 +7,7 @@ public class RefreshRecordSteps : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = "Record Steps: " + 
+        gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = "STEPS: " + 
             System.Math.Round(VariablesSave.stepsScoreRecord, 2).ToString();
     }
 }

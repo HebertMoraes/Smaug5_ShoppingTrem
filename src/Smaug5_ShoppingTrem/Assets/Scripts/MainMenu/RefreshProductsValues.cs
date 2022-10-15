@@ -69,8 +69,8 @@ public class RefreshProductsValues : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        txtQuantityCandy.text = "Candy: " + VariablesSave.countCandy.ToString();
-        txtQuantityChoco.text = "Choco: " + VariablesSave.countChoco.ToString();
-        txtQuantityFone.text = "Fone: " + VariablesSave.countFone.ToString();
+        txtQuantityCandy.text = "x" + VariablesSave.countCandy.ToString();
+        txtQuantityChoco.text = "x" + VariablesSave.countChoco.ToString();
+        txtQuantityFone.text = "x" + VariablesSave.countFone.ToString();
     }
 }
