@@ -56,13 +56,13 @@ public class RefreshProductsValues : MonoBehaviour
         //     GameProductsBalanceVariables.chancePassengerInterestBuyFone.ToString() + "%";
 
         //preço de venda
-        salesPriceCandy.GetComponent<TMPro.TextMeshProUGUI>().text = "Sell for: $" +
+        salesPriceCandy.GetComponent<TMPro.TextMeshProUGUI>().text = "SELL FOR:$" +
             GameProductsBalanceVariables.sellPriceCandy.ToString();
 
-        salesPriceChoco.GetComponent<TMPro.TextMeshProUGUI>().text = "Sell for: $" +
+        salesPriceChoco.GetComponent<TMPro.TextMeshProUGUI>().text = "SELL FOR:$" +
             GameProductsBalanceVariables.sellPriceChoco.ToString();
         
-        salesPriceFone.GetComponent<TMPro.TextMeshProUGUI>().text = "Sell for: $" +
+        salesPriceFone.GetComponent<TMPro.TextMeshProUGUI>().text = "SELL FOR:$" +
             GameProductsBalanceVariables.sellPriceFone.ToString();
     }
 
