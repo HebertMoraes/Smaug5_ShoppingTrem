@@ -20,15 +20,15 @@ public class RefreshHudGameplay : MonoBehaviour
 
         txtProductsInInventory = transform.GetChild(indexTopHud).GetChild(0).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>();
         txtMoneyEarned = transform.GetChild(indexTopHud).GetChild(0).GetChild(1).GetComponent<TMPro.TextMeshProUGUI>();
-        
-        txtCurrentSteps = transform.GetChild(indexBottomHud).GetChild(0).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>();
+        txtCurrentSteps = transform.GetChild(indexTopHud).GetChild(0).GetChild(2).GetComponent<TMPro.TextMeshProUGUI>();
+        //txtCurrentSteps = transform.GetChild(indexBottomHud).GetChild(0).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
         txtProductsInInventory.text = playerInventory.currentProductsInInventory.ToString();
-        txtMoneyEarned.text = "$ " + playerInventory.moneyEarned;
+        txtMoneyEarned.text = playerInventory.moneyEarned.ToString();
 
         txtCurrentSteps.text = System.Math.Round(scorePlayer.currentScoreSteps, 2).ToString();
     }

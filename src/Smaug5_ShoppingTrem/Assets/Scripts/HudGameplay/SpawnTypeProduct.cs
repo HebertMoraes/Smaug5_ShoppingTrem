@@ -7,6 +7,9 @@ public class SpawnTypeProduct : MonoBehaviour
     public GameObject boxCandy;
     public GameObject boxChoco;
     public GameObject boxPhone;
+    public GameObject hudCandy;
+    public GameObject hudChoco;
+    public GameObject hudPhone;
 
     public GameState gameState;
 
@@ -17,12 +20,15 @@ public class SpawnTypeProduct : MonoBehaviour
     {
         if (VariablesSave.currentProductSelectedToSell == allProductsToSell.Candy) {
             currentProductGameObj = Instantiate(boxCandy);
+            hudCandy.SetActive(true);
         }
         if (VariablesSave.currentProductSelectedToSell == allProductsToSell.Choco) {
             currentProductGameObj = Instantiate(boxChoco);
+            hudChoco.SetActive(true);
         }
         if (VariablesSave.currentProductSelectedToSell == allProductsToSell.Fone) {
             currentProductGameObj = Instantiate(boxPhone);
+            hudPhone.SetActive(true);
         }
     }
 

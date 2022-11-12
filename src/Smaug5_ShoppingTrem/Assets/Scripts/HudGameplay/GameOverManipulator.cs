@@ -8,7 +8,6 @@ public class GameOverManipulator : MonoBehaviour
     public int indexGameOverInCanvas;
     public int indexDebuggtestInCanvas;
     public int indexTopHudInCanvas;
-    public int indexBottomHudInCanvas;
     public int indexScoreSteps;
     public int indexSalesMade;
     public int indexMoneyEarned;
@@ -24,8 +23,7 @@ public class GameOverManipulator : MonoBehaviour
         playerMovimentation = playerCharacter.GetComponent<MovimentationCharacter>();
         playerInventory = playerCharacter.GetComponent<Inventory>();
         playerScoreCount = playerCharacter.GetComponent<ScoreCount>();
-
-        backgroundGameOver = transform.GetChild(indexGameOverInCanvas).GetChild(0);
+        backgroundGameOver = transform.GetChild(indexGameOverInCanvas).GetChild(1);
     }
 
     public void PutRecordsOnUI() {
@@ -34,8 +32,6 @@ public class GameOverManipulator : MonoBehaviour
 
         transform.GetChild(indexDebuggtestInCanvas).gameObject.SetActive(false);
         transform.GetChild(indexTopHudInCanvas).gameObject.SetActive(false);
-        transform.GetChild(indexBottomHudInCanvas).gameObject.SetActive(false);
-
 
         backgroundGameOver.GetChild(indexScoreSteps).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = 
             System.Math.Round(playerScoreCount.currentScoreSteps, 2).ToString();
