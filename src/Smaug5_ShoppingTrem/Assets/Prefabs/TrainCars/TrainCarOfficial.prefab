@@ -1624,7 +1624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a65b4ff7447d9469db60350052efc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonusMoneyOfSalesPrefab: {fileID: 5934373521521870670, guid: 254d56625e5a2334bac90e1a071282ca, type: 3}
+  bonusMoneyOfSalesPrefab: {fileID: 2311077871909486374, guid: daf8e42631ece7744b3afa4f8c31c082, type: 3}
   chanceToSpawn: 0.06
   indiceDropSpots: 7
 --- !u!114 &5878521814722475295

@@ -386,6 +386,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8758303179028679133, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
+      propertyPath: bonusMoneyOfSalesPrefab
+      value: 
+      objectReference: {fileID: 2311077871909486374, guid: daf8e42631ece7744b3afa4f8c31c082, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
 --- !u!1 &15493452
@@ -1706,6 +1710,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8758303179028679133, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
+      propertyPath: bonusMoneyOfSalesPrefab
+      value: 
+      objectReference: {fileID: 2311077871909486374, guid: daf8e42631ece7744b3afa4f8c31c082, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
 --- !u!4 &661164040 stripped
@@ -5183,6 +5191,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8758303179028679133, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
+      propertyPath: bonusMoneyOfSalesPrefab
+      value: 
+      objectReference: {fileID: 2311077871909486374, guid: daf8e42631ece7744b3afa4f8c31c082, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8eb5c6dc82d2a6846b74f2c4036229be, type: 3}
 --- !u!1 &1907504150
