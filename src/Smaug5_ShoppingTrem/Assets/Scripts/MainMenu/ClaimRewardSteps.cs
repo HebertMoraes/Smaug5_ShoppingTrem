@@ -21,8 +21,8 @@ public class ClaimRewardSteps : MonoBehaviour
     }
     public void claimSales()
     {
-        buttonSteps = GetComponent<Button>();
+        buttonSales = GetComponent<Button>();
         VariablesSave.countMoney = VariablesSave.countMoney + 1000;
-        buttonSteps.interactable = false;
+        buttonSales.interactable = false;
     }
 }
