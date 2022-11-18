@@ -10,7 +10,7 @@ public class validateMissionSteps : MonoBehaviour
     void Start()
     {
         buttonSteps = GetComponent<Button>();
-        if (VariablesSave.stepsScoreRecord >= 1000)
+        if (VariablesSave.stepsScoreRecord >= 1000 && VariablesSave.claimedSales == false)
         {
             buttonSteps.interactable = true;
         }

@@ -18,6 +18,11 @@ using UnityEngine;
         public static float stepsScoreRecord;
         public static int countOfSalesRecord;
 
+        public static bool claimedSales = false;
+        public static bool claimedSteps = false;
+
         public static float musicVolume = (float)0.7;
         public static float soundsVolume = (float)0.7;
+
+        
     }

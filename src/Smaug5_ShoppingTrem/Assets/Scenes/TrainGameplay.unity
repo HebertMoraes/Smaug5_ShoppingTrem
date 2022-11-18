@@ -4002,7 +4002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1442540217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5734,6 +5734,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056213442}
   m_CullTransparentMesh: 1
+--- !u!1 &2056747742 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1281211321471708541, guid: 47935e8949e68124a8312ba6702a36a5, type: 3}
+  m_PrefabInstance: {fileID: 6747130047196179259}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2056747748
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056747742}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: f61479af787ef9f4aa33dca5ca09cc5f, type: 3}
+  m_Controller: {fileID: 9100000, guid: c256fcdde4740fa429de68dcfd870563, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2058771088
 GameObject:
   m_ObjectHideFlags: 0

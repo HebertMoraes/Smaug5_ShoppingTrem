@@ -10,7 +10,7 @@ public class validateMissionSales : MonoBehaviour
     void Start()
     {
         buttonSteps = GetComponent<Button>();
-        if (VariablesSave.countOfSalesRecord >= 100)
+        if (VariablesSave.countOfSalesRecord >= 100 && VariablesSave.claimedSales == false)
         {
             buttonSteps.interactable = true;
         }

@@ -15,14 +15,22 @@ public class ClaimRewardSteps : MonoBehaviour
 
     public void claimSteps()
     {
-        buttonSteps = GetComponent<Button>();
-        VariablesSave.countMoney = VariablesSave.countMoney + 100;
-        buttonSteps.interactable = false;
+        if(VariablesSave.claimedSales == false)
+        {
+            buttonSteps = GetComponent<Button>();
+            VariablesSave.countMoney = VariablesSave.countMoney + 100;
+            buttonSteps.interactable = false;
+            VariablesSave.claimedSales = true;
+        }
     }
     public void claimSales()
     {
-        buttonSales = GetComponent<Button>();
-        VariablesSave.countMoney = VariablesSave.countMoney + 1000;
-        buttonSales.interactable = false;
+        if (VariablesSave.claimedSales == false)
+        {
+            buttonSales = GetComponent<Button>();
+            VariablesSave.countMoney = VariablesSave.countMoney + 1000;
+            buttonSales.interactable = false;
+            VariablesSave.claimedSteps = true;
+        }            
     }
 }
