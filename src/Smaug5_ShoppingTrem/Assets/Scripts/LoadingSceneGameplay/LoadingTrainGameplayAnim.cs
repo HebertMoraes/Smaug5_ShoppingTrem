@@ -13,6 +13,7 @@ public class LoadingTrainGameplayAnim : MonoBehaviour
     public Texture img2;
     public float speedLoadingIconTxt;
     public float loadingIconTxtMaxLeft;
+    public RawImage backgroundOfBackgroundImg;
 
     private float currentTimeInLoad;
     private float loadingIconTxtMaxRight;
@@ -26,10 +27,12 @@ public class LoadingTrainGameplayAnim : MonoBehaviour
         if (Random.value > 0.5)
         {
             backgroundImg.GetComponent<UnityEngine.UI.RawImage>().texture = img1;
+            backgroundOfBackgroundImg.color = new Color(0.98f, 0.81f, 0.06f);
         }
         else
         {
             backgroundImg.GetComponent<UnityEngine.UI.RawImage>().texture = img2;
+            backgroundOfBackgroundImg.color = new Color(0.71f, 0.06f, 0.09f);
         }
     }
 
