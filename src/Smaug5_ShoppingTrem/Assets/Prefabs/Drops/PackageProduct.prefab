@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valueToAddProduct: 10
+  addIndicatorProductHud: {fileID: 4483222941906192304, guid: 2389172222e83db41bd3c35f7ec0cb8f, type: 3}
 --- !u!54 &2472532597127758582
 Rigidbody:
   m_ObjectHideFlags: 0

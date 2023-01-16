@@ -2503,6 +2503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c01a23644e18a441a295a66f0a36e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  addMoneyIndicatorHud: {fileID: 1566653359287210858, guid: 5c4a2ecc5531c084f92f484401cb1227, type: 3}
   currentProductsInInventory: 0
   chancePassengerInterestBuy: 0.2
   sellPrice: 3
