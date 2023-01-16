@@ -14,7 +14,8 @@ public class Inventory : MonoBehaviour
     public int totalItemSale;
     public allProductsToSell currentTypeOfProductInInventory;
     public AudioSource audioSourceCoinInSales;
-    private float valueToMultiplyBonusMoney = 1;
+    [HideInInspector]
+    public float valueToMultiplyBonusMoney = 1;
     private float timeTotalInBonus;
     private float currentTimeInBonusMoneySales;
 

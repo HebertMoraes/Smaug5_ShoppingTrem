@@ -6,6 +6,7 @@ public class ScoreCount : MonoBehaviour
 {
     public float currentScoreSteps;
     public float valueToDivideSteps;
+    public TMPro.TextMeshProUGUI txtBonusOnOff;
     [HideInInspector]
     public int currentScoreSales;
     private MovimentationCharacter movCharacterBehavior;
@@ -30,6 +31,8 @@ public class ScoreCount : MonoBehaviour
                 x2BonusScoreCount = 1;
                 currentTimeX2BonusScoreCount = 0;
             }
+        } else {
+            txtBonusOnOff.alpha = 0;
         }
 
         currentScoreSteps += ((movCharacterBehavior.velOfMovimentation * Time.deltaTime) / valueToDivideSteps) 
@@ -43,5 +46,6 @@ public class ScoreCount : MonoBehaviour
         currentTimeX2BonusScoreCount = 0;
         x2BonusScoreCount = valueToBonus;
         timeTotalX2BonusScoreCount = timeInBonus;
+        txtBonusOnOff.alpha = 255;
     }
 }
