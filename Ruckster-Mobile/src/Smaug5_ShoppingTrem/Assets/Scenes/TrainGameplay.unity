@@ -786,7 +786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8936953169004307564, guid: 40e013ba78f45f9489f684fca122a6e6, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8936953169004307564, guid: 40e013ba78f45f9489f684fca122a6e6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2393,7 +2393,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 46.62, y: -20.633, z: -27.087}
 --- !u!4 &827910240 stripped
 Transform:
@@ -3490,7 +3490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1320822365
 RectTransform:
   m_ObjectHideFlags: 0
