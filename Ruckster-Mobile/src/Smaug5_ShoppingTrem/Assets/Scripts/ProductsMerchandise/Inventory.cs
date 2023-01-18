@@ -4,50 +4,65 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    public GameObject addMoneyIndicatorHud;
     public int currentProductsInInventory;//quantos produtos o player tem para vender, quantos tem no inventario
-    [Range(0,1)]
+    [Range(0, 1)]
     public float chancePassengerInterestBuy;//setada no começo de cada partida de acordo com o produto escolhido para venda
     public float sellPrice; //setada no começo de cada partida de acordo com o produto escolhido para venda
     [HideInInspector]
     public float moneyEarned; //dinheiro de vendas feitas em cada partida 
-    public int totalItemSale; 
+    public int totalItemSale;
+    public TMPro.TextMeshProUGUI txtBonusMoneyOnOff;
     public allProductsToSell currentTypeOfProductInInventory;
     public AudioSource audioSourceCoinInSales;
-    private float valueToMultiplyBonusMoney = 1;
+    [HideInInspector]
+    public float valueToMultiplyBonusMoney = 1;
     private float timeTotalInBonus;
     private float currentTimeInBonusMoneySales;
-    
 
-    private void Awake() {
+
+    private void Awake()
+    {
         currentTypeOfProductInInventory = VariablesSave.currentProductSelectedToSell;
     }
 
-    public void MakeBusinessWithPassenger() {
-
+    public void MakeBusinessWithPassenger()
+    {
         currentProductsInInventory -= 1;
         this.audioSourceCoinInSales.Play();
 
-        moneyEarned += (float)System.Math.Round((sellPrice * valueToMultiplyBonusMoney), 0);
-        
+        float moneyValueToAdd = (float)System.Math.Round((sellPrice * valueToMultiplyBonusMoney), 0);
+        moneyEarned += moneyValueToAdd;
+        GameObject topHud = GameObject.Find("TopHud");
+        GameObject newIndicator = GameObject.Instantiate(addMoneyIndicatorHud, topHud.transform);
+        TMPro.TextMeshProUGUI txtAddValue = newIndicator.GetComponentInChildren<TMPro.TextMeshProUGUI>();
+        txtAddValue.text = "+" + moneyValueToAdd.ToString();
+
         GetComponent<ScoreCount>().currentScoreSales += 1;
         totalItemSale += 1;
     }
 
-    private void Update() {
-        if (valueToMultiplyBonusMoney != 1) {
+    private void Update()
+    {
+        if (valueToMultiplyBonusMoney != 1)
+        {
             currentTimeInBonusMoneySales += Time.deltaTime;
 
-            if (currentTimeInBonusMoneySales >= timeTotalInBonus) {
+            if (currentTimeInBonusMoneySales >= timeTotalInBonus)
+            {
                 currentTimeInBonusMoneySales = 0;
                 valueToMultiplyBonusMoney = 1;
+                txtBonusMoneyOnOff.alpha = 0;
             }
         }
     }
 
-    public void BonusMoneyOfSales(float valueToBonus, float timeInBonus) {
+    public void BonusMoneyOfSales(float valueToBonus, float timeInBonus)
+    {
         valueToMultiplyBonusMoney = valueToBonus;
         timeTotalInBonus = timeInBonus;
         currentTimeInBonusMoneySales = 0;
+        txtBonusMoneyOnOff.alpha = 255;
     }
 }
 

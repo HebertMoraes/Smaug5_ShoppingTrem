@@ -19,7 +19,6 @@ public class Inventory : MonoBehaviour
     private float timeTotalInBonus;
     private float currentTimeInBonusMoneySales;
 
-
     private void Awake()
     {
         currentTypeOfProductInInventory = VariablesSave.currentProductSelectedToSell;
@@ -27,7 +26,6 @@ public class Inventory : MonoBehaviour
 
     public void MakeBusinessWithPassenger()
     {
-
         currentProductsInInventory -= 1;
         this.audioSourceCoinInSales.Play();
 
