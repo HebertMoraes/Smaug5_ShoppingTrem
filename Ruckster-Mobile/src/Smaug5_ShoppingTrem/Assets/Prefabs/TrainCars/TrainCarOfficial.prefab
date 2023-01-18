@@ -1577,6 +1577,8 @@ MonoBehaviour:
   passengersPrefabs:
   - {fileID: 1174862653326377768, guid: 94ca724fe048e7f488b5ca8891d21cc5, type: 3}
   - {fileID: 8427809286682376571, guid: 105e643ddb731a54e87420cfa0887ef1, type: 3}
+  - {fileID: 2996608601609520583, guid: 9d831661a5be7d04195c6c845a3ba884, type: 3}
+  - {fileID: 6341140325566213367, guid: 7310379381ae225418fa99c6cb94e0f6, type: 3}
 --- !u!114 &3055227578182807874
 MonoBehaviour:
   m_ObjectHideFlags: 0
