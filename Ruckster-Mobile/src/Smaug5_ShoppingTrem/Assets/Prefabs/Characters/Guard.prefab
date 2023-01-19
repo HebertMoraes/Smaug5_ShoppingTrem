@@ -128,11 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c06aa50168b39344993ff6fa32bf7b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posXLineLeft: -1
-  posXLineMid: 0
-  posXLineRight: 1
-  isTurningLeft: 0
-  isTurningRight: 0
+  delaySecToSeekPlayerChar: 0.1
 --- !u!1001 &2783687386142980526
 PrefabInstance:
   m_ObjectHideFlags: 0

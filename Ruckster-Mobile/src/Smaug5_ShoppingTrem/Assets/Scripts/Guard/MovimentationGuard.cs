@@ -4,117 +4,235 @@ using UnityEngine;
 
 public class MovimentationGuard : MonoBehaviour
 {
-    private GameObject playerCharacter;
-    private float posXAlreadyIncremented;
+    public float delaySecToSeekPlayerChar;
+    private string newMoveTo;
+    private string moveTo;
     private string currentLine;
-    public float posXLineLeft, posXLineMid, posXLineRight;
-    [HideInInspector]
-    public bool isTurningLeft, isTurningRight;
+    private MovimentationCharacter playerMovimentation;
     private CharacterController charControll;
+    private float posXAlreadyIncremented;
+    private float posXLineLeft, posXLineMid, posXLineRight;
+    private float velOfMovimentationLeftRight;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerCharacter = GameObject.FindGameObjectWithTag("Player");
-        charControll = GetComponent<CharacterController>();
         currentLine = "mid";
+        playerMovimentation = GameObject.FindWithTag("Player").GetComponent<MovimentationCharacter>();
+        charControll = GetComponent<CharacterController>();
+        posXLineLeft = playerMovimentation.posXLineLeft;
+        posXLineMid = playerMovimentation.posXLineMid;
+        posXLineRight = playerMovimentation.posXLineRight;
+        velOfMovimentationLeftRight = playerMovimentation.velOfMovimentationLeftRight;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void TurningGuard(float velToTurnAdd)
-    {
-        float currentValueToIncrement = velToTurnAdd * Time.deltaTime;
-
-        posXAlreadyIncremented += currentValueToIncrement;
-
-        if (currentLine == "left")
+        if (moveTo == "right")
         {
-
-            if (posXLineLeft + posXAlreadyIncremented >= posXLineMid)
+            if (currentLine == "left")
             {
-                posXAlreadyIncremented = 0;
-                currentLine = "mid";
-                isTurningLeft = false;
-                isTurningRight = false;
-                transform.SetPositionAndRotation(new Vector3(posXLineMid,
-                    transform.position.y,
-                    transform.position.z),
-                    transform.rotation);
-            }
-            else
-            {
+                float currentValueToIncrement = playerMovimentation.velOfMovimentationLeftRight * Time.deltaTime;
+                posXAlreadyIncremented += currentValueToIncrement;
                 charControll.Move(new Vector3(currentValueToIncrement, 0, 0));
+
+                if (posXLineLeft + posXAlreadyIncremented >= posXLineMid)
+                {
+                    posXAlreadyIncremented = 0;
+                    currentLine = "mid";
+                    //alreadyMakeSecondTurn = false;
+                    transform.SetPositionAndRotation(new Vector3(posXLineMid,
+                        transform.position.y,
+                        transform.position.z),
+                        transform.rotation);
+                    //isTurningLeft = false;
+                    //isTurningRight = false;
+                    moveTo = null;
+                }
             }
-
-        }
-        else if (currentLine == "mid")
-        {
-
-            if (currentValueToIncrement > 0)
+            if (currentLine == "mid")
             {
+                float currentValueToIncrement = velOfMovimentationLeftRight * Time.deltaTime;
+                posXAlreadyIncremented += currentValueToIncrement;
+                charControll.Move(new Vector3(currentValueToIncrement, 0, 0));
 
                 if (posXLineMid + posXAlreadyIncremented >= posXLineRight)
                 {
                     posXAlreadyIncremented = 0;
                     currentLine = "right";
-                    isTurningLeft = false;
-                    isTurningRight = false;
+                    //alreadyMakeSecondTurn = false;
                     transform.SetPositionAndRotation(new Vector3(posXLineRight,
                         transform.position.y,
                         transform.position.z),
                         transform.rotation);
-
-                }
-                else
-                {
-                    charControll.Move(new Vector3(currentValueToIncrement, 0, 0));
+                    //isTurningLeft = false;
+                    //isTurningRight = false;
+                    moveTo = null;
                 }
             }
-            else
+        }
+
+        if (moveTo == "left")
+        {
+            if (currentLine == "mid")
             {
+                float currentValueToIncrement = -playerMovimentation.velOfMovimentationLeftRight * Time.deltaTime;
+                posXAlreadyIncremented += currentValueToIncrement;
+                charControll.Move(new Vector3(currentValueToIncrement, 0, 0));
 
                 if (posXLineMid + posXAlreadyIncremented <= posXLineLeft)
                 {
                     posXAlreadyIncremented = 0;
                     currentLine = "left";
-                    isTurningLeft = false;
-                    isTurningRight = false;
+                    //alreadyMakeSecondTurn = false;
                     transform.SetPositionAndRotation(new Vector3(posXLineLeft,
                         transform.position.y,
                         transform.position.z),
                         transform.rotation);
-                }
-                else
-                {
-                    charControll.Move(new Vector3(currentValueToIncrement, 0, 0));
+                    //isTurningLeft = false;
+                    //isTurningRight = false;
+                    moveTo = null;
                 }
             }
-
-        }
-        else if (currentLine == "right")
-        {
-
-            if (posXLineRight + posXAlreadyIncremented <= posXLineMid)
+            if (currentLine == "right")
             {
-                posXAlreadyIncremented = 0;
-                currentLine = "mid";
-                isTurningLeft = false;
-                isTurningRight = false;
-                transform.SetPositionAndRotation(new Vector3(posXLineMid,
-                    transform.position.y,
-                    transform.position.z),
-                    transform.rotation);
-
-            }
-            else
-            {
+                float currentValueToIncrement = -velOfMovimentationLeftRight * Time.deltaTime;
+                posXAlreadyIncremented += currentValueToIncrement;
                 charControll.Move(new Vector3(currentValueToIncrement, 0, 0));
+
+                if (posXLineRight + posXAlreadyIncremented <= posXLineMid)
+                {
+                    posXAlreadyIncremented = 0;
+                    currentLine = "mid";
+                    //alreadyMakeSecondTurn = false;
+                    transform.SetPositionAndRotation(new Vector3(posXLineMid,
+                        transform.position.y,
+                        transform.position.z),
+                        transform.rotation);
+                    //isTurningLeft = false;
+                    //isTurningRight = false;
+                    moveTo = null;
+                }
             }
         }
     }
+
+    public void StartTurnRight()
+    {
+        newMoveTo = "right";
+        StartCoroutine("WaitForSeekPlayerCharacter");
+    }
+
+    public void StartTurnLeft()
+    {
+        newMoveTo = "left";
+        StartCoroutine("WaitForSeekPlayerCharacter");
+    }
+
+    IEnumerator WaitForSeekPlayerCharacter()
+    {
+        yield return new WaitForSeconds(delaySecToSeekPlayerChar);
+        moveTo = newMoveTo;
+    }
+
+    //
+    //
+    // FUNÇÃO ANTIGA DA MOVIMENTAÇÃO DO GUARDA 
+    //chamado a cada frame pelo MovimentationCharacter, 
+    //com valor negativo para esquerda e positivo para direita
+    //
+    //
+
+    // public void TurningGuard(float velToTurnAdd)
+    // {
+    //     float currentValueToIncrement = velToTurnAdd * Time.deltaTime;
+
+    //     posXAlreadyIncremented += currentValueToIncrement;
+
+    //     if (currentLine == "left")
+    //     {
+
+    //         if (posXLineLeft + posXAlreadyIncremented >= posXLineMid)
+    //         {
+    //             posXAlreadyIncremented = 0;
+    //             currentLine = "mid";
+    //             isTurningLeft = false;
+    //             isTurningRight = false;
+    //             transform.SetPositionAndRotation(new Vector3(posXLineMid,
+    //                 transform.position.y,
+    //                 transform.position.z),
+    //                 transform.rotation);
+    //         }
+    //         else
+    //         {
+    //             charControll.Move(new Vector3(currentValueToIncrement, 0, 0));
+    //         }
+
+    //     }
+    //     else if (currentLine == "mid")
+    //     {
+
+    //         if (currentValueToIncrement > 0)
+    //         {
+
+    //             if (posXLineMid + posXAlreadyIncremented >= posXLineRight)
+    //             {
+    //                 posXAlreadyIncremented = 0;
+    //                 currentLine = "right";
+    //                 isTurningLeft = false;
+    //                 isTurningRight = false;
+    //                 transform.SetPositionAndRotation(new Vector3(posXLineRight,
+    //                     transform.position.y,
+    //                     transform.position.z),
+    //                     transform.rotation);
+
+    //             }
+    //             else
+    //             {
+    //                 charControll.Move(new Vector3(currentValueToIncrement, 0, 0));
+    //             }
+    //         }
+    //         else
+    //         {
+
+    //             if (posXLineMid + posXAlreadyIncremented <= posXLineLeft)
+    //             {
+    //                 posXAlreadyIncremented = 0;
+    //                 currentLine = "left";
+    //                 isTurningLeft = false;
+    //                 isTurningRight = false;
+    //                 transform.SetPositionAndRotation(new Vector3(posXLineLeft,
+    //                     transform.position.y,
+    //                     transform.position.z),
+    //                     transform.rotation);
+    //             }
+    //             else
+    //             {
+    //                 charControll.Move(new Vector3(currentValueToIncrement, 0, 0));
+    //             }
+    //         }
+
+    //     }
+    //     else if (currentLine == "right")
+    //     {
+
+    //         if (posXLineRight + posXAlreadyIncremented <= posXLineMid)
+    //         {
+    //             posXAlreadyIncremented = 0;
+    //             currentLine = "mid";
+    //             isTurningLeft = false;
+    //             isTurningRight = false;
+    //             transform.SetPositionAndRotation(new Vector3(posXLineMid,
+    //                 transform.position.y,
+    //                 transform.position.z),
+    //                 transform.rotation);
+
+    //         }
+    //         else
+    //         {
+    //             charControll.Move(new Vector3(currentValueToIncrement, 0, 0));
+    //         }
+    //     }
+    // }
 }
