@@ -9,8 +9,10 @@ public class LoadingTrainGameplayAnim : MonoBehaviour
     public float timeInLoading;
     public GameObject loadingIconTxt;
     public GameObject backgroundImg;
-    public Texture img1;
-    public Texture img2;
+    public Texture img1English;
+    public Texture img2English;
+    public Texture img1Portuguese;
+    public Texture img2Portuguese;
     public float speedLoadingIconTxt;
     public float loadingIconTxtMaxLeft;
     public RawImage backgroundOfBackgroundImg;
@@ -26,12 +28,20 @@ public class LoadingTrainGameplayAnim : MonoBehaviour
 
         if (Random.value > 0.5)
         {
-            backgroundImg.GetComponent<UnityEngine.UI.RawImage>().texture = img1;
+            if (VariablesSave.translate) {
+                backgroundImg.GetComponent<UnityEngine.UI.RawImage>().texture = img1Portuguese;
+            } else {
+                backgroundImg.GetComponent<UnityEngine.UI.RawImage>().texture = img1English;
+            }
             backgroundOfBackgroundImg.color = new Color(0.98f, 0.81f, 0.06f);
         }
         else
         {
-            backgroundImg.GetComponent<UnityEngine.UI.RawImage>().texture = img2;
+            if (VariablesSave.translate) {
+                backgroundImg.GetComponent<UnityEngine.UI.RawImage>().texture = img2Portuguese;
+            } else {
+                backgroundImg.GetComponent<UnityEngine.UI.RawImage>().texture = img2English;
+            }
             backgroundOfBackgroundImg.color = new Color(0.71f, 0.06f, 0.09f);
         }
     }

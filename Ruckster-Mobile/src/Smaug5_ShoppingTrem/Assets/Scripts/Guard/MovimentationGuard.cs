@@ -121,12 +121,14 @@ public class MovimentationGuard : MonoBehaviour
     public void StartTurnRight()
     {
         newMoveTo = "right";
+        //mudar a currentLine aqui
         StartCoroutine("WaitForSeekPlayerCharacter");
     }
 
     public void StartTurnLeft()
     {
         newMoveTo = "left";
+        //mudar a currentLine aqui
         StartCoroutine("WaitForSeekPlayerCharacter");
     }
 
