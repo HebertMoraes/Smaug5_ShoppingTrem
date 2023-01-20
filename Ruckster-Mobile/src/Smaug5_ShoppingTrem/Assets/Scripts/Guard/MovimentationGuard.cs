@@ -13,6 +13,16 @@ public class MovimentationGuard : MonoBehaviour
     private float posXAlreadyIncremented;
     private float posXLineLeft, posXLineMid, posXLineRight;
     private float velOfMovimentationLeftRight;
+    private bool jumping;    
+    private float currentVelocityYJump;
+    private float currentVelocityYLanding;
+    private float currentValueToDecreaseVelJump;
+    private float currentValueToDecreaseVelLanding;
+    private bool landing;
+    private float maxHeightJump;
+    private float velocityYJump;
+    private float valueToDecreaseVelJump;
+    private float valueToDecreaseVelLanding;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +39,13 @@ public class MovimentationGuard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (jumping)
+        {
+            UpdateJump();
+        } else {
+            charControll.Move(new Vector3(0, Physics.gravity.y, 0) * Time.deltaTime);
+        }
+
         if (moveTo == "right")
         {
             if (currentLine == "left")
@@ -121,21 +138,92 @@ public class MovimentationGuard : MonoBehaviour
     public void StartTurnRight()
     {
         newMoveTo = "right";
-        //mudar a currentLine aqui
         StartCoroutine("WaitForSeekPlayerCharacter");
     }
 
     public void StartTurnLeft()
     {
         newMoveTo = "left";
-        //mudar a currentLine aqui
         StartCoroutine("WaitForSeekPlayerCharacter");
+    }
+
+    public void StartJump(
+            float currentVelocityYJump, 
+            float currentVelocityYLanding, 
+            float currentValueToDecreaseVelJump, 
+            float currentValueToDecreaseVelLanding, 
+            float maxHeightJump, 
+            float velocityYJump, 
+            float valueToDecreaseVelJump, 
+            float valueToDecreaseVelLanding)
+    {
+        this.currentVelocityYJump = currentVelocityYJump * 1.5f;
+        this.currentVelocityYLanding = currentVelocityYLanding * 1.5f;
+        this.currentValueToDecreaseVelJump = currentValueToDecreaseVelJump * 1.5f;
+        this.currentValueToDecreaseVelLanding = currentValueToDecreaseVelLanding * 1.5f;
+        this.maxHeightJump = 3;
+        this.velocityYJump = velocityYJump;
+        this.valueToDecreaseVelJump = valueToDecreaseVelJump;
+        this.valueToDecreaseVelLanding = valueToDecreaseVelLanding;
+
+        StartCoroutine("WaitForStartJump");
     }
 
     IEnumerator WaitForSeekPlayerCharacter()
     {
         yield return new WaitForSeconds(delaySecToSeekPlayerChar);
         moveTo = newMoveTo;
+    }
+
+    IEnumerator WaitForStartJump()
+    {
+        jumping = false;
+        yield return new WaitForSeconds(delaySecToSeekPlayerChar * 1.5f);
+        jumping = true;
+    }
+
+    private void UpdateJump()
+    {
+        if (!landing) {
+
+            charControll.Move(new Vector3(
+                0, 
+                currentVelocityYJump * Time.deltaTime, 
+                0
+            ));
+
+            currentVelocityYJump -= (currentValueToDecreaseVelJump * Time.deltaTime);
+            currentValueToDecreaseVelJump -= Time.deltaTime;
+            //currentValueToIncreaseVelFall = currentValueToDecreaseVel;
+
+            if (transform.position.y >= maxHeightJump) {
+                landing = true;
+                currentVelocityYJump = velocityYJump;
+                currentValueToDecreaseVelJump = valueToDecreaseVelJump;
+            }
+
+        } else {
+
+            if (currentVelocityYLanding < 0) {
+
+                charControll.Move(new Vector3(
+                    0, 
+                    currentVelocityYLanding * Time.deltaTime, 
+                    0
+                ));
+            }
+
+            currentVelocityYLanding -= (currentValueToDecreaseVelLanding * Time.deltaTime);
+            currentValueToDecreaseVelLanding += Time.deltaTime;
+            //currentValueToIncreaseVelFall = currentValueToDecreaseVel;
+
+            if (charControll.isGrounded) {
+                currentVelocityYLanding = velocityYJump;
+                currentValueToDecreaseVelLanding = valueToDecreaseVelLanding;
+                landing = false;
+                jumping = false;
+            }
+        }
     }
 
     //

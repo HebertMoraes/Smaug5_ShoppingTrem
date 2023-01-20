@@ -24,6 +24,16 @@ public class JumpPlayerStateM : StateMachineBehaviour
         currentValueToDecreaseVelJump = animator.GetFloat("valueToDecreaseVelJump");
         currentValueToDecreaseVelLanding = animator.GetFloat("valueToDecreaseVelLanding");
         charControll = animator.gameObject.GetComponent<CharacterController>();
+
+        GameObject.Find("Guard").GetComponent<MovimentationGuard>().StartJump(
+            currentVelocityYJump, 
+            currentVelocityYLanding, 
+            currentValueToDecreaseVelJump, 
+            currentValueToDecreaseVelLanding, 
+            animator.GetFloat("maxHeightJump"), 
+            animator.GetFloat("velocityYJump"), 
+            animator.GetFloat("valueToDecreaseVelJump"), 
+            animator.GetFloat("valueToDecreaseVelLanding"));
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

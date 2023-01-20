@@ -6640,5 +6640,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guard
       objectReference: {fileID: 0}
+    - target: {fileID: 1281211321471708542, guid: 47935e8949e68124a8312ba6702a36a5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47935e8949e68124a8312ba6702a36a5, type: 3}
