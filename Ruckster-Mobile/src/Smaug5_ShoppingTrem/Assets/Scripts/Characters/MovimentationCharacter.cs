@@ -30,7 +30,7 @@ public class MovimentationCharacter : MonoBehaviour
     {
         if (currentLine == "left")
         {
-            if (touchSceenControll.CheckSwipTouchToLeft() && !alreadyMakeSecondTurn)
+            if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && !alreadyMakeSecondTurn)
             {
                 //cancelou e voltou para a esquerda
                 alreadyMakeSecondTurn = true;
@@ -65,7 +65,7 @@ public class MovimentationCharacter : MonoBehaviour
         }
         if (currentLine == "mid")
         {
-            if (touchSceenControll.CheckSwipTouchToLeft() && !alreadyMakeSecondTurn)
+            if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && !alreadyMakeSecondTurn)
             {
                 //cancelou e voltou para a esquerda
                 alreadyMakeSecondTurn = true;
@@ -104,7 +104,7 @@ public class MovimentationCharacter : MonoBehaviour
     {
         if (currentLine == "mid")
         {
-            if (touchSceenControll.CheckSwipTouchToRight() && !alreadyMakeSecondTurn)
+            if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && !alreadyMakeSecondTurn)
             {
                 //cancelou e voltou para a esquerda
                 alreadyMakeSecondTurn = true;
@@ -139,7 +139,7 @@ public class MovimentationCharacter : MonoBehaviour
         }
         if (currentLine == "right")
         {
-            if (touchSceenControll.CheckSwipTouchToRight() && !alreadyMakeSecondTurn)
+            if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && !alreadyMakeSecondTurn)
             {
                 //cancelou e voltou para a esquerda
                 alreadyMakeSecondTurn = true;
@@ -182,7 +182,7 @@ public class MovimentationCharacter : MonoBehaviour
             charControll.Move(new Vector3(0, Physics.gravity.y, 0) * Time.deltaTime);
         }
 
-        if (touchSceenControll.CheckSwipTouchToRight() && !isTurningRight)
+        if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && !isTurningRight)
         {
             charSounds.activeSlideHorizontalSound();
             isTurningRight = true;
@@ -195,7 +195,7 @@ public class MovimentationCharacter : MonoBehaviour
             TurningRight();
         }
 
-        if (touchSceenControll.CheckSwipTouchToLeft() && !isTurningLeft)
+        if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && !isTurningLeft)
         {
             charSounds.activeSlideHorizontalSound();
             isTurningLeft = true;
